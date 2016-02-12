@@ -1,0 +1,380 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{E6B8A2CB-AF8B-4E06-BC29-25CF047220DB}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ApplicationWPF</RootNamespace>
+    <AssemblyName>ApplicationWPF</AssemblyName>
+    <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Compile Include="Frames\FightPage.xaml.cs">
+      <DependentUpon>FightPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Frames\NewJediPagexaml.xaml.cs">
+      <DependentUpon>NewJediPagexaml.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Frames\PlayPageFrame\MultiplayerPage.xaml.cs">
+      <DependentUpon>MultiplayerPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Frames\PlayPageFrame\OnePlayerPage.xaml.cs">
+      <DependentUpon>OnePlayerPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Frames\PlayPageFrame\PariMultiplayer.xaml.cs">
+      <DependentUpon>PariMultiplayer.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Frames\PlayPageFrame\PariOnePlayer.xaml.cs">
+      <DependentUpon>PariOnePlayer.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Frames\WinnerPage.xaml.cs">
+      <DependentUpon>WinnerPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\ButtonSoft.xaml.cs">
+      <DependentUpon>ButtonSoft.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Frames\IFrameNavigator.cs" />
+    <Compile Include="Frames\MainMenu.xaml.cs">
+      <DependentUpon>MainMenu.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Frames\PlayPage.xaml.cs">
+      <DependentUpon>PlayPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MainWindow.xaml.cs">
+      <DependentUpon>MainWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\Tournoi\CtrlTournoi.xaml.cs">
+      <DependentUpon>CtrlTournoi.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\Tournoi\TournoisView.xaml.cs">
+      <DependentUpon>TournoisView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\ComboBoxJedi.xaml.cs">
+      <DependentUpon>ComboBoxJedi.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\ComboBoxStade.xaml.cs">
+      <DependentUpon>ComboBoxStade.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\ComboBoxTournoi.xaml.cs">
+      <DependentUpon>ComboBoxTournoi.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\Stade\StadesView.xaml.cs">
+      <DependentUpon>StadesView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\Jedi\JedisView.xaml.cs">
+      <DependentUpon>JedisView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\Match\MatchsView.xaml.cs">
+      <DependentUpon>MatchsView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\PlayChoice.xaml.cs">
+      <DependentUpon>PlayChoice.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\Jedi\CtrlJedi.xaml.cs">
+      <DependentUpon>CtrlJedi.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\Match\CtrlMatch.xaml.cs">
+      <DependentUpon>CtrlMatch.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ViewModel\Gestion\CtrlResearch.xaml.cs">
+      <DependentUpon>CtrlResearch.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\Stade\CtrlStade.xaml.cs">
+      <DependentUpon>CtrlStade.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Frames\GestionTournament.xaml.cs">
+      <DependentUpon>GestionTournament.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ViewModel\Jedi\JedisModelView.cs" />
+    <Compile Include="ViewModel\Jedi\JediViewModel.cs" />
+    <Compile Include="ViewModel\Match\MatchsViewModel.cs" />
+    <Compile Include="ViewModel\Match\MatchViewModel.cs" />
+    <Compile Include="ViewModel\Partie\PartieViewModel.cs" />
+    <Compile Include="ViewModel\RelayCommand.cs" />
+    <Compile Include="ViewModel\Stade\StadesViewModel.cs" />
+    <Compile Include="ViewModel\Stade\StadeViewModel.cs" />
+    <Compile Include="ViewModel\Tournament\TournamentsViewModel.cs" />
+    <Compile Include="ViewModel\Tournament\TournamentViewModel.cs" />
+    <Compile Include="ViewModel\ViewModelBase.cs" />
+    <Page Include="Frames\FightPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Frames\NewJediPagexaml.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Frames\PlayPageFrame\MultiplayerPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Frames\PlayPageFrame\OnePlayerPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Frames\PlayPageFrame\PariMultiplayer.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Frames\PlayPageFrame\PariOnePlayer.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Frames\WinnerPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControls\ButtonSoft.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ConnexionWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ConnexionWindow.xaml.cs">
+      <DependentUpon>ConnexionWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Page Include="Frames\MainMenu.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Frames\PlayPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MainWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControls\Tournoi\CtrlTournoi.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="UserControls\Tournoi\TournoisView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="UserControls\ComboBoxJedi.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControls\ComboBoxStade.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControls\ComboBoxTournoi.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControls\Stade\StadesView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="UserControls\Jedi\JedisView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="UserControls\Match\MatchsView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="UserControls\PlayChoice.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControls\Jedi\CtrlJedi.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControls\Match\CtrlMatch.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ViewModel\Gestion\CtrlResearch.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControls\Stade\CtrlStade.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Frames\GestionTournament.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Resource Include="Font\Starjout.ttf" />
+    <Resource Include="Font\telemarines1.ttf" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <AppDesigner Include="Properties\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BusinessLayer\BusinessLayer.csproj">
+      <Project>{a62009e1-33e0-48b8-854f-a6ad3a19c1ad}</Project>
+      <Name>BusinessLayer</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\EntitiesLayer\EntitiesLayer.csproj">
+      <Project>{fb56789a-f43b-4f09-b675-ac26cd2b2f0b}</Project>
+      <Name>EntitiesLayer</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Modele\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Picture\starwars5.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Picture\starwars10.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Picture\JediTournamentLogo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Picture\starwars8.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Picture\starwars6.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Picture\starwars4.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Picture\starwars7.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Picture\starwars3.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Picture\starwars12.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Picture\Jedi.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Picture\VS_Icon.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Picture\Jedi.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Picture\default.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Picture\anakin.png" />
+    <Resource Include="Picture\kitfist.png" />
+    <Resource Include="Picture\luke.png" />
+    <Resource Include="Picture\obiwan.png" />
+    <Resource Include="Picture\planet.png" />
+    <Resource Include="Picture\plokoon.png" />
+    <Resource Include="Picture\quigon.png" />
+    <Resource Include="Picture\shaakti.png" />
+    <Resource Include="Picture\windu.png" />
+    <Resource Include="Picture\yoda.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Picture\darkmaul.png" />
+    <Resource Include="Picture\kylo.png" />
+    <Resource Include="Picture\revan.png" />
+    <Resource Include="Picture\rey.png" />
+    <Resource Include="Picture\sidious.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Picture\secura.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Picture\grivious.png" />
+    <Resource Include="Picture\vador.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Picture\dooku.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Picture\logo_sith.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

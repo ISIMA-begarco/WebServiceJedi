@@ -1,0 +1,12 @@
+C:\Users\Benoît\Source\Repos\webService\JediTournamentConsole\bin\Debug\JediTournamentConsole.exe.config
+C:\Users\Benoît\Source\Repos\webService\JediTournamentConsole\bin\Debug\JediTournamentConsole.exe
+C:\Users\Benoît\Source\Repos\webService\JediTournamentConsole\bin\Debug\JediTournamentConsole.pdb
+C:\Users\Benoît\Source\Repos\webService\JediTournamentConsole\bin\Debug\BusinessLayer.dll
+C:\Users\Benoît\Source\Repos\webService\JediTournamentConsole\bin\Debug\EntitiesLayer.dll
+C:\Users\Benoît\Source\Repos\webService\JediTournamentConsole\bin\Debug\DataAccessLayer.dll
+C:\Users\Benoît\Source\Repos\webService\JediTournamentConsole\bin\Debug\BusinessLayer.pdb
+C:\Users\Benoît\Source\Repos\webService\JediTournamentConsole\bin\Debug\EntitiesLayer.pdb
+C:\Users\Benoît\Source\Repos\webService\JediTournamentConsole\bin\Debug\DataAccessLayer.pdb
+C:\Users\Benoît\Source\Repos\webService\JediTournamentConsole\obj\Debug\JediTournamentConsole.csprojResolveAssemblyReference.cache
+C:\Users\Benoît\Source\Repos\webService\JediTournamentConsole\obj\Debug\JediTournamentConsole.exe
+C:\Users\Benoît\Source\Repos\webService\JediTournamentConsole\obj\Debug\JediTournamentConsole.pdb

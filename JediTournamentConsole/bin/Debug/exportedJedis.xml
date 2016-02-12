@@ -1,0 +1,549 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Jedis>
+	<Jedi>
+		<ID>1</ID>
+		<Nom>Obi Wan Kenobi</Nom>
+		<IsSith>False</IsSith>
+		<Caracteristiques>
+			<Caracteristique>
+				<ID>9</ID>
+				<Nom>Guidé par un esprit</Nom>
+				<Type>Jedi</Type>
+				<Valeur>20</Valeur>
+			</Caracteristique>
+			<Caracteristique>
+				<ID>10</ID>
+				<Nom>Grand Maître Jedi</Nom>
+				<Type>Jedi</Type>
+				<Valeur>50</Valeur>
+			</Caracteristique>
+			<Caracteristique>
+				<ID>12</ID>
+				<Nom>Combat au sabre laser</Nom>
+				<Type>Jedi</Type>
+				<Valeur>30</Valeur>
+			</Caracteristique>
+			<Caracteristique>
+				<ID>23</ID>
+				<Nom>Parade au sabre laser</Nom>
+				<Type>Jedi</Type>
+				<Valeur>40</Valeur>
+			</Caracteristique>
+			<Caracteristique>
+				<ID>24</ID>
+				<Nom>Armure légère</Nom>
+				<Type>Jedi</Type>
+				<Valeur>20</Valeur>
+			</Caracteristique>
+		</Caracteristiques>
+	</Jedi>
+	<Jedi>
+		<ID>2</ID>
+		<Nom>Yoda</Nom>
+		<IsSith>False</IsSith>
+		<Caracteristiques>
+			<Caracteristique>
+				<ID>9</ID>
+				<Nom>Guidé par un esprit</Nom>
+				<Type>Jedi</Type>
+				<Valeur>20</Valeur>
+			</Caracteristique>
+			<Caracteristique>
+				<ID>10</ID>
+				<Nom>Grand Maître Jedi</Nom>
+				<Type>Jedi</Type>
+				<Valeur>50</Valeur>
+			</Caracteristique>
+			<Caracteristique>
+				<ID>12</ID>
+				<Nom>Combat au sabre laser</Nom>
+				<Type>Jedi</Type>
+				<Valeur>30</Valeur>
+			</Caracteristique>
+			<Caracteristique>
+				<ID>23</ID>
+				<Nom>Parade au sabre laser</Nom>
+				<Type>Jedi</Type>
+				<Valeur>40</Valeur>
+			</Caracteristique>
+		</Caracteristiques>
+	</Jedi>
+	<Jedi>
+		<ID>3</ID>
+		<Nom>Mace Windu</Nom>
+		<IsSith>False</IsSith>
+		<Caracteristiques>
+			<Caracteristique>
+				<ID>10</ID>
+				<Nom>Grand Maître Jedi</Nom>
+				<Type>Jedi</Type>
+				<Valeur>50</Valeur>
+			</Caracteristique>
+			<Caracteristique>
+				<ID>12</ID>
+				<Nom>Combat au sabre laser</Nom>
+				<Type>Jedi</Type>
+				<Valeur>30</Valeur>
+			</Caracteristique>
+			<Caracteristique>
+				<ID>23</ID>
+				<Nom>Parade au sabre laser</Nom>
+				<Type>Jedi</Type>
+				<Valeur>40</Valeur>
+			</Caracteristique>
+			<Caracteristique>
+				<ID>24</ID>
+				<Nom>Armure légère</Nom>
+				<Type>Jedi</Type>
+				<Valeur>20</Valeur>
+			</Caracteristique>
+		</Caracteristiques>
+	</Jedi>
+	<Jedi>
+		<ID>4</ID>
+		<Nom>Aayla Secura</Nom>
+		<IsSith>False</IsSith>
+		<Caracteristiques>
+			<Caracteristique>
+				<ID>10</ID>
+				<Nom>Grand Maître Jedi</Nom>
+				<Type>Jedi</Type>
+				<Valeur>50</Valeur>
+			</Caracteristique>
+			<Caracteristique>
+				<ID>12</ID>
+				<Nom>Combat au sabre laser</Nom>
+				<Type>Jedi</Type>
+				<Valeur>30</Valeur>
+			</Caracteristique>
+			<Caracteristique>
+				<ID>23</ID>
+				<Nom>Parade au sabre laser</Nom>
+				<Type>Jedi</Type>
+				<Valeur>40</Valeur>
+			</Caracteristique>
+			<Caracteristique>
+				<ID>24</ID>
+				<Nom>Armure légère</Nom>
+				<Type>Jedi</Type>
+				<Valeur>20</Valeur>
+			</Caracteristique>
+		</Caracteristiques>
+	</Jedi>
+	<Jedi>
+		<ID>5</ID>
+		<Nom>Shaak Ti</Nom>
+		<IsSith>False</IsSith>
+		<Caracteristiques>
+			<Caracteristique>
+				<ID>10</ID>
+				<Nom>Grand Maître Jedi</Nom>
+				<Type>Jedi</Type>
+				<Valeur>50</Valeur>
+			</Caracteristique>
+			<Caracteristique>
+				<ID>12</ID>
+				<Nom>Combat au sabre laser</Nom>
+				<Type>Jedi</Type>
+				<Valeur>30</Valeur>
+			</Caracteristique>
+			<Caracteristique>
+				<ID>23</ID>
+				<Nom>Parade au sabre laser</Nom>
+				<Type>Jedi</Type>
+				<Valeur>40</Valeur>
+			</Caracteristique>
+			<Caracteristique>
+				<ID>24</ID>
+				<Nom>Armure légère</Nom>
+				<Type>Jedi</Type>
+				<Valeur>20</Valeur>
+			</Caracteristique>
+		</Caracteristiques>
+	</Jedi>
+	<Jedi>
+		<ID>6</ID>
+		<Nom>Plo Koon</Nom>
+		<IsSith>False</IsSith>
+		<Caracteristiques>
+			<Caracteristique>
+				<ID>10</ID>
+				<Nom>Grand Maître Jedi</Nom>
+				<Type>Jedi</Type>
+				<Valeur>50</Valeur>
+			</Caracteristique>
+			<Caracteristique>
+				<ID>12</ID>
+				<Nom>Combat au sabre laser</Nom>
+				<Type>Jedi</Type>
+				<Valeur>30</Valeur>
+			</Caracteristique>
+			<Caracteristique>
+				<ID>23</ID>
+				<Nom>Parade au sabre laser</Nom>
+				<Type>Jedi</Type>
+				<Valeur>40</Valeur>
+			</Caracteristique>
+			<Caracteristique>
+				<ID>24</ID>
+				<Nom>Armure légère</Nom>
+				<Type>Jedi</Type>
+				<Valeur>20</Valeur>
+			</Caracteristique>
+		</Caracteristiques>
+	</Jedi>
+	<Jedi>
+		<ID>7</ID>
+		<Nom>Kit Fist</Nom>
+		<IsSith>False</IsSith>
+		<Caracteristiques>
+			<Caracteristique>
+				<ID>10</ID>
+				<Nom>Grand Maître Jedi</Nom>
+				<Type>Jedi</Type>
+				<Valeur>50</Valeur>
+			</Caracteristique>
+			<Caracteristique>
+				<ID>12</ID>
+				<Nom>Combat au sabre laser</Nom>
+				<Type>Jedi</Type>
+				<Valeur>30</Valeur>
+			</Caracteristique>
+			<Caracteristique>
+				<ID>23</ID>
+				<Nom>Parade au sabre laser</Nom>
+				<Type>Jedi</Type>
+				<Valeur>40</Valeur>
+			</Caracteristique>
+			<Caracteristique>
+				<ID>24</ID>
+				<Nom>Armure légère</Nom>
+				<Type>Jedi</Type>
+				<Valeur>20</Valeur>
+			</Caracteristique>
+		</Caracteristiques>
+	</Jedi>
+	<Jedi>
+		<ID>8</ID>
+		<Nom>Qui Gon Jinn</Nom>
+		<IsSith>False</IsSith>
+		<Caracteristiques>
+			<Caracteristique>
+				<ID>10</ID>
+				<Nom>Grand Maître Jedi</Nom>
+				<Type>Jedi</Type>
+				<Valeur>50</Valeur>
+			</Caracteristique>
+			<Caracteristique>
+				<ID>12</ID>
+				<Nom>Combat au sabre laser</Nom>
+				<Type>Jedi</Type>
+				<Valeur>30</Valeur>
+			</Caracteristique>
+			<Caracteristique>
+				<ID>23</ID>
+				<Nom>Parade au sabre laser</Nom>
+				<Type>Jedi</Type>
+				<Valeur>40</Valeur>
+			</Caracteristique>
+			<Caracteristique>
+				<ID>24</ID>
+				<Nom>Armure légère</Nom>
+				<Type>Jedi</Type>
+				<Valeur>20</Valeur>
+			</Caracteristique>
+		</Caracteristiques>
+	</Jedi>
+	<Jedi>
+		<ID>9</ID>
+		<Nom>Luke Skywalker</Nom>
+		<IsSith>False</IsSith>
+		<Caracteristiques>
+			<Caracteristique>
+				<ID>4</ID>
+				<Nom>Je suis un Skywalker</Nom>
+				<Type>Jedi</Type>
+				<Valeur>30</Valeur>
+			</Caracteristique>
+			<Caracteristique>
+				<ID>9</ID>
+				<Nom>Guidé par un esprit</Nom>
+				<Type>Jedi</Type>
+				<Valeur>20</Valeur>
+			</Caracteristique>
+			<Caracteristique>
+				<ID>10</ID>
+				<Nom>Grand Maître Jedi</Nom>
+				<Type>Jedi</Type>
+				<Valeur>50</Valeur>
+			</Caracteristique>
+			<Caracteristique>
+				<ID>23</ID>
+				<Nom>Parade au sabre laser</Nom>
+				<Type>Jedi</Type>
+				<Valeur>40</Valeur>
+			</Caracteristique>
+		</Caracteristiques>
+	</Jedi>
+	<Jedi>
+		<ID>10</ID>
+		<Nom>Anakin Skywalker</Nom>
+		<IsSith>True</IsSith>
+		<Caracteristiques>
+			<Caracteristique>
+				<ID>2</ID>
+				<Nom>Esprit obscurci</Nom>
+				<Type>Jedi</Type>
+				<Valeur>40</Valeur>
+			</Caracteristique>
+			<Caracteristique>
+				<ID>3</ID>
+				<Nom>The chosen one</Nom>
+				<Type>Jedi</Type>
+				<Valeur>70</Valeur>
+			</Caracteristique>
+			<Caracteristique>
+				<ID>13</ID>
+				<Nom>Double sabre</Nom>
+				<Type>Jedi</Type>
+				<Valeur>50</Valeur>
+			</Caracteristique>
+			<Caracteristique>
+				<ID>23</ID>
+				<Nom>Parade au sabre laser</Nom>
+				<Type>Jedi</Type>
+				<Valeur>40</Valeur>
+			</Caracteristique>
+		</Caracteristiques>
+	</Jedi>
+	<Jedi>
+		<ID>11</ID>
+		<Nom>Rey Skywalker</Nom>
+		<IsSith>False</IsSith>
+		<Caracteristiques>
+			<Caracteristique>
+				<ID>1</ID>
+				<Nom>Le réveil de la force</Nom>
+				<Type>Jedi</Type>
+				<Valeur>30</Valeur>
+			</Caracteristique>
+			<Caracteristique>
+				<ID>4</ID>
+				<Nom>Je suis un Skywalker</Nom>
+				<Type>Jedi</Type>
+				<Valeur>30</Valeur>
+			</Caracteristique>
+			<Caracteristique>
+				<ID>12</ID>
+				<Nom>Combat au sabre laser</Nom>
+				<Type>Jedi</Type>
+				<Valeur>30</Valeur>
+			</Caracteristique>
+			<Caracteristique>
+				<ID>23</ID>
+				<Nom>Parade au sabre laser</Nom>
+				<Type>Jedi</Type>
+				<Valeur>40</Valeur>
+			</Caracteristique>
+		</Caracteristiques>
+	</Jedi>
+	<Jedi>
+		<ID>12</ID>
+		<Nom>Dark Sidious</Nom>
+		<IsSith>True</IsSith>
+		<Caracteristiques>
+			<Caracteristique>
+				<ID>11</ID>
+				<Nom>Seigneur Sith</Nom>
+				<Type>Jedi</Type>
+				<Valeur>50</Valeur>
+			</Caracteristique>
+			<Caracteristique>
+				<ID>15</ID>
+				<Nom>Eclairs</Nom>
+				<Type>Jedi</Type>
+				<Valeur>50</Valeur>
+			</Caracteristique>
+			<Caracteristique>
+				<ID>23</ID>
+				<Nom>Parade au sabre laser</Nom>
+				<Type>Jedi</Type>
+				<Valeur>40</Valeur>
+			</Caracteristique>
+			<Caracteristique>
+				<ID>25</ID>
+				<Nom>Garde</Nom>
+				<Type>Jedi</Type>
+				<Valeur>10</Valeur>
+			</Caracteristique>
+		</Caracteristiques>
+	</Jedi>
+	<Jedi>
+		<ID>13</ID>
+		<Nom>Dark Vador</Nom>
+		<IsSith>True</IsSith>
+		<Caracteristiques>
+			<Caracteristique>
+				<ID>3</ID>
+				<Nom>The chosen one</Nom>
+				<Type>Jedi</Type>
+				<Valeur>70</Valeur>
+			</Caracteristique>
+			<Caracteristique>
+				<ID>11</ID>
+				<Nom>Seigneur Sith</Nom>
+				<Type>Jedi</Type>
+				<Valeur>50</Valeur>
+			</Caracteristique>
+			<Caracteristique>
+				<ID>16</ID>
+				<Nom>Etranglement</Nom>
+				<Type>Jedi</Type>
+				<Valeur>50</Valeur>
+			</Caracteristique>
+			<Caracteristique>
+				<ID>23</ID>
+				<Nom>Parade au sabre laser</Nom>
+				<Type>Jedi</Type>
+				<Valeur>40</Valeur>
+			</Caracteristique>
+			<Caracteristique>
+				<ID>28</ID>
+				<Nom>Je suis un androïd</Nom>
+				<Type>Jedi</Type>
+				<Valeur>70</Valeur>
+			</Caracteristique>
+		</Caracteristiques>
+	</Jedi>
+	<Jedi>
+		<ID>14</ID>
+		<Nom>Grivious</Nom>
+		<IsSith>True</IsSith>
+		<Caracteristiques>
+			<Caracteristique>
+				<ID>11</ID>
+				<Nom>Seigneur Sith</Nom>
+				<Type>Jedi</Type>
+				<Valeur>50</Valeur>
+			</Caracteristique>
+			<Caracteristique>
+				<ID>12</ID>
+				<Nom>Combat au sabre laser</Nom>
+				<Type>Jedi</Type>
+				<Valeur>30</Valeur>
+			</Caracteristique>
+			<Caracteristique>
+				<ID>23</ID>
+				<Nom>Parade au sabre laser</Nom>
+				<Type>Jedi</Type>
+				<Valeur>40</Valeur>
+			</Caracteristique>
+			<Caracteristique>
+				<ID>28</ID>
+				<Nom>Je suis un androïd</Nom>
+				<Type>Jedi</Type>
+				<Valeur>70</Valeur>
+			</Caracteristique>
+		</Caracteristiques>
+	</Jedi>
+	<Jedi>
+		<ID>15</ID>
+		<Nom>Dark Maul</Nom>
+		<IsSith>True</IsSith>
+		<Caracteristiques>
+			<Caracteristique>
+				<ID>8</ID>
+				<Nom>Apprenti Sith</Nom>
+				<Type>Jedi</Type>
+				<Valeur>15</Valeur>
+			</Caracteristique>
+			<Caracteristique>
+				<ID>14</ID>
+				<Nom>Sabre double lame</Nom>
+				<Type>Jedi</Type>
+				<Valeur>40</Valeur>
+			</Caracteristique>
+			<Caracteristique>
+				<ID>23</ID>
+				<Nom>Parade au sabre laser</Nom>
+				<Type>Jedi</Type>
+				<Valeur>40</Valeur>
+			</Caracteristique>
+		</Caracteristiques>
+	</Jedi>
+	<Jedi>
+		<ID>16</ID>
+		<Nom>Dooku</Nom>
+		<IsSith>True</IsSith>
+		<Caracteristiques>
+			<Caracteristique>
+				<ID>11</ID>
+				<Nom>Seigneur Sith</Nom>
+				<Type>Jedi</Type>
+				<Valeur>50</Valeur>
+			</Caracteristique>
+			<Caracteristique>
+				<ID>12</ID>
+				<Nom>Combat au sabre laser</Nom>
+				<Type>Jedi</Type>
+				<Valeur>30</Valeur>
+			</Caracteristique>
+			<Caracteristique>
+				<ID>23</ID>
+				<Nom>Parade au sabre laser</Nom>
+				<Type>Jedi</Type>
+				<Valeur>40</Valeur>
+			</Caracteristique>
+		</Caracteristiques>
+	</Jedi>
+	<Jedi>
+		<ID>17</ID>
+		<Nom>Kylo Ren</Nom>
+		<IsSith>True</IsSith>
+		<Caracteristiques>
+			<Caracteristique>
+				<ID>2</ID>
+				<Nom>Esprit obscurci</Nom>
+				<Type>Jedi</Type>
+				<Valeur>40</Valeur>
+			</Caracteristique>
+			<Caracteristique>
+				<ID>12</ID>
+				<Nom>Combat au sabre laser</Nom>
+				<Type>Jedi</Type>
+				<Valeur>30</Valeur>
+			</Caracteristique>
+			<Caracteristique>
+				<ID>23</ID>
+				<Nom>Parade au sabre laser</Nom>
+				<Type>Jedi</Type>
+				<Valeur>40</Valeur>
+			</Caracteristique>
+		</Caracteristiques>
+	</Jedi>
+	<Jedi>
+		<ID>18</ID>
+		<Nom>Dark Revan</Nom>
+		<IsSith>True</IsSith>
+		<Caracteristiques>
+			<Caracteristique>
+				<ID>8</ID>
+				<Nom>Apprenti Sith</Nom>
+				<Type>Jedi</Type>
+				<Valeur>15</Valeur>
+			</Caracteristique>
+			<Caracteristique>
+				<ID>12</ID>
+				<Nom>Combat au sabre laser</Nom>
+				<Type>Jedi</Type>
+				<Valeur>30</Valeur>
+			</Caracteristique>
+			<Caracteristique>
+				<ID>23</ID>
+				<Nom>Parade au sabre laser</Nom>
+				<Type>Jedi</Type>
+				<Valeur>40</Valeur>
+			</Caracteristique>
+		</Caracteristiques>
+	</Jedi>
+</Jedis>

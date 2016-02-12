@@ -1,0 +1,36 @@
+﻿<UserControl x:Class="ApplicationWPF.UserControls.MatchsView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:ApplicationWPF.UserControls"
+             mc:Ignorable="d">
+    <Grid HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="4*"/>
+            <RowDefinition Height="3*"/>
+            <RowDefinition Height="1*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <ListView  
+            ItemsSource="{Binding Matchs}" 
+            SelectedItem="{Binding SelectedMatch}"
+            Grid.Row="0" Grid.ColumnSpan="2">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="Jedi 1" DisplayMemberBinding="{Binding Jedi1}"/>
+                    <GridViewColumn Header="Jedi 2" DisplayMemberBinding="{Binding Jedi2}"/>
+                    <GridViewColumn Header="Phase" DisplayMemberBinding="{Binding PhaseTournoi}"/>
+                    <GridViewColumn Header="Stade" DisplayMemberBinding="{Binding Stade}"/>
+                    <GridViewColumn Header="Vaiqueur" DisplayMemberBinding="{Binding Vainqueur}"/>
+                </GridView>
+            </ListView.View>
+        </ListView>
+        <local:CtrlMatch x:Name="InfoMatch" Grid.Row="1" Grid.ColumnSpan="2" DataContext="{Binding SelectedMatch}"/>
+        <Button Name="Add" Grid.Row="3" Grid.Column="0" Content="Ajouter" Command="{Binding AddCommand}" Style="{StaticResource TeleMarinesFont}"/>
+        <Button Name="Remvoe" Grid.Row="3" Grid.Column="1" Content="Supprimer" Command="{Binding RemoveCommand}" Style="{StaticResource TeleMarinesFont}"/>
+    </Grid>
+</UserControl>

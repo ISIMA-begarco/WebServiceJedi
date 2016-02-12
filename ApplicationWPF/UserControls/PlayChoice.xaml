@@ -1,0 +1,34 @@
+﻿<UserControl x:Class="ApplicationWPF.UserControls.PlayChoice"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" 
+             Style="{StaticResource PlayChoiceStyle}"
+             d:DesignHeight="300" d:DesignWidth="500"
+             MouseDown="OnButtonClick">
+    <UserControl.Background>
+        <ImageBrush ImageSource="{Binding RelativeSource={RelativeSource AncestorType=UserControl}, Path=PlayChoiceImSource}"/>
+    </UserControl.Background>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <TextBlock Grid.Row="0" x:Name="Title" UseLayoutRounding="True" TextWrapping="Wrap" Text="{Binding Path=PlayChoiceTitle}" 
+                Style="{StaticResource StarWarsFontStyle}">
+            <TextBlock.Effect>
+                <DropShadowEffect BlurRadius="1" Color="red"
+                                  Direction="0" ShadowDepth="1"/>
+            </TextBlock.Effect>
+        </TextBlock>
+        <TextBlock Grid.Row="1" x:Name="Description" UseLayoutRounding="True" Text="{Binding Path=PlayChoiceDescription}" 
+                   Style="{StaticResource StarWarsFontStyle}"
+                   FontSize="20">
+            <TextBlock.Effect>
+                <DropShadowEffect BlurRadius="1" Color="Black"
+                                  Direction="0" ShadowDepth="1"/>
+            </TextBlock.Effect>
+        </TextBlock>
+    </Grid>
+</UserControl>

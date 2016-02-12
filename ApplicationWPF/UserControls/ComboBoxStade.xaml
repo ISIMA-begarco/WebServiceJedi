@@ -1,0 +1,45 @@
+﻿<UserControl x:Class="ApplicationWPF.UserControls.ComboBoxStade"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:ApplicationWPF.UserControls"
+             mc:Ignorable="d" 
+             d:DesignHeight="100" d:DesignWidth="600">
+    <ComboBox ItemsSource="{Binding Stades}" SelectedItem="{Binding SelectedStade}" Height="50" Margin="10" Background="Transparent">
+        <ComboBox.Resources>
+            <Style x:Key="ComboBoxItemStyle1" TargetType="{x:Type ComboBoxItem}">
+                <Setter Property="SnapsToDevicePixels" Value="True"/>
+                <Setter Property="Padding" Value="4,1"/>
+                <Setter Property="HorizontalContentAlignment" Value="{Binding HorizontalContentAlignment, RelativeSource={RelativeSource AncestorType={x:Type ItemsControl}}}"/>
+                <Setter Property="VerticalContentAlignment" Value="{Binding VerticalContentAlignment, RelativeSource={RelativeSource AncestorType={x:Type ItemsControl}}}"/>
+                <Setter Property="Background" Value="Yellow"/>
+                <!-- Custom value -->
+                <Setter Property="BorderBrush" Value="Yellow"/>
+                <!-- Custom value -->
+                <Setter Property="BorderThickness" Value="1"/>
+            </Style>
+        </ComboBox.Resources>
+        <ComboBox.ItemContainerStyle>
+            <Style TargetType="ComboBoxItem">
+                <Setter Property="Background" Value="Black"/>
+                <Setter Property="BorderBrush" Value="Red"/>
+                <Setter Property="SnapsToDevicePixels" Value="True"/>
+                <Setter Property="Padding" Value="4,1"/>
+                <Setter Property="HorizontalContentAlignment" Value="Center"/>
+                <Setter Property="VerticalContentAlignment" Value="Center"/>
+                <Setter Property="BorderThickness" Value="1"/>
+            </Style>
+        </ComboBox.ItemContainerStyle>
+        <ComboBox.ItemTemplate>
+            <DataTemplate>
+                <StackPanel Orientation="Horizontal" Background="Transparent">
+                    <TextBlock Text="{Binding Planete}" Style="{StaticResource StarWarsFontStyle}"/>
+                    <TextBlock Text=" (" Style="{StaticResource StarWarsFontStyle}"/>
+                    <TextBlock Text="{Binding NbPlaces}" Style="{StaticResource StarWarsFontStyle}"/>
+                    <TextBlock Text=" places)" Style="{StaticResource StarWarsFontStyle}"/>
+                </StackPanel>
+            </DataTemplate>
+        </ComboBox.ItemTemplate>
+    </ComboBox>
+</UserControl>

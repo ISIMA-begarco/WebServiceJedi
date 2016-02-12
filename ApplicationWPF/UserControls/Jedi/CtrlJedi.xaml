@@ -1,0 +1,62 @@
+﻿<UserControl x:Class="ApplicationWPF.UserControls.CtrlJedi"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" 
+             d:DesignHeight="200" d:DesignWidth="500">
+    <Grid Background="White">
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        
+        <Grid Grid.Row="0" Grid.Column="0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="5*"/>
+                <ColumnDefinition Width="5*"/>
+            </Grid.ColumnDefinitions>
+
+            <Image Name="jediImage" Source="{Binding ImageUri, UpdateSourceTrigger=PropertyChanged}" Grid.Column="0" Grid.Row="0" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            <Button Name="btnLoad" Click="OnChangeImageClick" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center">Parcourir</Button>
+        </Grid>
+
+        <Grid Grid.Row="1" Grid.Column="0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="2*"/>
+                <ColumnDefinition Width="8*"/>
+            </Grid.ColumnDefinitions>
+
+            <Label Content="Nom" Grid.Column="0" VerticalAlignment="Center"  FontSize="30"/>
+            <TextBox Text="{Binding Nom, UpdateSourceTrigger=PropertyChanged}" Grid.Column="1" FontSize="30" VerticalAlignment="Center"/>
+        </Grid>
+
+        <CheckBox Grid.Row="2" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Left" IsChecked="{Binding IsSith}">
+            <TextBlock Text="Seigneur Sith"  Margin="0,-10,0,0" FontFamily="Calibri"  FontSize="30"/>
+        </CheckBox>
+
+        <GroupBox Header="Caracteristiques" Grid.RowSpan="3" Grid.Column="1" Margin="10">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="1*"/>
+                    <RowDefinition Height="4*"/>
+                </Grid.RowDefinitions>
+                <ComboBox x:Name="caracBox" VerticalAlignment="Top" Grid.Row="0" SelectionChanged="caracBox_SelectionChanged"/>
+                <ListView x:Name="displayCarac" Grid.Row="1" ItemsSource="{Binding Caracteristiques, UpdateSourceTrigger=PropertyChanged}" SelectionChanged="displayCarac_SelectionChanged">
+                    <ListView.View>
+                        <GridView>
+                            <GridViewColumn Header="Caracteristiques" DisplayMemberBinding="{Binding Nom}"/>
+                        </GridView>
+                    </ListView.View>
+                </ListView>
+            </Grid>
+        </GroupBox>
+
+    </Grid>
+</UserControl>

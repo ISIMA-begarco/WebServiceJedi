@@ -1,0 +1,48 @@
+﻿<Page x:Class="ApplicationWPF.Frames.WinnerPage"
+      xmlns:UserControls="clr-namespace:ApplicationWPF.UserControls"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:ApplicationWPF.Frames"
+      mc:Ignorable="d" 
+      Loaded="WindowLoaded"
+      d:DesignHeight="1000" d:DesignWidth="1000"
+      Title="WinnerPage">
+
+    <Grid x:Name="WinnerFic">
+        <Grid.Background>
+            <ImageBrush ImageSource="{StaticResource StarWarsImageBackGround6}" />
+        </Grid.Background>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="100"/>
+            <RowDefinition />
+            <RowDefinition Height="100"/>
+        </Grid.RowDefinitions>
+        <Border Grid.Row="0" Background="Black" Opacity="0.9">
+            <StackPanel Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Center">
+                <TextBlock Text="{Binding Nom}" Style="{StaticResource StarWarsFontStyle}"  FontSize="50" >
+                    <TextBlock.Effect>
+                        <DropShadowEffect BlurRadius="50" Color="Gold"
+                                  Direction="0" ShadowDepth="10"/>
+                    </TextBlock.Effect>
+                </TextBlock>
+                <TextBlock Text=" vainqueur !" Style="{StaticResource StarWarsFontStyle}"  FontSize="50">
+                    <TextBlock.Effect>
+                        <DropShadowEffect BlurRadius="50" Color="Gold"
+                                  Direction="0" ShadowDepth="10"/>
+                    </TextBlock.Effect>
+                </TextBlock>
+            </StackPanel>
+            
+        </Border>
+        
+        <Image Grid.Row="1" Source="{Binding ImageUri}"  VerticalAlignment="Center" HorizontalAlignment="Center">
+            <Image.Effect>
+                <DropShadowEffect BlurRadius="50" Color="Gold"
+                                  Direction="0" ShadowDepth="10"/>
+            </Image.Effect>
+        </Image>
+        <UserControls:ButtonSoft Grid.Row="2" Label="Quitter" Event="ButtonSoft_Event"  VerticalAlignment="Center" HorizontalAlignment="Left" Margin="50,0,0,0" />
+    </Grid>
+</Page>

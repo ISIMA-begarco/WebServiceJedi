@@ -1,0 +1,25 @@
+<Page xmlns:UserControls="clr-namespace:ApplicationWPF.UserControls"  x:Class="ApplicationWPF.Frames.PlayPageFrame.MultiplayerPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:ApplicationWPF.Frames.PlayPageFrame"
+      mc:Ignorable="d" 
+      d:DesignHeight="200" d:DesignWidth="1000"
+      Title="MultiplayerPage">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="2*"/>
+        </Grid.ColumnDefinitions>
+        <TextBlock Grid.Row="0" Grid.Column="0" Style="{StaticResource StarWarsFontStyle}" Text="Joueur 1" />
+        <UserControls:ComboBoxJedi Grid.Row="0" Grid.Column="1" x:Name="J1Jedi"  MouseLeave="J1Jedi_MouseLeave" MouseEnter="J1Jedi_MouseEnter"/>
+        <TextBlock Grid.Row="1" Grid.Column="0" Style="{StaticResource StarWarsFontStyle}" Text="Joueur 2"/>
+        <UserControls:ComboBoxJedi Grid.Row="1" Grid.Column="1" x:Name="J2Jedi"  MouseLeave="J2Jedi_MouseLeave" MouseEnter="J1Jedi_MouseEnter"/>
+    </Grid>
+</Page>

@@ -1,0 +1,89 @@
+﻿<Page x:Class="ApplicationWPF.Frames.FightPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:ApplicationWPF.Frames"
+      xmlns:UserControls="clr-namespace:ApplicationWPF.UserControls"
+      mc:Ignorable="d" 
+      d:DesignHeight="1000" d:DesignWidth="1000"
+      Loaded="WindowLoaded"
+      Title="FightPage"
+      KeyDown="Page_KeyDown"
+      x:Name="fightPage">
+    <Page.Background>
+        <ImageBrush x:Name="stadeBckGrnd"  ImageSource="{Binding ImageUri}"/>
+    </Page.Background>
+    <Grid KeyDown="Page_KeyDown">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="100"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="100"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="3*"/>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="3*"/>
+        </Grid.ColumnDefinitions>
+        <StackPanel Grid.Row="0" Grid.ColumnSpan="3">
+            <TextBlock x:Name="PhaseTournoi" Style="{StaticResource StarWarsFontStyle}" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        </StackPanel>
+        <StackPanel  x:Name="Concurent1" Grid.Row="1" Grid.Column="0" Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Center" Background="Black" Opacity="0.9">
+            <TextBlock Style="{StaticResource StarWarsFontStyle}" Text="{Binding Nom}" Opacity="1"/>
+            <Image x:Name="Concurent1Img" Source="{Binding ImageUri}" Height="300" Width="300" Opacity="1"/>
+        </StackPanel>
+        
+        <Image Grid.Row="0" Grid.Column="1"/>
+        <StackPanel x:Name="Concurent2" Grid.Row="1" Grid.Column="2" Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Center" Background="Black" Opacity="0.9">
+            <TextBlock Style="{StaticResource StarWarsFontStyle}" Text="{Binding Nom}" Opacity="1"/>
+            <Image x:Name="Concurent2Img"  Source="{Binding ImageUri}" Width="300" Height="300" Opacity="1"/>
+        </StackPanel>
+        <StackPanel x:Name="Pari1" Grid.Row="2" Grid.Column="0" Visibility="Hidden" Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Center">
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Text="Votre richesse :" Style="{StaticResource StarWarsFontStyle}" />
+                <TextBlock Text="{Binding Bourse_j1}" Style="{StaticResource StarWarsFontStyle}" />
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <UserControls:ComboBoxJedi x:Name="J1Jedi" Width="300"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Text="Mise :" Style="{StaticResource StarWarsFontStyle}" />
+                <TextBox x:Name="mise_j1" Text="0" Grid.Column="1" Height="50" Width="200" Margin="10" Background="Transparent" 
+                         BorderBrush="Red" Foreground="White" FontSize="30"
+                          MouseLeave="Bourse_j1_LostFocus" LostFocus="Bourse_j1_LostFocus"/>
+            </StackPanel>
+        </StackPanel>
+        <StackPanel x:Name="Affiche1" Grid.Row="2" Grid.Column="0" Visibility="Hidden" Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Center">
+            <UserControls:ButtonSoft  Label="Pierre[E]" HorizontalAlignment="Right" Margin="10" Event="ButtonPierre_Event"/>
+            <UserControls:ButtonSoft  Label="Papier[D]" HorizontalAlignment="Right" Margin="10" Event="ButtonPapier_Event"/>
+            <UserControls:ButtonSoft  Label="Ciseau[X]" HorizontalAlignment="Right" Margin="10" Event="ButtonCiseau_Event"/>
+        </StackPanel>
+        <StackPanel x:Name="Pari2" Grid.Row="2" Grid.Column="2" Visibility="Hidden" Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Center">
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Text="Votre richesse :" Style="{StaticResource StarWarsFontStyle}" />
+                <TextBlock Text="{Binding Bourse_j2}" Style="{StaticResource StarWarsFontStyle}" />
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <UserControls:ComboBoxJedi x:Name="J2Jedi"  Width="300"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Text="Mise :" Style="{StaticResource StarWarsFontStyle}" />
+                <TextBox x:Name="mise_j2" Text="0" Grid.Column="1" Height="50" Width="200" Margin="10" Background="Transparent" 
+                         BorderBrush="Red" Foreground="White" FontSize="30"
+                          MouseLeave="Bourse_j2_LostFocus" LostFocus="Bourse_j2_LostFocus"/>
+            </StackPanel>
+        </StackPanel>
+        <StackPanel x:Name="Affiche2" Grid.Row="2" Grid.Column="2" Visibility="Hidden" Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Center">
+            <UserControls:ButtonSoft  Label="Pierre[U]" HorizontalAlignment="Right" Margin="10" Event="ButtonPierre2_Event"/>
+            <UserControls:ButtonSoft  Label="Papier[J]" HorizontalAlignment="Right" Margin="10" Event="ButtonPapier2_Event"/>
+            <UserControls:ButtonSoft  Label="Ciseau[N]" HorizontalAlignment="Right" Margin="10" Event="ButtonCiseau2_Event"/>
+        </StackPanel>
+        <UserControls:ButtonSoft Grid.Row="3" Grid.Column="0" Label="Quitter" HorizontalAlignment="Left" Margin="50,0,0,0" Event="ButtonBack_Event"/>
+        <StackPanel Grid.Row="3" Grid.Column="2" Orientation="Horizontal" HorizontalAlignment="Right">
+            <UserControls:ButtonSoft  Label="Fight" HorizontalAlignment="Right" Margin="20,0,0,0" Event="ButtonStart_Event"/>
+            <UserControls:ButtonSoft  Label="Suivant" HorizontalAlignment="Right" Margin="20,0,20,0" Event="ButtonNext_Event"/>
+        </StackPanel>
+        
+    </Grid> 
+</Page>

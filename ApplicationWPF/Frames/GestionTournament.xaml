@@ -1,0 +1,47 @@
+﻿<Page xmlns:UserControls="clr-namespace:ApplicationWPF.UserControls" 
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:ApplicationWPF.Frames" x:Class="ApplicationWPF.Frames.GestionTournament" 
+      xmlns:userControls="clr-namespace:ApplicationWPF.UserControls" d:DesignWidth="1000"
+      mc:Ignorable="d"
+	Title="GestionTournament">
+
+    <Page.Background>
+        <ImageBrush ImageSource="{StaticResource StarWarsImageBackGround7}"/>
+    </Page.Background>
+    
+    <Grid>
+        <UserControls:ButtonSoft HorizontalAlignment="Left" VerticalAlignment="Top" Margin="20" Label="Retour" Event="ButtonBak_Event"/>
+
+        <TabControl
+            FontSize="70"  Style="{StaticResource TeleMarinesFont}" Opacity="0.9">
+            <TabControl.Resources>
+                <Style TargetType="TabPanel">
+                    <Setter Property="HorizontalAlignment" Value="Right"/>
+                </Style>
+            </TabControl.Resources>
+
+            <!-- Gestion des Jedis -->
+            <TabItem Header="Jedi" FontWeight="Bold" Padding="25,20,25,20">
+                <userControls:JedisView x:Name="ucJedis" Style="{StaticResource Classic}" Loaded="JediLoaded" Unloaded="JediUnloaded"/>
+            </TabItem>
+
+            <!-- Gestion des Matchs -->
+            <TabItem Header="Match" FontWeight="Bold" Padding="25,20,25,20">
+                <userControls:MatchsView x:Name="ucMatchs" Style="{StaticResource Classic}" Loaded="MatchLoaded" Unloaded="MatchUnloaded"/>
+            </TabItem>
+
+            <!-- Gestion des Stades -->
+            <TabItem Header="Stade" FontWeight="Bold" Padding="25,20,25,20">
+                <userControls:StadesView x:Name="ucStade" Style="{StaticResource Classic}" Loaded="StadeLoaded" Unloaded="StadeUnloaded"/>
+            </TabItem>
+
+            <!-- Gestion des Tournois -->
+            <TabItem Header="Tournoi" FontWeight="Bold" Padding="25,20,25,20">
+                <userControls:TournoisView x:Name="ucTournoi" Style="{StaticResource Classic}" Loaded="TournoiLoaded" Unloaded="TournoiUnloaded"/>
+            </TabItem>
+        </TabControl>
+    </Grid>
+</Page>

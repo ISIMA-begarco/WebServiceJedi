@@ -1,0 +1,13 @@
+C:\Users\Benoît\Source\Repos\webService\BusinessLayerTest\bin\Debug\BusinessLayerTest.dll
+C:\Users\Benoît\Source\Repos\webService\BusinessLayerTest\bin\Debug\BusinessLayerTest.pdb
+C:\Users\Benoît\Source\Repos\webService\BusinessLayerTest\bin\Debug\BusinessLayer.dll
+C:\Users\Benoît\Source\Repos\webService\BusinessLayerTest\bin\Debug\EntitiesLayer.dll
+C:\Users\Benoît\Source\Repos\webService\BusinessLayerTest\bin\Debug\Microsoft.VisualStudio.QualityTools.UnitTestFramework.dll
+C:\Users\Benoît\Source\Repos\webService\BusinessLayerTest\bin\Debug\DataAccessLayer.dll
+C:\Users\Benoît\Source\Repos\webService\BusinessLayerTest\bin\Debug\BusinessLayer.pdb
+C:\Users\Benoît\Source\Repos\webService\BusinessLayerTest\bin\Debug\EntitiesLayer.pdb
+C:\Users\Benoît\Source\Repos\webService\BusinessLayerTest\bin\Debug\DataAccessLayer.pdb
+C:\Users\Benoît\Source\Repos\webService\BusinessLayerTest\bin\Debug\fr\Microsoft.VisualStudio.QualityTools.UnitTestFramework.resources.dll
+C:\Users\Benoît\Source\Repos\webService\BusinessLayerTest\obj\Debug\BusinessLayerTest.csprojResolveAssemblyReference.cache
+C:\Users\Benoît\Source\Repos\webService\BusinessLayerTest\obj\Debug\BusinessLayerTest.dll
+C:\Users\Benoît\Source\Repos\webService\BusinessLayerTest\obj\Debug\BusinessLayerTest.pdb

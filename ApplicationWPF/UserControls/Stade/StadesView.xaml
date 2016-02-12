@@ -1,0 +1,35 @@
+﻿<UserControl x:Class="ApplicationWPF.UserControls.StadesView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:ApplicationWPF.UserControls"
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="300">
+    <Grid HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="4*"/>
+            <RowDefinition Height="3*"/>
+            <RowDefinition Height="1*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <ListView  
+            ItemsSource="{Binding Stades}" 
+            SelectedItem="{Binding SelectedStade}"
+            Grid.Row="0" Grid.ColumnSpan="2">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="Planete" DisplayMemberBinding="{Binding Planete}"/>
+                    <GridViewColumn Header="NbPlaces" DisplayMemberBinding="{Binding NbPlaces}"/>
+                    <GridViewColumn Header="Caracs" DisplayMemberBinding="{Binding CaracteristiquesString}"/>
+                </GridView>
+            </ListView.View>
+        </ListView>
+        <local:CtrlStade x:Name="InfoStade" Grid.Row="1" Grid.ColumnSpan="2" DataContext="{Binding SelectedStade}"/>
+        <Button Name="Add" Grid.Row="2" Grid.Column="0" Content="Ajouter" Command="{Binding AddCommand}" Style="{StaticResource TeleMarinesFont}"/>
+        <Button Name="Remvoe" Grid.Row="2" Grid.Column="1" Content="Supprimer" Command="{Binding RemoveCommand}" Style="{StaticResource TeleMarinesFont}"/>
+    </Grid>
+</UserControl>

@@ -1,0 +1,5 @@
+C:\Users\Benoît\Source\Repos\webService\EntitiesLayer\bin\Debug\EntitiesLayer.dll
+C:\Users\Benoît\Source\Repos\webService\EntitiesLayer\bin\Debug\EntitiesLayer.pdb
+C:\Users\Benoît\Source\Repos\webService\EntitiesLayer\obj\Debug\EntitiesLayer.csprojResolveAssemblyReference.cache
+C:\Users\Benoît\Source\Repos\webService\EntitiesLayer\obj\Debug\EntitiesLayer.dll
+C:\Users\Benoît\Source\Repos\webService\EntitiesLayer\obj\Debug\EntitiesLayer.pdb

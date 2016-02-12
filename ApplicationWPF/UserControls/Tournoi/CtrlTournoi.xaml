@@ -1,0 +1,57 @@
+﻿<UserControl x:Class="ApplicationWPF.UserControls.CtrlTournoi"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" 
+             d:DesignHeight="200" d:DesignWidth="500">
+    <Grid Background="White">
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+
+        <Label Content="Nom" VerticalAlignment="Center" HorizontalAlignment="Left" Grid.Row="0" Grid.Column="0"/>
+        <TextBox Text="{Binding Name, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Center" Grid.Row="0" Grid.Column="1"/>
+
+        <!-- Match 1 -->
+        <Label Content="Match 1" VerticalAlignment="Top" HorizontalAlignment="Center" Grid.Row="1" Grid.Column="0"/>
+        <ComboBox x:Name="Match1" SelectedItem="{Binding Match1}" VerticalAlignment="Bottom" Grid.Row="1" Grid.Column="0" Margin="5,0,5,5"/>
+
+        <!-- Match 2 -->
+        <Label Content="Match 2" VerticalAlignment="Top" HorizontalAlignment="Center" Grid.Row="1" Grid.Column="1"/>
+        <ComboBox x:Name="Match2" SelectedItem="{Binding Match2}" VerticalAlignment="Bottom" Grid.Row="1" Grid.Column="1" Margin="5,0,5,5"/>
+
+        <!-- Match 3 -->
+        <Label Content="Match 3" VerticalAlignment="Top" HorizontalAlignment="Center" Grid.Row="2" Grid.Column="0"/>
+        <ComboBox x:Name="Match3" SelectedItem="{Binding Match3}" VerticalAlignment="Bottom" Grid.Row="2" Grid.Column="0" Margin="5,0,5,5"/>
+
+        <!-- Match 4 -->
+        <Label Content="Match 4" VerticalAlignment="Top" HorizontalAlignment="Center" Grid.Row="2" Grid.Column="1"/>
+        <ComboBox x:Name="Match4" SelectedItem="{Binding Match4}" VerticalAlignment="Bottom" Grid.Row="2" Grid.Column="1" Margin="5,0,5,5"/>
+
+        <!-- Match 5 -->
+        <Label Content="Match 5" VerticalAlignment="Top" HorizontalAlignment="Center" Grid.Row="3" Grid.Column="0"/>
+        <ComboBox x:Name="Match5" SelectedItem="{Binding Match5}" VerticalAlignment="Bottom" Grid.Row="3" Grid.Column="0" Margin="5,0,5,5"/>
+
+        <!-- Match 6 -->
+        <Label Content="Match 6" VerticalAlignment="Top" HorizontalAlignment="Center" Grid.Row="3" Grid.Column="1"/>
+        <ComboBox x:Name="Match6" SelectedItem="{Binding Match6}" VerticalAlignment="Bottom" Grid.Row="3" Grid.Column="1" Margin="5,0,5,5"/>
+
+        <!-- Match 7 -->
+        <Label Content="Match 7" VerticalAlignment="Top" HorizontalAlignment="Center" Grid.Row="4" Grid.Column="0"/>
+        <ComboBox x:Name="Match7" SelectedItem="{Binding Match7}" VerticalAlignment="Bottom" Grid.Row="4" Grid.Column="0" Margin="5,0,5,5"/>
+
+        <!-- Match 8 -->
+        <Label Content="Match 8" VerticalAlignment="Top" HorizontalAlignment="Center" Grid.Row="4" Grid.Column="1"/>
+        <ComboBox x:Name="Match8" SelectedItem="{Binding Match8}" VerticalAlignment="Bottom" Grid.Row="4" Grid.Column="1" Margin="5,0,5,5"/>
+        
+    </Grid>
+</UserControl>

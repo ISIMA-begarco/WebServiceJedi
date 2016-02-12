@@ -1,0 +1,7 @@
+C:\Users\Benoît\Source\Repos\webService\DataAccessLayer\bin\Debug\DataAccessLayer.dll
+C:\Users\Benoît\Source\Repos\webService\DataAccessLayer\bin\Debug\DataAccessLayer.pdb
+C:\Users\Benoît\Source\Repos\webService\DataAccessLayer\bin\Debug\EntitiesLayer.dll
+C:\Users\Benoît\Source\Repos\webService\DataAccessLayer\bin\Debug\EntitiesLayer.pdb
+C:\Users\Benoît\Source\Repos\webService\DataAccessLayer\obj\Debug\DataAccessLayer.csprojResolveAssemblyReference.cache
+C:\Users\Benoît\Source\Repos\webService\DataAccessLayer\obj\Debug\DataAccessLayer.dll
+C:\Users\Benoît\Source\Repos\webService\DataAccessLayer\obj\Debug\DataAccessLayer.pdb

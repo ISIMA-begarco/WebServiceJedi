@@ -1,0 +1,11 @@
+C:\Users\Benoît\Source\Repos\webService\DataAccessLayerTest\bin\Debug\DataAccessLayerTest.dll
+C:\Users\Benoît\Source\Repos\webService\DataAccessLayerTest\bin\Debug\DataAccessLayerTest.pdb
+C:\Users\Benoît\Source\Repos\webService\DataAccessLayerTest\bin\Debug\DataAccessLayer.dll
+C:\Users\Benoît\Source\Repos\webService\DataAccessLayerTest\bin\Debug\EntitiesLayer.dll
+C:\Users\Benoît\Source\Repos\webService\DataAccessLayerTest\bin\Debug\Microsoft.VisualStudio.QualityTools.UnitTestFramework.dll
+C:\Users\Benoît\Source\Repos\webService\DataAccessLayerTest\bin\Debug\DataAccessLayer.pdb
+C:\Users\Benoît\Source\Repos\webService\DataAccessLayerTest\bin\Debug\EntitiesLayer.pdb
+C:\Users\Benoît\Source\Repos\webService\DataAccessLayerTest\bin\Debug\fr\Microsoft.VisualStudio.QualityTools.UnitTestFramework.resources.dll
+C:\Users\Benoît\Source\Repos\webService\DataAccessLayerTest\obj\Debug\DataAccessLayerTest.csprojResolveAssemblyReference.cache
+C:\Users\Benoît\Source\Repos\webService\DataAccessLayerTest\obj\Debug\DataAccessLayerTest.dll
+C:\Users\Benoît\Source\Repos\webService\DataAccessLayerTest\obj\Debug\DataAccessLayerTest.pdb
