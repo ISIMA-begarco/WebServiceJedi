@@ -13,3 +13,12 @@ C:\Users\Benoît\Source\Repos\webService\JediTournamentConsole\obj\Debug\JediTou
 O:\OneDrive\GitHub\WebServiceJedi\JediTournamentConsole\bin\Debug\JediTournamentConsole.exe.config
 O:\OneDrive\GitHub\WebServiceJedi\JediTournamentConsole\obj\Debug\JediTournamentConsole.exe
 O:\OneDrive\GitHub\WebServiceJedi\JediTournamentConsole\obj\Debug\JediTournamentConsole.pdb
+O:\OneDrive\GitHub\WebServiceJedi\JediTournamentConsole\bin\Debug\JediTournamentConsole.exe
+O:\OneDrive\GitHub\WebServiceJedi\JediTournamentConsole\bin\Debug\JediTournamentConsole.pdb
+O:\OneDrive\GitHub\WebServiceJedi\JediTournamentConsole\bin\Debug\BusinessLayer.dll
+O:\OneDrive\GitHub\WebServiceJedi\JediTournamentConsole\bin\Debug\EntitiesLayer.dll
+O:\OneDrive\GitHub\WebServiceJedi\JediTournamentConsole\bin\Debug\DataAccessLayer.dll
+O:\OneDrive\GitHub\WebServiceJedi\JediTournamentConsole\bin\Debug\BusinessLayer.pdb
+O:\OneDrive\GitHub\WebServiceJedi\JediTournamentConsole\bin\Debug\EntitiesLayer.pdb
+O:\OneDrive\GitHub\WebServiceJedi\JediTournamentConsole\bin\Debug\DataAccessLayer.pdb
+O:\OneDrive\GitHub\WebServiceJedi\JediTournamentConsole\obj\Debug\JediTournamentConsole.csprojResolveAssemblyReference.cache

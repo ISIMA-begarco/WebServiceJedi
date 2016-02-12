@@ -3,15 +3,20 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using EntitiesLayer;
-
+using System.Runtime.Serialization;
 
 namespace WCFJedi
 {
+    [DataContract]
     public class CaracteristiqueWS
     {
+        [DataMember]
         public string Nom { get; set; }
+        [DataMember]
         public EDefCaracteristique Definition { get; set; }
+        [DataMember]
         public int Valeur { get; set; }
+        
         public CaracteristiqueWS(Caracteristique c)
         {
             this.Nom = c.Nom;

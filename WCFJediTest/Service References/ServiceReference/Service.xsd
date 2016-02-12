@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/WCFJedi" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/WCFJedi" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost:1379/Service.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/EntitiesLayer" />
+  <xs:complexType name="ArrayOfJediWS">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="JediWS" nillable="true" type="tns:JediWS" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfJediWS" nillable="true" type="tns:ArrayOfJediWS" />
+  <xs:complexType name="JediWS">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Caracteristiques" nillable="true" type="tns:ArrayOfCaracteristiqueWS" />
+      <xs:element minOccurs="0" name="IsSith" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Nom" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="JediWS" nillable="true" type="tns:JediWS" />
+  <xs:complexType name="ArrayOfCaracteristiqueWS">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="CaracteristiqueWS" nillable="true" type="tns:CaracteristiqueWS" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfCaracteristiqueWS" nillable="true" type="tns:ArrayOfCaracteristiqueWS" />
+  <xs:complexType name="CaracteristiqueWS">
+    <xs:sequence>
+      <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/EntitiesLayer" minOccurs="0" name="Definition" type="q1:EDefCaracteristique" />
+      <xs:element minOccurs="0" name="Nom" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Valeur" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CaracteristiqueWS" nillable="true" type="tns:CaracteristiqueWS" />
+  <xs:complexType name="ArrayOfStadeWS">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="StadeWS" nillable="true" type="tns:StadeWS" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfStadeWS" nillable="true" type="tns:ArrayOfStadeWS" />
+  <xs:complexType name="StadeWS">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Caracteristiques" nillable="true" type="tns:ArrayOfCaracteristiqueWS" />
+      <xs:element minOccurs="0" name="NbPlaces" type="xs:int" />
+      <xs:element minOccurs="0" name="Planete" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="StadeWS" nillable="true" type="tns:StadeWS" />
+  <xs:complexType name="ArrayOfMatchWS">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="MatchWS" nillable="true" type="tns:MatchWS" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfMatchWS" nillable="true" type="tns:ArrayOfMatchWS" />
+  <xs:complexType name="MatchWS">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Jedi1" nillable="true" type="tns:JediWS" />
+      <xs:element minOccurs="0" name="Jedi2" nillable="true" type="tns:JediWS" />
+      <xs:element minOccurs="0" name="JediVainqueur" nillable="true" type="tns:JediWS" />
+      <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/EntitiesLayer" minOccurs="0" name="Phase" type="q2:EPhaseTournoi" />
+      <xs:element minOccurs="0" name="Stade" nillable="true" type="tns:StadeWS" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="MatchWS" nillable="true" type="tns:MatchWS" />
+  <xs:complexType name="ArrayOfTournoiWS">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="TournoiWS" nillable="true" type="tns:TournoiWS" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfTournoiWS" nillable="true" type="tns:ArrayOfTournoiWS" />
+  <xs:complexType name="TournoiWS">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Matches" nillable="true" type="tns:ArrayOfMatchWS" />
+      <xs:element minOccurs="0" name="Nom" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="TournoiWS" nillable="true" type="tns:TournoiWS" />
+</xs:schema>
