@@ -21,6 +21,7 @@ namespace WCFJedi
         {
             this.Nom = j.Nom;
             this.IsSith = j.IsSith;
+            this.Caracteristiques = new List<CaracteristiqueWS>();
             j.Caracteristiques.ForEach(x => this.Caracteristiques.Add(new CaracteristiqueWS(x)));
         }
     }

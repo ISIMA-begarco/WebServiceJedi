@@ -1,7 +1,0 @@
-C:\Users\Benoît\Source\Repos\webService\StubDataAccessLayer\bin\Debug\StubDataAccessLayer.dll
-C:\Users\Benoît\Source\Repos\webService\StubDataAccessLayer\bin\Debug\StubDataAccessLayer.pdb
-C:\Users\Benoît\Source\Repos\webService\StubDataAccessLayer\bin\Debug\EntitiesLayer.dll
-C:\Users\Benoît\Source\Repos\webService\StubDataAccessLayer\bin\Debug\EntitiesLayer.pdb
-C:\Users\Benoît\Source\Repos\webService\StubDataAccessLayer\obj\Debug\StubDataAccessLayer.csprojResolveAssemblyReference.cache
-C:\Users\Benoît\Source\Repos\webService\StubDataAccessLayer\obj\Debug\StubDataAccessLayer.dll
-C:\Users\Benoît\Source\Repos\webService\StubDataAccessLayer\obj\Debug\StubDataAccessLayer.pdb

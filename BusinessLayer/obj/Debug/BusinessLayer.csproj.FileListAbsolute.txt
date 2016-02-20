@@ -13,10 +13,8 @@ O:\OneDrive\GitHub\WebServiceJedi\BusinessLayer\bin\Debug\BusinessLayer.dll
 O:\OneDrive\GitHub\WebServiceJedi\BusinessLayer\bin\Debug\BusinessLayer.pdb
 O:\OneDrive\GitHub\WebServiceJedi\BusinessLayer\bin\Debug\DataAccessLayer.dll
 O:\OneDrive\GitHub\WebServiceJedi\BusinessLayer\bin\Debug\EntitiesLayer.dll
-O:\OneDrive\GitHub\WebServiceJedi\BusinessLayer\bin\Debug\StubDataAccessLayer.dll
 O:\OneDrive\GitHub\WebServiceJedi\BusinessLayer\bin\Debug\DataAccessLayer.pdb
 O:\OneDrive\GitHub\WebServiceJedi\BusinessLayer\bin\Debug\EntitiesLayer.pdb
-O:\OneDrive\GitHub\WebServiceJedi\BusinessLayer\bin\Debug\StubDataAccessLayer.pdb
 O:\OneDrive\GitHub\WebServiceJedi\BusinessLayer\obj\Debug\BusinessLayer.csprojResolveAssemblyReference.cache
 O:\OneDrive\GitHub\WebServiceJedi\BusinessLayer\obj\Debug\BusinessLayer.dll
 O:\OneDrive\GitHub\WebServiceJedi\BusinessLayer\obj\Debug\BusinessLayer.pdb

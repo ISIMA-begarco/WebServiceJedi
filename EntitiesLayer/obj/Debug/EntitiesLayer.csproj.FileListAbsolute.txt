@@ -3,3 +3,7 @@ C:\Users\Benoît\Source\Repos\webService\EntitiesLayer\bin\Debug\EntitiesLayer.p
 C:\Users\Benoît\Source\Repos\webService\EntitiesLayer\obj\Debug\EntitiesLayer.csprojResolveAssemblyReference.cache
 C:\Users\Benoît\Source\Repos\webService\EntitiesLayer\obj\Debug\EntitiesLayer.dll
 C:\Users\Benoît\Source\Repos\webService\EntitiesLayer\obj\Debug\EntitiesLayer.pdb
+O:\OneDrive\GitHub\WebServiceJedi\EntitiesLayer\bin\Debug\EntitiesLayer.dll
+O:\OneDrive\GitHub\WebServiceJedi\EntitiesLayer\bin\Debug\EntitiesLayer.pdb
+O:\OneDrive\GitHub\WebServiceJedi\EntitiesLayer\obj\Debug\EntitiesLayer.dll
+O:\OneDrive\GitHub\WebServiceJedi\EntitiesLayer\obj\Debug\EntitiesLayer.pdb

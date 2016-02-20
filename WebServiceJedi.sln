@@ -7,8 +7,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JediTournamentConsole", "Je
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BusinessLayer", "BusinessLayer\BusinessLayer.csproj", "{A62009E1-33E0-48B8-854F-A6AD3A19C1AD}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StubDataAccessLayer", "StubDataAccessLayer\StubDataAccessLayer.csproj", "{8F0B711B-1D8A-4728-BC89-36D87651A9B3}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EntitiesLayer", "EntitiesLayer\EntitiesLayer.csproj", "{FB56789A-F43B-4F09-B675-AC26CD2B2F0B}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JediTournamentWPF", "ApplicationWPF\JediTournamentWPF.csproj", "{E6B8A2CB-AF8B-4E06-BC29-25CF047220DB}"
@@ -16,12 +14,6 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{4B55D85D-4CEC-402A-9185-B00181723A10}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataAccessLayer", "DataAccessLayer\DataAccessLayer.csproj", "{6A832D68-D334-42E2-9CD1-8B5A3C12BC7B}"
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "img", "img", "{4922E289-603C-4471-9C78-727D54DF60C9}"
-	ProjectSection(SolutionItems) = preProject
-		img\default.png = img\default.png
-		img\planet.png = img\planet.png
-	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "sql", "sql", "{FA776FF9-9B98-4E10-B831-3FA639A1BA32}"
 	ProjectSection(SolutionItems) = preProject
@@ -55,10 +47,6 @@ Global
 		{A62009E1-33E0-48B8-854F-A6AD3A19C1AD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A62009E1-33E0-48B8-854F-A6AD3A19C1AD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A62009E1-33E0-48B8-854F-A6AD3A19C1AD}.Release|Any CPU.Build.0 = Release|Any CPU
-		{8F0B711B-1D8A-4728-BC89-36D87651A9B3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{8F0B711B-1D8A-4728-BC89-36D87651A9B3}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{8F0B711B-1D8A-4728-BC89-36D87651A9B3}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{8F0B711B-1D8A-4728-BC89-36D87651A9B3}.Release|Any CPU.Build.0 = Release|Any CPU
 		{FB56789A-F43B-4F09-B675-AC26CD2B2F0B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{FB56789A-F43B-4F09-B675-AC26CD2B2F0B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FB56789A-F43B-4F09-B675-AC26CD2B2F0B}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -92,7 +80,6 @@ Global
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
-		{4922E289-603C-4471-9C78-727D54DF60C9} = {4B55D85D-4CEC-402A-9185-B00181723A10}
 		{FA776FF9-9B98-4E10-B831-3FA639A1BA32} = {4B55D85D-4CEC-402A-9185-B00181723A10}
 	EndGlobalSection
 EndGlobal

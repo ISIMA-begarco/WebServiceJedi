@@ -5,7 +5,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using EntitiesLayer;
-using StubDataAccessLayer;
 using DataAccessLayer;
 using System.Security.Cryptography;
 using System.Xml;
@@ -15,7 +14,6 @@ namespace BusinessLayer
     public class JediTournamentManager
     {
         private static DataAccessLayer.DalManager bdd = DataAccessLayer.DalManager.Instance;
-       
 
         #region Stades management
         public List<Stade> getStades()
