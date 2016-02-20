@@ -38,7 +38,6 @@ namespace DataAccessLayer
             string root = AppDomain.CurrentDomain.BaseDirectory + "\\";
             root = root.Split(new string[] { "JediTournamentConsole", "ApplicationWPF", "DataAccessLayerTest", "BusinessLayerTest", "WCFJediTest", "WCFJedi" }, StringSplitOptions.None)[0];
             string url = "Data Source = (LocalDB)\\MSSQLLocalDB;AttachDbFilename=" + root + "Database\\JediTournament.mdf;Integrated Security=True;Connect Timeout=30";
-            Console.WriteLine(url);
             bdd = new MSSQLSFile(url);
             //bdd = new StubDatabase();
         }
