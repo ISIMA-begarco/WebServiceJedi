@@ -23,9 +23,9 @@ namespace WCFJedi
 
         public MatchWS(Match m)
         {
-            this.Jedi1 = new JediWS(m.Jedi1);
-            this.Jedi2 = new JediWS(m.Jedi2);
-            this.JediVainqueur = new JediWS(m.JediVainqueur);
+            this.Jedi1 = m.Jedi1 != null ? new JediWS(m.Jedi1) : null;
+            this.Jedi2 = m.Jedi2 != null ? new JediWS(m.Jedi2) : null;
+            this.JediVainqueur = m.JediVainqueur != null ? new JediWS(m.JediVainqueur) : null;
             this.Stade = new StadeWS(m.Stade);
             this.Phase = m.PhaseTournoi;
         }

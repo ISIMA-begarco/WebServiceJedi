@@ -18,7 +18,6 @@ namespace DataAccessLayer
         {
             get
             {
-                Console.WriteLine("bleu");
                 if (_instance == null)
                 {
                     lock (padlock)

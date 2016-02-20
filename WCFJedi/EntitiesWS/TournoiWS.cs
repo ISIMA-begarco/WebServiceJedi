@@ -18,6 +18,7 @@ namespace WCFJedi
         public TournoiWS (Tournoi t)
         {
             this.Nom = t.Nom;
+            this.Matches = new List<MatchWS>();
             t.Matchs.ForEach(x => this.Matches.Add(new MatchWS(x)));
         }
     }
