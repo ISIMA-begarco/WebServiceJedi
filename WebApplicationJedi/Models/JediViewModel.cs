@@ -20,7 +20,7 @@ namespace WebApplicationJedi.Models {
 
 		[Required]
 		[Display(Name ="Caractéristiques")]
-		public List<string> Caracteristiques { get; set; }
+		public CaracteristiqueCollection Caracteristiques { get; set; }
 		// TODO ajouter les caracteristiques par la suite
 
 		public JediViewModel() { }
@@ -28,7 +28,12 @@ namespace WebApplicationJedi.Models {
 		public JediViewModel(ServiceReference.JediWS jedi) {
 			this.Nom = jedi.Nom;
 			this.IsSith = jedi.IsSith;
-			// TODO ajouter les caracteristiques
+
+			List<CaracteristiqueViewModel> tmpList = new List<CaracteristiqueViewModel>();
+			foreach(var car in jedi.Caracteristiques) {
+				tmpList.Add(new CaracteristiqueViewModel(car));
+			}
+			this.Caracteristiques = new CaracteristiqueCollection(tmpList);
 		}
 	}
 

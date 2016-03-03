@@ -1,0 +1,32 @@
+﻿@model WebApplicationJedi.Models.JediCollection
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Gestion des jedis</h2>
+
+<p>Voici la liste des Jedis que vous pouvez consulter et modifier.</p>
+
+<table>
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Default.Nom)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Default.IsSith)
+        </th>
+    </tr>
+
+@foreach(var it in Model.list) {
+    <tr>
+        <td>
+            @Html.DisplayFor(Model => it.Nom)
+        </td>
+        <td>
+            @Html.DisplayFor(Model => it.IsSith)
+        </td>
+    </tr>
+}
+
+</table>
