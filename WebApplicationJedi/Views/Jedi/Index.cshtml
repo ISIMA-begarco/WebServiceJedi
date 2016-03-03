@@ -8,25 +8,42 @@
 
 <p>Voici la liste des Jedis que vous pouvez consulter et modifier.</p>
 
-<table>
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.Default.Nom)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Default.IsSith)
-        </th>
-    </tr>
+@foreach(var j in Model.list) {
+    <div class="panel-primary">
+        <div class="panel-heading">
+            <h2>@Html.DisplayFor(Model => j.Nom)</h2>
+        </div>
+        <div class="panel-body">
+            @Html.DisplayNameFor(model => model.Default.IsSith) @Html.DisplayFor(Model => j.IsSith)
 
-@foreach(var it in Model.list) {
-    <tr>
-        <td>
-            @Html.DisplayFor(Model => it.Nom)
-        </td>
-        <td>
-            @Html.DisplayFor(Model => it.IsSith)
-        </td>
-    </tr>
+            <table class="table">
+                <tr>
+                    <th>
+                        @Html.DisplayNameFor(Model => Model.Default.Caracteristiques.Default.Nom)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(Model => Model.Default.Caracteristiques.Default.Definition)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(Model => Model.Default.Caracteristiques.Default.Valeur)
+                    </th>
+                </tr>
+
+                @foreach(var c in j.Caracteristiques.list) {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(Model => c.Nom)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(Model => c.Definition)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(Model => c.Valeur)
+                        </td>
+                    </tr>
+                }
+
+            </table>
+        </div>
+    </div> 
 }
-
-</table>
