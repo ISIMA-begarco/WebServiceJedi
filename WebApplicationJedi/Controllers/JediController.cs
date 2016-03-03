@@ -3,12 +3,23 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using WebApplicationJedi.Models;
+using WebApplicationJedi.ServiceReference;
 
 namespace WebApplicationJedi.Controllers {
 	public class JediController : Controller {
+
 		// GET: Jedi
 		public ActionResult Index() {
-			return View();
+			List<JediViewModel> list = new List<JediViewModel>();
+
+			using(ServiceReference.ServiceClient service = new ServiceReference.ServiceClient()) {
+				foreach(var jedi in service.getJedis()) {
+					list.Add(new JediViewModel(jedi));
+				}
+			}
+
+			return View(new JediCollection(list));
 		}
 
 		// GET: Jedi/Details/5

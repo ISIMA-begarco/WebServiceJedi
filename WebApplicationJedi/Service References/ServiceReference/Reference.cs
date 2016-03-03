@@ -8,3 +8,590 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
+namespace WebApplicationJedi.ServiceReference {
+    using System.Runtime.Serialization;
+    using System;
+    
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="JediWS", Namespace="http://schemas.datacontract.org/2004/07/WCFJedi")]
+    [System.SerializableAttribute()]
+    public partial class JediWS : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private WebApplicationJedi.ServiceReference.CaracteristiqueWS[] CaracteristiquesField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private bool IsSithField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string NomField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public WebApplicationJedi.ServiceReference.CaracteristiqueWS[] Caracteristiques {
+            get {
+                return this.CaracteristiquesField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.CaracteristiquesField, value) != true)) {
+                    this.CaracteristiquesField = value;
+                    this.RaisePropertyChanged("Caracteristiques");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public bool IsSith {
+            get {
+                return this.IsSithField;
+            }
+            set {
+                if ((this.IsSithField.Equals(value) != true)) {
+                    this.IsSithField = value;
+                    this.RaisePropertyChanged("IsSith");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Nom {
+            get {
+                return this.NomField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.NomField, value) != true)) {
+                    this.NomField = value;
+                    this.RaisePropertyChanged("Nom");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="CaracteristiqueWS", Namespace="http://schemas.datacontract.org/2004/07/WCFJedi")]
+    [System.SerializableAttribute()]
+    public partial class CaracteristiqueWS : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private WebApplicationJedi.ServiceReference.EDefCaracteristique DefinitionField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string NomField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int ValeurField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public WebApplicationJedi.ServiceReference.EDefCaracteristique Definition {
+            get {
+                return this.DefinitionField;
+            }
+            set {
+                if ((this.DefinitionField.Equals(value) != true)) {
+                    this.DefinitionField = value;
+                    this.RaisePropertyChanged("Definition");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Nom {
+            get {
+                return this.NomField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.NomField, value) != true)) {
+                    this.NomField = value;
+                    this.RaisePropertyChanged("Nom");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int Valeur {
+            get {
+                return this.ValeurField;
+            }
+            set {
+                if ((this.ValeurField.Equals(value) != true)) {
+                    this.ValeurField = value;
+                    this.RaisePropertyChanged("Valeur");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="EDefCaracteristique", Namespace="http://schemas.datacontract.org/2004/07/EntitiesLayer")]
+    public enum EDefCaracteristique : int {
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        Strength = 0,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        Dexterity = 1,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        Perception = 2,
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="StadeWS", Namespace="http://schemas.datacontract.org/2004/07/WCFJedi")]
+    [System.SerializableAttribute()]
+    public partial class StadeWS : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private WebApplicationJedi.ServiceReference.CaracteristiqueWS[] CaracteristiquesField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int NbPlacesField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string PlaneteField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public WebApplicationJedi.ServiceReference.CaracteristiqueWS[] Caracteristiques {
+            get {
+                return this.CaracteristiquesField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.CaracteristiquesField, value) != true)) {
+                    this.CaracteristiquesField = value;
+                    this.RaisePropertyChanged("Caracteristiques");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int NbPlaces {
+            get {
+                return this.NbPlacesField;
+            }
+            set {
+                if ((this.NbPlacesField.Equals(value) != true)) {
+                    this.NbPlacesField = value;
+                    this.RaisePropertyChanged("NbPlaces");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Planete {
+            get {
+                return this.PlaneteField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.PlaneteField, value) != true)) {
+                    this.PlaneteField = value;
+                    this.RaisePropertyChanged("Planete");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="MatchWS", Namespace="http://schemas.datacontract.org/2004/07/WCFJedi")]
+    [System.SerializableAttribute()]
+    public partial class MatchWS : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private WebApplicationJedi.ServiceReference.JediWS Jedi1Field;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private WebApplicationJedi.ServiceReference.JediWS Jedi2Field;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private WebApplicationJedi.ServiceReference.JediWS JediVainqueurField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private WebApplicationJedi.ServiceReference.EPhaseTournoi PhaseField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private WebApplicationJedi.ServiceReference.StadeWS StadeField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public WebApplicationJedi.ServiceReference.JediWS Jedi1 {
+            get {
+                return this.Jedi1Field;
+            }
+            set {
+                if ((object.ReferenceEquals(this.Jedi1Field, value) != true)) {
+                    this.Jedi1Field = value;
+                    this.RaisePropertyChanged("Jedi1");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public WebApplicationJedi.ServiceReference.JediWS Jedi2 {
+            get {
+                return this.Jedi2Field;
+            }
+            set {
+                if ((object.ReferenceEquals(this.Jedi2Field, value) != true)) {
+                    this.Jedi2Field = value;
+                    this.RaisePropertyChanged("Jedi2");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public WebApplicationJedi.ServiceReference.JediWS JediVainqueur {
+            get {
+                return this.JediVainqueurField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.JediVainqueurField, value) != true)) {
+                    this.JediVainqueurField = value;
+                    this.RaisePropertyChanged("JediVainqueur");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public WebApplicationJedi.ServiceReference.EPhaseTournoi Phase {
+            get {
+                return this.PhaseField;
+            }
+            set {
+                if ((this.PhaseField.Equals(value) != true)) {
+                    this.PhaseField = value;
+                    this.RaisePropertyChanged("Phase");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public WebApplicationJedi.ServiceReference.StadeWS Stade {
+            get {
+                return this.StadeField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.StadeField, value) != true)) {
+                    this.StadeField = value;
+                    this.RaisePropertyChanged("Stade");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="EPhaseTournoi", Namespace="http://schemas.datacontract.org/2004/07/EntitiesLayer")]
+    public enum EPhaseTournoi : int {
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        HuitiemeFinale1 = 14,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        HuitiemeFinale2 = 13,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        HuitiemeFinale3 = 12,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        HuitiemeFinale4 = 11,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        HuitiemeFinale5 = 10,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        HuitiemeFinale6 = 9,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        HuitiemeFinale7 = 8,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        HuitiemeFinale8 = 7,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        QuartFinale1 = 6,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        QuartFinale2 = 5,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        QuartFinale3 = 4,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        QuartFinale4 = 3,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        DemiFinale1 = 2,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        DemiFinale2 = 1,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        Finale = 0,
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="TournoiWS", Namespace="http://schemas.datacontract.org/2004/07/WCFJedi")]
+    [System.SerializableAttribute()]
+    public partial class TournoiWS : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private WebApplicationJedi.ServiceReference.MatchWS[] MatchesField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string NomField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public WebApplicationJedi.ServiceReference.MatchWS[] Matches {
+            get {
+                return this.MatchesField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.MatchesField, value) != true)) {
+                    this.MatchesField = value;
+                    this.RaisePropertyChanged("Matches");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Nom {
+            get {
+                return this.NomField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.NomField, value) != true)) {
+                    this.NomField = value;
+                    this.RaisePropertyChanged("Nom");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ServiceModel.ServiceContractAttribute(ConfigurationName="ServiceReference.IService")]
+    public interface IService {
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/getJedis", ReplyAction="http://tempuri.org/IService/getJedisResponse")]
+        WebApplicationJedi.ServiceReference.JediWS[] getJedis();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/getJedis", ReplyAction="http://tempuri.org/IService/getJedisResponse")]
+        System.Threading.Tasks.Task<WebApplicationJedi.ServiceReference.JediWS[]> getJedisAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/getStades", ReplyAction="http://tempuri.org/IService/getStadesResponse")]
+        WebApplicationJedi.ServiceReference.StadeWS[] getStades();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/getStades", ReplyAction="http://tempuri.org/IService/getStadesResponse")]
+        System.Threading.Tasks.Task<WebApplicationJedi.ServiceReference.StadeWS[]> getStadesAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/getMatches", ReplyAction="http://tempuri.org/IService/getMatchesResponse")]
+        WebApplicationJedi.ServiceReference.MatchWS[] getMatches();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/getMatches", ReplyAction="http://tempuri.org/IService/getMatchesResponse")]
+        System.Threading.Tasks.Task<WebApplicationJedi.ServiceReference.MatchWS[]> getMatchesAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/getTournois", ReplyAction="http://tempuri.org/IService/getTournoisResponse")]
+        WebApplicationJedi.ServiceReference.TournoiWS[] getTournois();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/getTournois", ReplyAction="http://tempuri.org/IService/getTournoisResponse")]
+        System.Threading.Tasks.Task<WebApplicationJedi.ServiceReference.TournoiWS[]> getTournoisAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/getCaracteristiquesOf", ReplyAction="http://tempuri.org/IService/getCaracteristiquesOfResponse")]
+        WebApplicationJedi.ServiceReference.CaracteristiqueWS[] getCaracteristiquesOf(string jediName);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/getCaracteristiquesOf", ReplyAction="http://tempuri.org/IService/getCaracteristiquesOfResponse")]
+        System.Threading.Tasks.Task<WebApplicationJedi.ServiceReference.CaracteristiqueWS[]> getCaracteristiquesOfAsync(string jediName);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/addJedi", ReplyAction="http://tempuri.org/IService/addJediResponse")]
+        bool addJedi(WebApplicationJedi.ServiceReference.JediWS jedi);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/addJedi", ReplyAction="http://tempuri.org/IService/addJediResponse")]
+        System.Threading.Tasks.Task<bool> addJediAsync(WebApplicationJedi.ServiceReference.JediWS jedi);
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public interface IServiceChannel : WebApplicationJedi.ServiceReference.IService, System.ServiceModel.IClientChannel {
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public partial class ServiceClient : System.ServiceModel.ClientBase<WebApplicationJedi.ServiceReference.IService>, WebApplicationJedi.ServiceReference.IService {
+        
+        public ServiceClient() {
+        }
+        
+        public ServiceClient(string endpointConfigurationName) : 
+                base(endpointConfigurationName) {
+        }
+        
+        public ServiceClient(string endpointConfigurationName, string remoteAddress) : 
+                base(endpointConfigurationName, remoteAddress) {
+        }
+        
+        public ServiceClient(string endpointConfigurationName, System.ServiceModel.EndpointAddress remoteAddress) : 
+                base(endpointConfigurationName, remoteAddress) {
+        }
+        
+        public ServiceClient(System.ServiceModel.Channels.Binding binding, System.ServiceModel.EndpointAddress remoteAddress) : 
+                base(binding, remoteAddress) {
+        }
+        
+        public WebApplicationJedi.ServiceReference.JediWS[] getJedis() {
+            return base.Channel.getJedis();
+        }
+        
+        public System.Threading.Tasks.Task<WebApplicationJedi.ServiceReference.JediWS[]> getJedisAsync() {
+            return base.Channel.getJedisAsync();
+        }
+        
+        public WebApplicationJedi.ServiceReference.StadeWS[] getStades() {
+            return base.Channel.getStades();
+        }
+        
+        public System.Threading.Tasks.Task<WebApplicationJedi.ServiceReference.StadeWS[]> getStadesAsync() {
+            return base.Channel.getStadesAsync();
+        }
+        
+        public WebApplicationJedi.ServiceReference.MatchWS[] getMatches() {
+            return base.Channel.getMatches();
+        }
+        
+        public System.Threading.Tasks.Task<WebApplicationJedi.ServiceReference.MatchWS[]> getMatchesAsync() {
+            return base.Channel.getMatchesAsync();
+        }
+        
+        public WebApplicationJedi.ServiceReference.TournoiWS[] getTournois() {
+            return base.Channel.getTournois();
+        }
+        
+        public System.Threading.Tasks.Task<WebApplicationJedi.ServiceReference.TournoiWS[]> getTournoisAsync() {
+            return base.Channel.getTournoisAsync();
+        }
+        
+        public WebApplicationJedi.ServiceReference.CaracteristiqueWS[] getCaracteristiquesOf(string jediName) {
+            return base.Channel.getCaracteristiquesOf(jediName);
+        }
+        
+        public System.Threading.Tasks.Task<WebApplicationJedi.ServiceReference.CaracteristiqueWS[]> getCaracteristiquesOfAsync(string jediName) {
+            return base.Channel.getCaracteristiquesOfAsync(jediName);
+        }
+        
+        public bool addJedi(WebApplicationJedi.ServiceReference.JediWS jedi) {
+            return base.Channel.addJedi(jedi);
+        }
+        
+        public System.Threading.Tasks.Task<bool> addJediAsync(WebApplicationJedi.ServiceReference.JediWS jedi) {
+            return base.Channel.addJediAsync(jedi);
+        }
+    }
+}

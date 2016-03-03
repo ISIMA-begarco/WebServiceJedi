@@ -4,6 +4,8 @@ using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using WCFJedi;
+using WebApplicationJedi.ServiceReference;
 
 namespace WebApplicationJedi.Models {
 	public class JediViewModel {
@@ -23,13 +25,29 @@ namespace WebApplicationJedi.Models {
 
 		public JediViewModel() { }
 
+		public JediViewModel(ServiceReference.JediWS jedi) {
+			this.Nom = jedi.Nom;
+			this.IsSith = jedi.IsSith;
+			// TODO ajouter les caracteristiques
+		}
 	}
 
 	/// <summary>
 	/// Cette classe permet d'etre utilisable plus facilement dans la vue
 	/// </summary>
 	public class JediCollection {
-		public List<JediViewModel> JediModels { get; set; }
+		/// <summary>
+		/// La liste contenant des JediModels
+		/// </summary>
+		public List<JediViewModel> list { get; set; }
+
+		/// <summary>
+		/// Constucteur permettant de creer facilement la liste
+		/// </summary>
+		/// <param name="list"></param>
+		public JediCollection(List<JediViewModel> list) {
+			this.list = list;
+		}
 
 		/// <summary>
 		/// Ce champ permet de creer les headers dans les tables de la vue
