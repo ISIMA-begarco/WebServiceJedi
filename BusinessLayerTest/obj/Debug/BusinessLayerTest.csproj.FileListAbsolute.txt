@@ -24,3 +24,16 @@ O:\OneDrive\GitHub\WebServiceJedi\BusinessLayerTest\bin\Debug\fr\Microsoft.Visua
 O:\OneDrive\GitHub\WebServiceJedi\BusinessLayerTest\obj\Debug\BusinessLayerTest.csprojResolveAssemblyReference.cache
 O:\OneDrive\GitHub\WebServiceJedi\BusinessLayerTest\obj\Debug\BusinessLayerTest.dll
 O:\OneDrive\GitHub\WebServiceJedi\BusinessLayerTest\obj\Debug\BusinessLayerTest.pdb
+C:\Users\Benji\GitHub\WebServiceJedi\BusinessLayerTest\bin\Debug\BusinessLayerTest.dll
+C:\Users\Benji\GitHub\WebServiceJedi\BusinessLayerTest\bin\Debug\BusinessLayerTest.pdb
+C:\Users\Benji\GitHub\WebServiceJedi\BusinessLayerTest\bin\Debug\BusinessLayer.dll
+C:\Users\Benji\GitHub\WebServiceJedi\BusinessLayerTest\bin\Debug\EntitiesLayer.dll
+C:\Users\Benji\GitHub\WebServiceJedi\BusinessLayerTest\bin\Debug\Microsoft.VisualStudio.QualityTools.UnitTestFramework.dll
+C:\Users\Benji\GitHub\WebServiceJedi\BusinessLayerTest\bin\Debug\DataAccessLayer.dll
+C:\Users\Benji\GitHub\WebServiceJedi\BusinessLayerTest\bin\Debug\BusinessLayer.pdb
+C:\Users\Benji\GitHub\WebServiceJedi\BusinessLayerTest\bin\Debug\EntitiesLayer.pdb
+C:\Users\Benji\GitHub\WebServiceJedi\BusinessLayerTest\bin\Debug\DataAccessLayer.pdb
+C:\Users\Benji\GitHub\WebServiceJedi\BusinessLayerTest\bin\Debug\fr\Microsoft.VisualStudio.QualityTools.UnitTestFramework.resources.dll
+C:\Users\Benji\GitHub\WebServiceJedi\BusinessLayerTest\obj\Debug\BusinessLayerTest.csprojResolveAssemblyReference.cache
+C:\Users\Benji\GitHub\WebServiceJedi\BusinessLayerTest\obj\Debug\BusinessLayerTest.dll
+C:\Users\Benji\GitHub\WebServiceJedi\BusinessLayerTest\obj\Debug\BusinessLayerTest.pdb

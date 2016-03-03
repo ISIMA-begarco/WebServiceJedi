@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
-VisualStudioVersion = 14.0.24720.0
+VisualStudioVersion = 14.0.23107.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JediTournamentConsole", "JediTournamentConsole\JediTournamentConsole.csproj", "{834579C7-F006-4BC1-910A-C13AAC6454FE}"
 EndProject
@@ -29,6 +29,11 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WCFJedi", "WCFJedi\WCFJedi.csproj", "{937CCA0F-99A5-4BDB-A519-B6B1749D21C5}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WCFJediTest", "WCFJediTest\WCFJediTest.csproj", "{8FBDDF59-2B62-4B89-9B32-A636DF715E65}"
+	ProjectSection(ProjectDependencies) = postProject
+		{937CCA0F-99A5-4BDB-A519-B6B1749D21C5} = {937CCA0F-99A5-4BDB-A519-B6B1749D21C5}
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApplicationJedi", "WebApplicationJedi\WebApplicationJedi.csproj", "{198B3908-CAF8-4CFB-94DB-EAC682A84411}"
 	ProjectSection(ProjectDependencies) = postProject
 		{937CCA0F-99A5-4BDB-A519-B6B1749D21C5} = {937CCA0F-99A5-4BDB-A519-B6B1749D21C5}
 	EndProjectSection
@@ -75,6 +80,10 @@ Global
 		{8FBDDF59-2B62-4B89-9B32-A636DF715E65}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8FBDDF59-2B62-4B89-9B32-A636DF715E65}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8FBDDF59-2B62-4B89-9B32-A636DF715E65}.Release|Any CPU.Build.0 = Release|Any CPU
+		{198B3908-CAF8-4CFB-94DB-EAC682A84411}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{198B3908-CAF8-4CFB-94DB-EAC682A84411}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{198B3908-CAF8-4CFB-94DB-EAC682A84411}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{198B3908-CAF8-4CFB-94DB-EAC682A84411}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
