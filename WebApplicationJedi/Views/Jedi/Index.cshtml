@@ -11,11 +11,10 @@
 @foreach(var j in Model.list) {
     <div class="panel-primary">
         <div class="panel-heading">
-            <h2>@Html.DisplayFor(Model => j.Nom)</h2>
+            <h2>@Html.DisplayFor(Model => j.Nom) - @Html.DisplayNameFor(model => model.Default.IsSith) @Html.DisplayFor(Model => j.IsSith) </h2>
         </div>
         <div class="panel-body">
-            @Html.DisplayNameFor(model => model.Default.IsSith) @Html.DisplayFor(Model => j.IsSith)
-
+            Caractéristiques
             <table class="table">
                 <tr>
                     <th>

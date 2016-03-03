@@ -15,7 +15,7 @@ namespace WebApplicationJedi.Models {
 		public string Nom { get; set; }
 
 		[Required]
-		[Display(Name ="Est sith ?")]
+		[Display(Name ="Sith")]
 		public bool IsSith { get; set; }
 
 		[Required]
