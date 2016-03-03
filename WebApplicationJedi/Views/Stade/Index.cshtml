@@ -1,19 +1,19 @@
-﻿@model WebApplicationJedi.Models.JediCollection
+﻿@model WebApplicationJedi.Models.StadeCollection
 
 @{
     ViewBag.Title = "Index";
 }
 
-<h2>Gestion des jedis</h2>
+<h2>Gestion des Stades</h2>
 
-<p>Voici la liste des Jedis que vous pouvez consulter et modifier.</p>
+<p>Voici la liste des Stades afin de les modifier ou supprimer.</p>
 
-@foreach(var j in Model.list) {
+@foreach(var s in Model.list) {
     <div class="panel-primary">
         <div class="panel-heading">
             <div class="row">
                 <div class="col-lg-6 text-left">
-                    @Html.DisplayFor(Model => j.Nom) - @Html.DisplayNameFor(model => model.Default.IsSith) @Html.DisplayFor(Model => j.IsSith)
+                    @Html.DisplayFor(Model => s.Planete) - @Html.DisplayFor(Model => s.NbPlaces) places
                 </div>
                 <div class="col-lg-6 text-right">
                     @Html.ActionLink("Modifier", "Modifier", "Edit") | 
@@ -36,7 +36,7 @@
                     </th>
                 </tr>
 
-                @foreach(var c in j.Caracteristiques.list) {
+                @foreach(var c in s.Caracteristiques.list) {
                     <tr>
                         <td>
                             @Html.DisplayFor(Model => c.Nom)
@@ -52,5 +52,5 @@
 
             </table>
         </div>
-    </div> 
+    </div>
 }

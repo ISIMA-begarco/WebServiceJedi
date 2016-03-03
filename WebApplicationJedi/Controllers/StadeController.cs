@@ -4,36 +4,33 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using WebApplicationJedi.Models;
-using WebApplicationJedi.ServiceReference;
 
 namespace WebApplicationJedi.Controllers {
-	public class JediController : Controller {
-
-		// GET: Jedi
+	public class StadeController : Controller {
+		// GET: Stade
 		public ActionResult Index() {
-			List<JediViewModel> list = new List<JediViewModel>();
+			List<StadeViewModel> list = new List<StadeViewModel>();
 
 			using(ServiceReference.ServiceClient service = new ServiceReference.ServiceClient()) {
-				foreach(var jedi in service.getJedis()) {
-					list.Add(new JediViewModel(jedi));
+				foreach(var stade in service.getStades()) {
+					list.Add(new StadeViewModel(stade));
 				}
 			}
 
-			return View(new JediCollection(list));
+			return View(new StadeCollection(list));
 		}
 
-		// GET: Jedi/Details/5
+		// GET: Stade/Details/5
 		public ActionResult Details(int id) {
-			
 			return View();
 		}
 
-		// GET: Jedi/Create
+		// GET: Stade/Create
 		public ActionResult Create() {
 			return View();
 		}
 
-		// POST: Jedi/Create
+		// POST: Stade/Create
 		[HttpPost]
 		public ActionResult Create(FormCollection collection) {
 			try {
@@ -45,12 +42,12 @@ namespace WebApplicationJedi.Controllers {
 			}
 		}
 
-		// GET: Jedi/Edit/5
+		// GET: Stade/Edit/5
 		public ActionResult Edit(int id) {
 			return View();
 		}
 
-		// POST: Jedi/Edit/5
+		// POST: Stade/Edit/5
 		[HttpPost]
 		public ActionResult Edit(int id, FormCollection collection) {
 			try {
@@ -62,15 +59,12 @@ namespace WebApplicationJedi.Controllers {
 			}
 		}
 
-		// GET: Jedi/Delete/5
+		// GET: Stade/Delete/5
 		public ActionResult Delete(int id) {
-			using(ServiceReference.ServiceClient service = new ServiceReference.ServiceClient()) {
-				
-			}
 			return View();
 		}
 
-		// POST: Jedi/Delete/5
+		// POST: Stade/Delete/5
 		[HttpPost]
 		public ActionResult Delete(int id, FormCollection collection) {
 			try {

@@ -11,15 +11,15 @@ namespace WebApplicationJedi.Models {
 	public class JediViewModel {
 
 		[Required]
-		[Display(Name ="Nom")]
+		[Display(Name = "Nom")]
 		public string Nom { get; set; }
 
 		[Required]
-		[Display(Name ="Sith")]
+		[Display(Name = "Sith")]
 		public bool IsSith { get; set; }
 
 		[Required]
-		[Display(Name ="Caractéristiques")]
+		[Display(Name = "Caractéristiques")]
 		public CaracteristiqueCollection Caracteristiques { get; set; }
 		// TODO ajouter les caracteristiques par la suite
 
