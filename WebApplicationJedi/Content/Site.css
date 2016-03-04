@@ -26,3 +26,8 @@ textarea {
 .panel-heading a {
     color: white;
 }
+
+.btn a {
+    text-decoration : none;
+    color : white;
+}

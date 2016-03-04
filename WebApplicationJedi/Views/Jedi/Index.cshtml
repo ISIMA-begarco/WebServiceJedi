@@ -4,9 +4,15 @@
     ViewBag.Title = "Index";
 }
 
-<h2>Gestion des jedis</h2>
+<div class="jumbotron">
+    <h2>Gestion des jedis</h2>
 
-<p>Voici la liste des Jedis que vous pouvez consulter et modifier.</p>
+    <p>Voici la liste des Jedis que vous pouvez consulter et modifier.</p>
+</div>
+
+<div class="btn btn-success">
+    @Html.ActionLink("Créer un Nouveau Jedi", "Create")
+</div>
 
 @foreach(var j in Model.list) {
     <div class="panel-primary">
@@ -16,13 +22,13 @@
                     @Html.DisplayFor(Model => j.Nom) - @Html.DisplayNameFor(model => model.Default.IsSith) @Html.DisplayFor(Model => j.IsSith)
                 </div>
                 <div class="col-lg-6 text-right">
-                    @Html.ActionLink("Modifier", "Modifier", "Edit") | 
+                    @Html.ActionLink("Modifier", "Edit", new {id = j.Id }) | 
                     @Html.ActionLink("Supprimer", "Supprimer", "Delete")
                 </div>
             </div>
         </div>
         <div class="panel-body">
-            Caractéristiques
+            @Html.DisplayNameFor(Model => Model.Default.Caracteristiques)
             <table class="table table-striped">
                 <tr>
                     <th>

@@ -3,12 +3,21 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using WCFJedi;
+using WebApplicationJedi.Models;
 
 namespace WebApplicationJedi.Controllers {
 	public class TournoiController : Controller {
 		// GET: Tournoi
 		public ActionResult Index() {
-			return View();
+			List<TournoiViewModel> list = new List<TournoiViewModel>();
+			using(ServiceReference.ServiceClient service = new ServiceReference.ServiceClient()) {
+				foreach(var tournoi in service.getTournois()) {
+					list.Add(new TournoiViewModel(tournoi));
+				}
+			}
+
+			return View(new TournoiCollection(list));
 		}
 
 		// GET: Tournoi/Details/5

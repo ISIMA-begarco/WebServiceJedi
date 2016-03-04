@@ -10,6 +10,8 @@ namespace WCFJedi
     [DataContract]
     public class StadeWS
     {
+		[DataMember]
+		public int Id { get; set; }
         [DataMember]
         public string Planete { get; set; }
         [DataMember]
@@ -19,6 +21,7 @@ namespace WCFJedi
 
         public StadeWS(Stade s)
         {
+			this.Id = s.Id;
             this.Planete = s.Planete;
             this.NbPlaces = s.NbPlaces;
 			this.Caracteristiques = new List<CaracteristiqueWS>();

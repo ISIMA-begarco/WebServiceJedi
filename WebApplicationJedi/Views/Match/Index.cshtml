@@ -1,0 +1,28 @@
+﻿@model WebApplicationJedi.Models.MatchCollection
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Gestion des matchs</h2>
+
+<p>Voici la liste des matchs que vous pouvez modifier ou supprimer.</p>
+
+@foreach(var m in Model.list) {
+    <div class="panel-primary">
+        <div class="panel-heading">
+            <div class="row">
+                <div class="col-lg-6 text-left">
+                    @Html.DisplayFor(Model => m.Stade) - @Html.DisplayFor(Model => m.Phase)
+                </div>
+                <div class="col-lg-6 text-right">
+                    @Html.ActionLink("Modifier", "Modifier", "Edit") |
+                    @Html.ActionLink("Supprimer", "Supprimer", "Delete")
+                </div>
+            </div>
+        </div>
+        <div class="panel-body">
+
+        </div>
+    </div>
+}
