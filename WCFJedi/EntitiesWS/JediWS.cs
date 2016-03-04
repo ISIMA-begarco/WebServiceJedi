@@ -11,6 +11,8 @@ namespace WCFJedi
     public class JediWS
     {
         [DataMember]
+        public int Id { get; set; }
+        [DataMember]
         public string Nom { get; set; }
         [DataMember]
         public bool IsSith { get; set; }
@@ -19,6 +21,7 @@ namespace WCFJedi
 
         public JediWS(Jedi j)
         {
+            this.Id = j.Id;
             this.Nom = j.Nom;
             this.IsSith = j.IsSith;
             this.Caracteristiques = new List<CaracteristiqueWS>();

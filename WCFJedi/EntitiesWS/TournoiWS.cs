@@ -11,12 +11,15 @@ namespace WCFJedi
     public class TournoiWS
     {
         [DataMember]
+        public int Id { get; set; }
+        [DataMember]
         public string Nom { get; set; }
         [DataMember]
         public List<MatchWS> Matches { get; set; }
 
         public TournoiWS (Tournoi t)
         {
+            this.Id = t.Id;
             this.Nom = t.Nom;
             this.Matches = new List<MatchWS>();
             t.Matchs.ForEach(x => this.Matches.Add(new MatchWS(x)));

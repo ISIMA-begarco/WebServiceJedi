@@ -31,6 +31,42 @@ namespace WCFJedi
             return 0==businessManager.updateJedis(listeJ);
         }
 
+        public bool addMatch(MatchWS match)
+        {
+            List<Match> listeM = businessManager.getMatches();
+            List<Jedi> listeJ = businessManager.getJedis();
+            List<Stade> listeS = businessManager.getStades();
+            Match newMatch = new Match(0, listeJ.Where(x => x.Nom == match.Jedi1.Nom).First(), 
+                                            listeJ.Where(x => x.Nom == match.Jedi2.Nom).First(), 
+                                            match.Phase, 
+                                            listeS.Where(x => x.Planete == match.Stade.Planete).First(),
+                                            listeJ.Where(x => x.Nom == match.JediVainqueur.Nom).First());
+            listeM.Add(newMatch);
+            return 0==businessManager.updateMatches(listeM);
+        }
+
+        public bool addStade(StadeWS stade)
+        {
+            List<Stade> listeS = businessManager.getStades();
+            List<Caracteristique> listeC = businessManager.getCaracteristiques();
+            List<Caracteristique> caracs = new List<Caracteristique>();
+            stade.Caracteristiques.ForEach(x => caracs.Add(listeC.Find(c => c.Nom.Equals(x.Nom))));
+            Stade newStade = new Stade(0, stade.NbPlaces, stade.Planete, caracs);
+            listeS.Add(newStade);
+            return 0 == businessManager.updateStades(listeS);
+        }
+
+        public bool addTournoi(TournoiWS tournoi)
+        {
+            List<Tournoi> listeT = businessManager.getTournois();
+            List<Match> listeM = businessManager.getMatches();
+            List<Match> matches = new List<Match>();
+            tournoi.Matches.ForEach(x => matches.Add(listeM.Find(c => c.Id.Equals(x.Id))));
+            Tournoi newTournoi = new Tournoi(0, tournoi.Nom, matches);
+            listeT.Add(newTournoi);
+            return 0 == businessManager.updateTournois(listeT);
+        }
+
         public List<CaracteristiqueWS> getCaracteristiquesOf(string jediName)
         {
             List<Jedi> liste = businessManager.getJedisByName(jediName);
@@ -70,6 +106,26 @@ namespace WCFJedi
             List<TournoiWS> liste = new List<TournoiWS>();
             businessManager.getTournois().ForEach(x => liste.Add(new TournoiWS(x)));
             return liste;
+        }
+
+        public bool updateJedi(JediWS jedi)
+        {
+            throw new NotImplementedException();
+        }
+
+        public bool updateMatch(MatchWS match)
+        {
+            throw new NotImplementedException();
+        }
+
+        public bool updateStade(StadeWS stade)
+        {
+            throw new NotImplementedException();
+        }
+
+        public bool updateTournoi(TournoiWS tournoi)
+        {
+            throw new NotImplementedException();
         }
     }
 }
