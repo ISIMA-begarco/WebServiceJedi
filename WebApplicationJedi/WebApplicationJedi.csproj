@@ -289,13 +289,15 @@
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
     <Content Include="Views\Stade\Index.cshtml" />
+    <Content Include="Views\Match\Index.cshtml" />
+    <Content Include="Views\Tournoi\Index.cshtml" />
+    <Content Include="Views\Jedi\Edit.cshtml" />
+    <Content Include="Views\Jedi\Create.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Views\Caracteristique\" />
     <Folder Include="Views\Default\" />
-    <Folder Include="Views\Match\" />
-    <Folder Include="Views\Tournoi\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />

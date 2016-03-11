@@ -23,7 +23,10 @@ namespace WebApplicationJedi.ServiceReference {
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private WebApplicationJedi.ServiceReference.CaracteristiqueWS[] CaracteristiquesField;
+        private System.Collections.Generic.List<WebApplicationJedi.ServiceReference.CaracteristiqueWS> CaracteristiquesField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int IdField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private bool IsSithField;
@@ -42,7 +45,7 @@ namespace WebApplicationJedi.ServiceReference {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public WebApplicationJedi.ServiceReference.CaracteristiqueWS[] Caracteristiques {
+        public System.Collections.Generic.List<WebApplicationJedi.ServiceReference.CaracteristiqueWS> Caracteristiques {
             get {
                 return this.CaracteristiquesField;
             }
@@ -50,6 +53,19 @@ namespace WebApplicationJedi.ServiceReference {
                 if ((object.ReferenceEquals(this.CaracteristiquesField, value) != true)) {
                     this.CaracteristiquesField = value;
                     this.RaisePropertyChanged("Caracteristiques");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int Id {
+            get {
+                return this.IdField;
+            }
+            set {
+                if ((this.IdField.Equals(value) != true)) {
+                    this.IdField = value;
+                    this.RaisePropertyChanged("Id");
                 }
             }
         }
@@ -103,6 +119,9 @@ namespace WebApplicationJedi.ServiceReference {
         private WebApplicationJedi.ServiceReference.EDefCaracteristique DefinitionField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int IdField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string NomField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
@@ -127,6 +146,19 @@ namespace WebApplicationJedi.ServiceReference {
                 if ((this.DefinitionField.Equals(value) != true)) {
                     this.DefinitionField = value;
                     this.RaisePropertyChanged("Definition");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int Id {
+            get {
+                return this.IdField;
+            }
+            set {
+                if ((this.IdField.Equals(value) != true)) {
+                    this.IdField = value;
+                    this.RaisePropertyChanged("Id");
                 }
             }
         }
@@ -191,7 +223,10 @@ namespace WebApplicationJedi.ServiceReference {
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private WebApplicationJedi.ServiceReference.CaracteristiqueWS[] CaracteristiquesField;
+        private System.Collections.Generic.List<WebApplicationJedi.ServiceReference.CaracteristiqueWS> CaracteristiquesField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int IdField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private int NbPlacesField;
@@ -210,7 +245,7 @@ namespace WebApplicationJedi.ServiceReference {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public WebApplicationJedi.ServiceReference.CaracteristiqueWS[] Caracteristiques {
+        public System.Collections.Generic.List<WebApplicationJedi.ServiceReference.CaracteristiqueWS> Caracteristiques {
             get {
                 return this.CaracteristiquesField;
             }
@@ -218,6 +253,19 @@ namespace WebApplicationJedi.ServiceReference {
                 if ((object.ReferenceEquals(this.CaracteristiquesField, value) != true)) {
                     this.CaracteristiquesField = value;
                     this.RaisePropertyChanged("Caracteristiques");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int Id {
+            get {
+                return this.IdField;
+            }
+            set {
+                if ((this.IdField.Equals(value) != true)) {
+                    this.IdField = value;
+                    this.RaisePropertyChanged("Id");
                 }
             }
         }
@@ -268,6 +316,9 @@ namespace WebApplicationJedi.ServiceReference {
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int IdField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private WebApplicationJedi.ServiceReference.JediWS Jedi1Field;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
@@ -289,6 +340,19 @@ namespace WebApplicationJedi.ServiceReference {
             }
             set {
                 this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int Id {
+            get {
+                return this.IdField;
+            }
+            set {
+                if ((this.IdField.Equals(value) != true)) {
+                    this.IdField = value;
+                    this.RaisePropertyChanged("Id");
+                }
             }
         }
         
@@ -427,7 +491,10 @@ namespace WebApplicationJedi.ServiceReference {
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private WebApplicationJedi.ServiceReference.MatchWS[] MatchesField;
+        private int IdField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Collections.Generic.List<WebApplicationJedi.ServiceReference.MatchWS> MatchesField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string NomField;
@@ -443,7 +510,20 @@ namespace WebApplicationJedi.ServiceReference {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public WebApplicationJedi.ServiceReference.MatchWS[] Matches {
+        public int Id {
+            get {
+                return this.IdField;
+            }
+            set {
+                if ((this.IdField.Equals(value) != true)) {
+                    this.IdField = value;
+                    this.RaisePropertyChanged("Id");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Collections.Generic.List<WebApplicationJedi.ServiceReference.MatchWS> Matches {
             get {
                 return this.MatchesField;
             }
@@ -483,34 +563,34 @@ namespace WebApplicationJedi.ServiceReference {
     public interface IService {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/getJedis", ReplyAction="http://tempuri.org/IService/getJedisResponse")]
-        WebApplicationJedi.ServiceReference.JediWS[] getJedis();
+        System.Collections.Generic.List<WebApplicationJedi.ServiceReference.JediWS> getJedis();
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/getJedis", ReplyAction="http://tempuri.org/IService/getJedisResponse")]
-        System.Threading.Tasks.Task<WebApplicationJedi.ServiceReference.JediWS[]> getJedisAsync();
+        System.Threading.Tasks.Task<System.Collections.Generic.List<WebApplicationJedi.ServiceReference.JediWS>> getJedisAsync();
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/getStades", ReplyAction="http://tempuri.org/IService/getStadesResponse")]
-        WebApplicationJedi.ServiceReference.StadeWS[] getStades();
+        System.Collections.Generic.List<WebApplicationJedi.ServiceReference.StadeWS> getStades();
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/getStades", ReplyAction="http://tempuri.org/IService/getStadesResponse")]
-        System.Threading.Tasks.Task<WebApplicationJedi.ServiceReference.StadeWS[]> getStadesAsync();
+        System.Threading.Tasks.Task<System.Collections.Generic.List<WebApplicationJedi.ServiceReference.StadeWS>> getStadesAsync();
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/getMatches", ReplyAction="http://tempuri.org/IService/getMatchesResponse")]
-        WebApplicationJedi.ServiceReference.MatchWS[] getMatches();
+        System.Collections.Generic.List<WebApplicationJedi.ServiceReference.MatchWS> getMatches();
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/getMatches", ReplyAction="http://tempuri.org/IService/getMatchesResponse")]
-        System.Threading.Tasks.Task<WebApplicationJedi.ServiceReference.MatchWS[]> getMatchesAsync();
+        System.Threading.Tasks.Task<System.Collections.Generic.List<WebApplicationJedi.ServiceReference.MatchWS>> getMatchesAsync();
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/getTournois", ReplyAction="http://tempuri.org/IService/getTournoisResponse")]
-        WebApplicationJedi.ServiceReference.TournoiWS[] getTournois();
+        System.Collections.Generic.List<WebApplicationJedi.ServiceReference.TournoiWS> getTournois();
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/getTournois", ReplyAction="http://tempuri.org/IService/getTournoisResponse")]
-        System.Threading.Tasks.Task<WebApplicationJedi.ServiceReference.TournoiWS[]> getTournoisAsync();
+        System.Threading.Tasks.Task<System.Collections.Generic.List<WebApplicationJedi.ServiceReference.TournoiWS>> getTournoisAsync();
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/getCaracteristiquesOf", ReplyAction="http://tempuri.org/IService/getCaracteristiquesOfResponse")]
-        WebApplicationJedi.ServiceReference.CaracteristiqueWS[] getCaracteristiquesOf(string jediName);
+        System.Collections.Generic.List<WebApplicationJedi.ServiceReference.CaracteristiqueWS> getCaracteristiquesOf(string jediName);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/getCaracteristiquesOf", ReplyAction="http://tempuri.org/IService/getCaracteristiquesOfResponse")]
-        System.Threading.Tasks.Task<WebApplicationJedi.ServiceReference.CaracteristiqueWS[]> getCaracteristiquesOfAsync(string jediName);
+        System.Threading.Tasks.Task<System.Collections.Generic.List<WebApplicationJedi.ServiceReference.CaracteristiqueWS>> getCaracteristiquesOfAsync(string jediName);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/addJedi", ReplyAction="http://tempuri.org/IService/addJediResponse")]
         bool addJedi(WebApplicationJedi.ServiceReference.JediWS jedi);
@@ -546,43 +626,43 @@ namespace WebApplicationJedi.ServiceReference {
                 base(binding, remoteAddress) {
         }
         
-        public WebApplicationJedi.ServiceReference.JediWS[] getJedis() {
+        public System.Collections.Generic.List<WebApplicationJedi.ServiceReference.JediWS> getJedis() {
             return base.Channel.getJedis();
         }
         
-        public System.Threading.Tasks.Task<WebApplicationJedi.ServiceReference.JediWS[]> getJedisAsync() {
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<WebApplicationJedi.ServiceReference.JediWS>> getJedisAsync() {
             return base.Channel.getJedisAsync();
         }
         
-        public WebApplicationJedi.ServiceReference.StadeWS[] getStades() {
+        public System.Collections.Generic.List<WebApplicationJedi.ServiceReference.StadeWS> getStades() {
             return base.Channel.getStades();
         }
         
-        public System.Threading.Tasks.Task<WebApplicationJedi.ServiceReference.StadeWS[]> getStadesAsync() {
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<WebApplicationJedi.ServiceReference.StadeWS>> getStadesAsync() {
             return base.Channel.getStadesAsync();
         }
         
-        public WebApplicationJedi.ServiceReference.MatchWS[] getMatches() {
+        public System.Collections.Generic.List<WebApplicationJedi.ServiceReference.MatchWS> getMatches() {
             return base.Channel.getMatches();
         }
         
-        public System.Threading.Tasks.Task<WebApplicationJedi.ServiceReference.MatchWS[]> getMatchesAsync() {
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<WebApplicationJedi.ServiceReference.MatchWS>> getMatchesAsync() {
             return base.Channel.getMatchesAsync();
         }
         
-        public WebApplicationJedi.ServiceReference.TournoiWS[] getTournois() {
+        public System.Collections.Generic.List<WebApplicationJedi.ServiceReference.TournoiWS> getTournois() {
             return base.Channel.getTournois();
         }
         
-        public System.Threading.Tasks.Task<WebApplicationJedi.ServiceReference.TournoiWS[]> getTournoisAsync() {
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<WebApplicationJedi.ServiceReference.TournoiWS>> getTournoisAsync() {
             return base.Channel.getTournoisAsync();
         }
         
-        public WebApplicationJedi.ServiceReference.CaracteristiqueWS[] getCaracteristiquesOf(string jediName) {
+        public System.Collections.Generic.List<WebApplicationJedi.ServiceReference.CaracteristiqueWS> getCaracteristiquesOf(string jediName) {
             return base.Channel.getCaracteristiquesOf(jediName);
         }
         
-        public System.Threading.Tasks.Task<WebApplicationJedi.ServiceReference.CaracteristiqueWS[]> getCaracteristiquesOfAsync(string jediName) {
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<WebApplicationJedi.ServiceReference.CaracteristiqueWS>> getCaracteristiquesOfAsync(string jediName) {
             return base.Channel.getCaracteristiquesOfAsync(jediName);
         }
         

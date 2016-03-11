@@ -1,0 +1,19 @@
+﻿@model WebApplicationJedi.Models.TournoiCollection
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Gestion des Tournois</h2>
+
+@foreach(var t in Model.list) {
+    <div class="panel-primary">
+        <div class="panel-heading">
+            @Html.DisplayNameFor(Model => Model.Default.Nom)
+        </div>
+        <div class="panel-body">
+            
+        </div>
+    </div>
+
+}

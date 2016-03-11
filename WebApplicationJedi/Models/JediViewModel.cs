@@ -4,11 +4,12 @@ using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using WCFJedi;
 using WebApplicationJedi.ServiceReference;
 
 namespace WebApplicationJedi.Models {
 	public class JediViewModel {
+
+		public int Id { get; set; }
 
 		[Required]
 		[Display(Name = "Nom")]
@@ -26,6 +27,7 @@ namespace WebApplicationJedi.Models {
 		public JediViewModel() { }
 
 		public JediViewModel(ServiceReference.JediWS jedi) {
+			this.Id = jedi.Id;
 			this.Nom = jedi.Nom;
 			this.IsSith = jedi.IsSith;
 

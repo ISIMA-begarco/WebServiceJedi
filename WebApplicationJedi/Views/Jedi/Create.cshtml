@@ -1,0 +1,42 @@
+﻿@model WebApplicationJedi.Models.JediViewModel
+
+@{
+    ViewBag.Title = "Create";
+}
+
+<h2>Modifier le jedi</h2>
+
+@using(Html.BeginForm()) {
+    @Html.AntiForgeryToken()
+    <div class="form-horizontal">
+        @Html.ValidationSummary(true)
+        @Html.HiddenFor(Model => Model.Id)
+
+        <div class="form-group">
+            <div class="col-lg-2">
+                @Html.LabelFor(Model => Model.Nom)
+            </div>
+            <div class="col-lg-10">
+                @Html.EditorFor(Model => Model.Nom)
+                @Html.ValidationMessageFor(Model => Model.Nom)
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-lg-2">
+                @Html.LabelFor(Model => Model.IsSith)
+            </div>
+            <div class="col-lg-10">
+                @Html.EditorFor(Model => Model.IsSith)
+                @Html.ValidationMessageFor(Model => Model.IsSith)
+            </div>
+        </div>
+
+        <div>
+            <div class="btn btn-danger">
+                @Html.ActionLink("Annuler", "Index")
+            </div>
+            
+            <input type="submit" value="Créer" class="btn-success" />
+        </div>
+    </div>
+}

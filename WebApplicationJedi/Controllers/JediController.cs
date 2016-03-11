@@ -30,15 +30,16 @@ namespace WebApplicationJedi.Controllers {
 
 		// GET: Jedi/Create
 		public ActionResult Create() {
-			return View();
+			return View(new JediViewModel());
 		}
 
 		// POST: Jedi/Create
 		[HttpPost]
 		public ActionResult Create(FormCollection collection) {
+			Console.WriteLine("Creation d'un nouveau jedi");
 			try {
 				// TODO: Add insert logic here
-
+				
 				return RedirectToAction("Index");
 			} catch {
 				return View();
@@ -47,7 +48,16 @@ namespace WebApplicationJedi.Controllers {
 
 		// GET: Jedi/Edit/5
 		public ActionResult Edit(int id) {
-			return View();
+			ServiceReference.JediWS jedi = null;
+			using(ServiceReference.ServiceClient service = new ServiceClient() ) {
+				jedi = service.getJedis().First(x => x.Id == id);
+			}
+
+			if(jedi == null) {
+				return HttpNotFound();
+			}
+
+			return View(new JediViewModel(jedi));
 		}
 
 		// POST: Jedi/Edit/5
