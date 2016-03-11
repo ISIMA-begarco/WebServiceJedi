@@ -27,5 +27,13 @@ namespace WCFJedi
             this.Caracteristiques = new List<CaracteristiqueWS>();
             j.Caracteristiques.ForEach(x => this.Caracteristiques.Add(new CaracteristiqueWS(x)));
         }
+
+        public JediWS(int pId, string pNom, bool pIsSith, List<CaracteristiqueWS> pCaracs)
+        {
+            this.Id = pId;
+            this.Nom = pNom;
+            this.IsSith = pIsSith;
+            this.Caracteristiques = pCaracs;
+        }
     }
 }

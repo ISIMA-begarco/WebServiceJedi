@@ -104,6 +104,10 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\EntitiesLayer\EntitiesLayer.csproj">
+      <Project>{FB56789A-F43B-4F09-B675-AC26CD2B2F0B}</Project>
+      <Name>EntitiesLayer</Name>
+    </ProjectReference>
     <ProjectReference Include="..\WCFJedi\WCFJedi.csproj">
       <Project>{937cca0f-99a5-4bdb-a519-b6b1749d21c5}</Project>
       <Name>WCFJedi</Name>

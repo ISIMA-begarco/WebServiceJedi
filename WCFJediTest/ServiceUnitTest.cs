@@ -23,7 +23,7 @@ namespace WCFJediTest
         }
 
         [TestMethod]
-        public void TestServiceJedis()
+        public void TestServiceGetJedis()
         {
             ServiceReference.ServiceClient client = new ServiceReference.ServiceClient();
             List<JediWS> jedis = client.getJedis();
@@ -31,17 +31,49 @@ namespace WCFJediTest
             JediWS yoda = jedis.Find(x => x.Nom.Equals("Yoda"));
             Assert.IsNotNull(yoda);
 
-            /** TEST AJOUT */
-            /*
-                client.addJedi(yoda);
-                Assert.AreEqual(2, client.getJedis().Where(x => x.Nom.Equals("Yoda")).ToList().Count());
-            **/
+            client.Close();
+        }
+
+        [TestMethod]
+        public void TestServiceUpdateJedis()
+        {
+            ServiceReference.ServiceClient client = new ServiceReference.ServiceClient();
+
+            List<JediWS> jedis = client.getJedis();
+            Assert.IsNotNull(jedis);
+            JediWS yoda = client.getJedis().Find(x => x.Nom.Equals("Yoda"));
+            yoda.IsSith = true;
+            client.updateJedi(yoda);
+            Assert.IsTrue(((JediWS)client.getJedis().Find(x => x.Nom.Equals("Yoda"))).IsSith);
+            yoda.IsSith = false;
+            client.updateJedi(yoda);
+            Assert.IsFalse(((JediWS)client.getJedis().Find(x => x.Nom.Equals("Yoda"))).IsSith);
 
             client.Close();
         }
 
         [TestMethod]
-        public void TestServicesStades()
+        public void TestServiceARJedis()
+        {
+            ServiceReference.ServiceClient client = new ServiceReference.ServiceClient();
+
+            List<JediWS> jedis = client.getJedis();
+            int size = jedis.Count;
+            Assert.IsNotNull(jedis);
+            /* AJOUT */
+            JediWS bob = new JediWS(0, "Bob THE TEST", true, new List<CaracteristiqueWS>());
+            client.addJedi(bob);
+            Assert.AreEqual(size+1, client.getJedis().Count);
+            /* SUPPRESSION */
+            bob = client.getJedis().Find(x => x.Nom.Equals("Bob THE TEST"));
+            client.removeJedi(bob);
+            Assert.AreEqual(size, client.getJedis().Count);
+
+            client.Close();
+        }
+
+        [TestMethod]
+        public void TestServicesGetStades()
         {
             ServiceReference.ServiceClient client = new ServiceReference.ServiceClient();
             List<StadeWS> stades = client.getStades();
@@ -52,7 +84,45 @@ namespace WCFJediTest
         }
 
         [TestMethod]
-        public void TestServicesMatches()
+        public void TestServiceUpdateStades()
+        {
+            ServiceReference.ServiceClient client = new ServiceReference.ServiceClient();
+
+            List<StadeWS> stades = client.getStades();
+            Assert.IsNotNull(stades);
+            StadeWS kamino = client.getStades().Find(x => x.Planete.Equals("Kamino"));
+            kamino.NbPlaces = 10;
+            client.updateStade(kamino);
+            Assert.AreEqual(10, ((StadeWS)client.getStades().Find(x => x.Planete.Equals("Kamino"))).NbPlaces);
+            kamino.NbPlaces = 100000;
+            client.updateStade(kamino);
+            Assert.AreEqual(100000, ((StadeWS)client.getStades().Find(x => x.Planete.Equals("Kamino"))).NbPlaces);
+
+            client.Close();
+        }
+
+        [TestMethod]
+        public void TestServiceARStades()
+        {
+            ServiceReference.ServiceClient client = new ServiceReference.ServiceClient();
+
+            List<StadeWS> stades = client.getStades();
+            int size = stades.Count;
+            Assert.IsNotNull(stades);
+            /* AJOUT */
+            StadeWS zone = new StadeWS(0, "Zone TEST", 11, new List<CaracteristiqueWS>());
+            client.addStade(zone);
+            Assert.AreEqual(size + 1, client.getStades().Count);
+            /* SUPPRESSION */
+            zone = client.getStades().Find(x => x.Planete.Equals("Zone TEST"));
+            client.removeStade(zone);
+            Assert.AreEqual(size, client.getStades().Count);
+
+            client.Close();
+        }
+
+        [TestMethod]
+        public void TestServicesGetMatches()
         {
             ServiceReference.ServiceClient client = new ServiceReference.ServiceClient();
             List<MatchWS> matches = client.getMatches();
@@ -63,7 +133,47 @@ namespace WCFJediTest
         }
 
         [TestMethod]
-        public void TestServicesTournois()
+        public void TestServiceUpdateMatches()
+        {
+            ServiceReference.ServiceClient client = new ServiceReference.ServiceClient();
+
+            List<MatchWS> matches = client.getMatches();
+            Assert.IsNotNull(matches);
+            MatchWS kamino = client.getMatches().Find(x => x.Id.Equals(11));
+            kamino.Phase = (EntitiesLayer.EPhaseTournoi)5;
+            client.updateMatch(kamino);
+            Assert.AreEqual((EntitiesLayer.EPhaseTournoi)5, ((MatchWS)client.getMatches().Find(x => x.Id.Equals(11))).Phase);
+            kamino.Phase = (EntitiesLayer.EPhaseTournoi)4;
+            client.updateMatch(kamino);
+            Assert.AreEqual((EntitiesLayer.EPhaseTournoi)4, ((MatchWS)client.getMatches().Find(x => x.Id.Equals(11))).Phase);
+
+            client.Close();
+        }
+
+        [TestMethod]
+        public void TestServiceARMatches()
+        {
+            ServiceReference.ServiceClient client = new ServiceReference.ServiceClient();
+
+            List<MatchWS> matches = client.getMatches();
+            List<JediWS> jedis = client.getJedis();
+            List<StadeWS> stades = client.getStades();
+            int size = matches.Count;
+            Assert.IsNotNull(matches);
+            /* AJOUT */
+            MatchWS zone = new MatchWS(0, jedis.ElementAt(0), jedis.ElementAt(3), null, stades.ElementAt(0), EntitiesLayer.EPhaseTournoi.HuitiemeFinale1);
+            client.addMatch(zone);
+            Assert.AreEqual(size + 1, client.getMatches().Count);
+            /* SUPPRESSION */
+            zone = client.getMatches().Find(x => x.Jedi1.Id.Equals(jedis.ElementAt(0).Id) && x.Jedi2.Id.Equals(jedis.ElementAt(3).Id) && x.Stade.Id.Equals(stades.ElementAt(0).Id));
+            client.removeMatch(zone);
+            Assert.AreEqual(size, client.getMatches().Count);
+
+            client.Close();
+        }
+
+        [TestMethod]
+        public void TestServicesGetTournois()
         {
             ServiceReference.ServiceClient client = new ServiceReference.ServiceClient();
             List<TournoiWS> tournois = client.getTournois();

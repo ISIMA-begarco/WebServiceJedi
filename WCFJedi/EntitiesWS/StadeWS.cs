@@ -24,8 +24,16 @@ namespace WCFJedi
             this.Id = s.Id;
             this.Planete = s.Planete;
             this.NbPlaces = s.NbPlaces;
-			this.Caracteristiques = new List<CaracteristiqueWS>();
+            this.Caracteristiques = new List<CaracteristiqueWS>();
             s.Caracteristiques.ForEach(x => this.Caracteristiques.Add(new CaracteristiqueWS(x)));
+        }
+
+        public StadeWS(int pId, string pPlanete, int pNbPlaces, List<CaracteristiqueWS> pCaracs)
+        {
+            this.Id = pId;
+            this.Planete = pPlanete;
+            this.NbPlaces = pNbPlaces;
+            this.Caracteristiques = pCaracs;
         }
     }
 }
