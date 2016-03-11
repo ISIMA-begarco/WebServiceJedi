@@ -28,5 +28,38 @@ namespace WCFJedi
 
         [OperationContract]
         bool addJedi(JediWS jedi);
+
+        [OperationContract]
+        bool addStade(StadeWS stade);
+
+        [OperationContract]
+        bool addMatch(MatchWS match);
+
+        [OperationContract]
+        bool addTournoi(TournoiWS tournoi);
+
+        [OperationContract]
+        bool updateJedi(JediWS jedi);
+
+        [OperationContract]
+        bool updateStade(StadeWS stade);
+
+        [OperationContract]
+        bool updateMatch(MatchWS match);
+
+        [OperationContract]
+        bool updateTournoi(TournoiWS tournoi);
+
+        [OperationContract]
+        bool removeJedi(JediWS jedi);
+
+        [OperationContract]
+        bool removeStade(StadeWS stade);
+
+        [OperationContract]
+        bool removeMatch(MatchWS match);
+
+        [OperationContract]
+        bool removeTournoi(TournoiWS tournoi);
     }
 }

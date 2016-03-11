@@ -10,7 +10,7 @@ namespace WCFJedi
     [DataContract]
     public class MatchWS
     {
-		[DataMember]
+        [DataMember]
 		public int Id { get; set; }
         [DataMember]
         public JediWS Jedi1 { get; set; }
@@ -31,6 +31,16 @@ namespace WCFJedi
             this.JediVainqueur = m.JediVainqueur != null ? new JediWS(m.JediVainqueur) : null;
             this.Stade = new StadeWS(m.Stade);
             this.Phase = m.PhaseTournoi;
+        }
+
+        public MatchWS(int pId, JediWS pJedi1, JediWS pJedi2, JediWS pJediV, StadeWS pStade, EPhaseTournoi pPhase)
+        {
+            this.Id = pId;
+            this.Jedi1 = pJedi1;
+            this.Jedi2 = pJedi2;
+            this.JediVainqueur = pJediV;
+            this.Stade = pStade;
+            this.Phase = pPhase;
         }
     }
 }

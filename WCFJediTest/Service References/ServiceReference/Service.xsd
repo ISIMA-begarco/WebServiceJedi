@@ -10,6 +10,7 @@
   <xs:complexType name="JediWS">
     <xs:sequence>
       <xs:element minOccurs="0" name="Caracteristiques" nillable="true" type="tns:ArrayOfCaracteristiqueWS" />
+      <xs:element minOccurs="0" name="Id" type="xs:int" />
       <xs:element minOccurs="0" name="IsSith" type="xs:boolean" />
       <xs:element minOccurs="0" name="Nom" nillable="true" type="xs:string" />
     </xs:sequence>
@@ -24,6 +25,7 @@
   <xs:complexType name="CaracteristiqueWS">
     <xs:sequence>
       <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/EntitiesLayer" minOccurs="0" name="Definition" type="q1:EDefCaracteristique" />
+      <xs:element minOccurs="0" name="Id" type="xs:int" />
       <xs:element minOccurs="0" name="Nom" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="Valeur" type="xs:int" />
     </xs:sequence>
@@ -38,6 +40,7 @@
   <xs:complexType name="StadeWS">
     <xs:sequence>
       <xs:element minOccurs="0" name="Caracteristiques" nillable="true" type="tns:ArrayOfCaracteristiqueWS" />
+      <xs:element minOccurs="0" name="Id" type="xs:int" />
       <xs:element minOccurs="0" name="NbPlaces" type="xs:int" />
       <xs:element minOccurs="0" name="Planete" nillable="true" type="xs:string" />
     </xs:sequence>
@@ -51,6 +54,7 @@
   <xs:element name="ArrayOfMatchWS" nillable="true" type="tns:ArrayOfMatchWS" />
   <xs:complexType name="MatchWS">
     <xs:sequence>
+      <xs:element minOccurs="0" name="Id" type="xs:int" />
       <xs:element minOccurs="0" name="Jedi1" nillable="true" type="tns:JediWS" />
       <xs:element minOccurs="0" name="Jedi2" nillable="true" type="tns:JediWS" />
       <xs:element minOccurs="0" name="JediVainqueur" nillable="true" type="tns:JediWS" />
@@ -67,6 +71,7 @@
   <xs:element name="ArrayOfTournoiWS" nillable="true" type="tns:ArrayOfTournoiWS" />
   <xs:complexType name="TournoiWS">
     <xs:sequence>
+      <xs:element minOccurs="0" name="Id" type="xs:int" />
       <xs:element minOccurs="0" name="Matches" nillable="true" type="tns:ArrayOfMatchWS" />
       <xs:element minOccurs="0" name="Nom" nillable="true" type="xs:string" />
     </xs:sequence>

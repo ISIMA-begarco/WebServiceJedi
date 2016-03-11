@@ -96,6 +96,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="EntitiesWS\CaracteristiqueWS.cs" />
+    <Compile Include="EntitiesWS\EDefCaracteristiqueWS.cs" />
+    <Compile Include="EntitiesWS\EPhaseTournoiWS.cs" />
+    <Compile Include="EntitiesWS\ETypeCaracteristiqueWS.cs" />
     <Compile Include="EntitiesWS\JediWS.cs" />
     <Compile Include="EntitiesWS\MatchWS.cs" />
     <Compile Include="IService.cs" />
