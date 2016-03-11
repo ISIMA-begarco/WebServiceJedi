@@ -19,13 +19,13 @@ C:\Users\Benji\GitHub\WebServiceJedi\WCFJediTest\bin\Debug\ApplicationInsights.c
 C:\Users\Benji\GitHub\WebServiceJedi\WCFJediTest\bin\Debug\WCFJediTest.dll.config
 C:\Users\Benji\GitHub\WebServiceJedi\WCFJediTest\bin\Debug\WCFJediTest.dll
 C:\Users\Benji\GitHub\WebServiceJedi\WCFJediTest\bin\Debug\WCFJediTest.pdb
+C:\Users\Benji\GitHub\WebServiceJedi\WCFJediTest\bin\Debug\EntitiesLayer.dll
 C:\Users\Benji\GitHub\WebServiceJedi\WCFJediTest\bin\Debug\Microsoft.VisualStudio.QualityTools.UnitTestFramework.dll
 C:\Users\Benji\GitHub\WebServiceJedi\WCFJediTest\bin\Debug\WCFJedi.dll
-C:\Users\Benji\GitHub\WebServiceJedi\WCFJediTest\bin\Debug\EntitiesLayer.dll
 C:\Users\Benji\GitHub\WebServiceJedi\WCFJediTest\bin\Debug\BusinessLayer.dll
 C:\Users\Benji\GitHub\WebServiceJedi\WCFJediTest\bin\Debug\DataAccessLayer.dll
-C:\Users\Benji\GitHub\WebServiceJedi\WCFJediTest\bin\Debug\WCFJedi.pdb
 C:\Users\Benji\GitHub\WebServiceJedi\WCFJediTest\bin\Debug\EntitiesLayer.pdb
+C:\Users\Benji\GitHub\WebServiceJedi\WCFJediTest\bin\Debug\WCFJedi.pdb
 C:\Users\Benji\GitHub\WebServiceJedi\WCFJediTest\bin\Debug\BusinessLayer.pdb
 C:\Users\Benji\GitHub\WebServiceJedi\WCFJediTest\bin\Debug\DataAccessLayer.pdb
 C:\Users\Benji\GitHub\WebServiceJedi\WCFJediTest\bin\Debug\fr\Microsoft.VisualStudio.QualityTools.UnitTestFramework.resources.dll

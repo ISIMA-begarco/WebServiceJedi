@@ -31,12 +31,35 @@
             </div>
         </div>
 
+        <!-- vue des caracteristiques -->
         <div>
-            <div class="btn btn-danger">
+            @Html.DisplayNameFor(Model => Model.Caracteristiques)
+            <table class="table table-striped">
+                <tr>
+                    <th>
+                        @Html.LabelFor(Model => Model.Caracteristiques.Default.Nom)
+                    </th>
+                    <th>
+                        @Html.LabelFor(Model => Model.Caracteristiques.Default.Definition)
+                    </th>
+                    <th>
+                        @Html.LabelFor(Model => Model.Caracteristiques.Default.Valeur)
+                    </th>
+                    <th>
+                        <!-- Bouton ajout -->
+
+                    </th>
+                </tr>
+
+            </table>
+            @Html.ValidationMessageFor(Model => Model.Caracteristiques)
+        </div>
+
+        <div>
+            <div class="btn btn-primary">
                 @Html.ActionLink("Annuler", "Index")
             </div>
-            
-            <input type="submit" value="Créer" class="btn-success" />
+            <input type="submit" value="Valider" class="btn btn-success" />
         </div>
     </div>
 }

@@ -1,4 +1,4 @@
-﻿namespace EntitiesLayer
+﻿namespace WCFJedi
 {
     public enum EPhaseTournoiWS
     {

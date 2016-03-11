@@ -45,6 +45,9 @@
                     <th>
                         @Html.LabelFor(Model => Model.Caracteristiques.Default.Valeur)
                     </th>
+                    <th> <!-- Bouton ajout -->
+
+                    </th>
                 </tr>
 
                 @foreach(var c in Model.Caracteristiques.list) {
@@ -53,10 +56,14 @@
                             @Html.EditorFor(Model => c.Nom)
                         </td>
                         <td>
-                            @Html.DropDownList(c.Definition.ToString(), EnumHelper.GetSelectList(typeof(WebApplicationJedi.ServiceReference.EDefCaracteristiqueWS)), "Definition")
+                            @Html.DropDownList(c.Definition.ToString(), EnumHelper.GetSelectList(typeof(WebApplicationJedi.ServiceReference.EDefCaracteristique)), "Definition")
                         </td>
                         <td>
                             @Html.EditorFor(Model => c.Valeur)
+                        </td>
+                        <td> <!-- Bouton suppression -->
+                        +++++++++++
+
                         </td>
                     </tr>
                 }

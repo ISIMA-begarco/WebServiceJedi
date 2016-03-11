@@ -597,6 +597,72 @@ namespace WebApplicationJedi.ServiceReference {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/addJedi", ReplyAction="http://tempuri.org/IService/addJediResponse")]
         System.Threading.Tasks.Task<bool> addJediAsync(WebApplicationJedi.ServiceReference.JediWS jedi);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/addStade", ReplyAction="http://tempuri.org/IService/addStadeResponse")]
+        bool addStade(WebApplicationJedi.ServiceReference.StadeWS stade);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/addStade", ReplyAction="http://tempuri.org/IService/addStadeResponse")]
+        System.Threading.Tasks.Task<bool> addStadeAsync(WebApplicationJedi.ServiceReference.StadeWS stade);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/addMatch", ReplyAction="http://tempuri.org/IService/addMatchResponse")]
+        bool addMatch(WebApplicationJedi.ServiceReference.MatchWS match);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/addMatch", ReplyAction="http://tempuri.org/IService/addMatchResponse")]
+        System.Threading.Tasks.Task<bool> addMatchAsync(WebApplicationJedi.ServiceReference.MatchWS match);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/addTournoi", ReplyAction="http://tempuri.org/IService/addTournoiResponse")]
+        bool addTournoi(WebApplicationJedi.ServiceReference.TournoiWS tournoi);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/addTournoi", ReplyAction="http://tempuri.org/IService/addTournoiResponse")]
+        System.Threading.Tasks.Task<bool> addTournoiAsync(WebApplicationJedi.ServiceReference.TournoiWS tournoi);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/updateJedi", ReplyAction="http://tempuri.org/IService/updateJediResponse")]
+        bool updateJedi(WebApplicationJedi.ServiceReference.JediWS jedi);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/updateJedi", ReplyAction="http://tempuri.org/IService/updateJediResponse")]
+        System.Threading.Tasks.Task<bool> updateJediAsync(WebApplicationJedi.ServiceReference.JediWS jedi);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/updateStade", ReplyAction="http://tempuri.org/IService/updateStadeResponse")]
+        bool updateStade(WebApplicationJedi.ServiceReference.StadeWS stade);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/updateStade", ReplyAction="http://tempuri.org/IService/updateStadeResponse")]
+        System.Threading.Tasks.Task<bool> updateStadeAsync(WebApplicationJedi.ServiceReference.StadeWS stade);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/updateMatch", ReplyAction="http://tempuri.org/IService/updateMatchResponse")]
+        bool updateMatch(WebApplicationJedi.ServiceReference.MatchWS match);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/updateMatch", ReplyAction="http://tempuri.org/IService/updateMatchResponse")]
+        System.Threading.Tasks.Task<bool> updateMatchAsync(WebApplicationJedi.ServiceReference.MatchWS match);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/updateTournoi", ReplyAction="http://tempuri.org/IService/updateTournoiResponse")]
+        bool updateTournoi(WebApplicationJedi.ServiceReference.TournoiWS tournoi);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/updateTournoi", ReplyAction="http://tempuri.org/IService/updateTournoiResponse")]
+        System.Threading.Tasks.Task<bool> updateTournoiAsync(WebApplicationJedi.ServiceReference.TournoiWS tournoi);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/removeJedi", ReplyAction="http://tempuri.org/IService/removeJediResponse")]
+        bool removeJedi(WebApplicationJedi.ServiceReference.JediWS jedi);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/removeJedi", ReplyAction="http://tempuri.org/IService/removeJediResponse")]
+        System.Threading.Tasks.Task<bool> removeJediAsync(WebApplicationJedi.ServiceReference.JediWS jedi);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/removeStade", ReplyAction="http://tempuri.org/IService/removeStadeResponse")]
+        bool removeStade(WebApplicationJedi.ServiceReference.StadeWS stade);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/removeStade", ReplyAction="http://tempuri.org/IService/removeStadeResponse")]
+        System.Threading.Tasks.Task<bool> removeStadeAsync(WebApplicationJedi.ServiceReference.StadeWS stade);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/removeMatch", ReplyAction="http://tempuri.org/IService/removeMatchResponse")]
+        bool removeMatch(WebApplicationJedi.ServiceReference.MatchWS match);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/removeMatch", ReplyAction="http://tempuri.org/IService/removeMatchResponse")]
+        System.Threading.Tasks.Task<bool> removeMatchAsync(WebApplicationJedi.ServiceReference.MatchWS match);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/removeTournoi", ReplyAction="http://tempuri.org/IService/removeTournoiResponse")]
+        bool removeTournoi(WebApplicationJedi.ServiceReference.TournoiWS tournoi);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/removeTournoi", ReplyAction="http://tempuri.org/IService/removeTournoiResponse")]
+        System.Threading.Tasks.Task<bool> removeTournoiAsync(WebApplicationJedi.ServiceReference.TournoiWS tournoi);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -672,6 +738,94 @@ namespace WebApplicationJedi.ServiceReference {
         
         public System.Threading.Tasks.Task<bool> addJediAsync(WebApplicationJedi.ServiceReference.JediWS jedi) {
             return base.Channel.addJediAsync(jedi);
+        }
+        
+        public bool addStade(WebApplicationJedi.ServiceReference.StadeWS stade) {
+            return base.Channel.addStade(stade);
+        }
+        
+        public System.Threading.Tasks.Task<bool> addStadeAsync(WebApplicationJedi.ServiceReference.StadeWS stade) {
+            return base.Channel.addStadeAsync(stade);
+        }
+        
+        public bool addMatch(WebApplicationJedi.ServiceReference.MatchWS match) {
+            return base.Channel.addMatch(match);
+        }
+        
+        public System.Threading.Tasks.Task<bool> addMatchAsync(WebApplicationJedi.ServiceReference.MatchWS match) {
+            return base.Channel.addMatchAsync(match);
+        }
+        
+        public bool addTournoi(WebApplicationJedi.ServiceReference.TournoiWS tournoi) {
+            return base.Channel.addTournoi(tournoi);
+        }
+        
+        public System.Threading.Tasks.Task<bool> addTournoiAsync(WebApplicationJedi.ServiceReference.TournoiWS tournoi) {
+            return base.Channel.addTournoiAsync(tournoi);
+        }
+        
+        public bool updateJedi(WebApplicationJedi.ServiceReference.JediWS jedi) {
+            return base.Channel.updateJedi(jedi);
+        }
+        
+        public System.Threading.Tasks.Task<bool> updateJediAsync(WebApplicationJedi.ServiceReference.JediWS jedi) {
+            return base.Channel.updateJediAsync(jedi);
+        }
+        
+        public bool updateStade(WebApplicationJedi.ServiceReference.StadeWS stade) {
+            return base.Channel.updateStade(stade);
+        }
+        
+        public System.Threading.Tasks.Task<bool> updateStadeAsync(WebApplicationJedi.ServiceReference.StadeWS stade) {
+            return base.Channel.updateStadeAsync(stade);
+        }
+        
+        public bool updateMatch(WebApplicationJedi.ServiceReference.MatchWS match) {
+            return base.Channel.updateMatch(match);
+        }
+        
+        public System.Threading.Tasks.Task<bool> updateMatchAsync(WebApplicationJedi.ServiceReference.MatchWS match) {
+            return base.Channel.updateMatchAsync(match);
+        }
+        
+        public bool updateTournoi(WebApplicationJedi.ServiceReference.TournoiWS tournoi) {
+            return base.Channel.updateTournoi(tournoi);
+        }
+        
+        public System.Threading.Tasks.Task<bool> updateTournoiAsync(WebApplicationJedi.ServiceReference.TournoiWS tournoi) {
+            return base.Channel.updateTournoiAsync(tournoi);
+        }
+        
+        public bool removeJedi(WebApplicationJedi.ServiceReference.JediWS jedi) {
+            return base.Channel.removeJedi(jedi);
+        }
+        
+        public System.Threading.Tasks.Task<bool> removeJediAsync(WebApplicationJedi.ServiceReference.JediWS jedi) {
+            return base.Channel.removeJediAsync(jedi);
+        }
+        
+        public bool removeStade(WebApplicationJedi.ServiceReference.StadeWS stade) {
+            return base.Channel.removeStade(stade);
+        }
+        
+        public System.Threading.Tasks.Task<bool> removeStadeAsync(WebApplicationJedi.ServiceReference.StadeWS stade) {
+            return base.Channel.removeStadeAsync(stade);
+        }
+        
+        public bool removeMatch(WebApplicationJedi.ServiceReference.MatchWS match) {
+            return base.Channel.removeMatch(match);
+        }
+        
+        public System.Threading.Tasks.Task<bool> removeMatchAsync(WebApplicationJedi.ServiceReference.MatchWS match) {
+            return base.Channel.removeMatchAsync(match);
+        }
+        
+        public bool removeTournoi(WebApplicationJedi.ServiceReference.TournoiWS tournoi) {
+            return base.Channel.removeTournoi(tournoi);
+        }
+        
+        public System.Threading.Tasks.Task<bool> removeTournoiAsync(WebApplicationJedi.ServiceReference.TournoiWS tournoi) {
+            return base.Channel.removeTournoiAsync(tournoi);
         }
     }
 }

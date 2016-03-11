@@ -39,6 +39,12 @@ namespace WebApplicationJedi.Controllers {
 			Console.WriteLine("Creation d'un nouveau jedi");
 			try {
 				// TODO: Add insert logic here
+
+				WebApplicationJedi.ServiceReference.JediWS jedi = new JediWS();
+				jedi.Id = 0; // Parce qu'on va le creer
+				jedi.Nom = collection["Nom"];
+				jedi.IsSith = Boolean.Parse(collection["IsSith"]);
+				
 				
 				return RedirectToAction("Index");
 			} catch {
