@@ -30,11 +30,45 @@
                 @Html.ValidationMessageFor(Model => Model.IsSith)
             </div>
         </div>
+        
         <!-- vue des caracteristiques -->
         <div>
-            @Html.ActionLink("Annuler", "Index")
-            @Html.ActionLink("Valider", "Edit")
-            <input type="submit" value="Valider" class="btn btn-primary" />
+            @Html.DisplayNameFor(Model => Model.Caracteristiques)
+            <table class="table table-striped">
+                <tr>
+                    <th>
+                        @Html.LabelFor(Model => Model.Caracteristiques.Default.Nom)
+                    </th>
+                    <th>
+                        @Html.LabelFor(Model => Model.Caracteristiques.Default.Definition)
+                    </th>
+                    <th>
+                        @Html.LabelFor(Model => Model.Caracteristiques.Default.Valeur)
+                    </th>
+                </tr>
+
+                @foreach(var c in Model.Caracteristiques.list) {
+                    <tr>
+                        <td>
+                            @Html.EditorFor(Model => c.Nom)
+                        </td>
+                        <td>
+                            @Html.DropDownList(c.Definition.ToString(), EnumHelper.GetSelectList(typeof(WebApplicationJedi.ServiceReference.EDefCaracteristiqueWS)), "Definition")
+                        </td>
+                        <td>
+                            @Html.EditorFor(Model => c.Valeur)
+                        </td>
+                    </tr>
+                }
+            </table>
+            @Html.ValidationMessageFor(Model => Model.Caracteristiques)
+        </div>
+
+        <div>
+            <div class="btn btn-primary">
+                @Html.ActionLink("Annuler", "Index")
+            </div>
+            <input type="submit" value="Valider" class="btn btn-success" />
         </div>
     </div>
 }
