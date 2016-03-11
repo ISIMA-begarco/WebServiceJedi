@@ -49,5 +49,17 @@ namespace WCFJedi
 
         [OperationContract]
         bool updateTournoi(TournoiWS tournoi);
+
+        [OperationContract]
+        bool removeJedi(JediWS jedi);
+
+        [OperationContract]
+        bool removeStade(StadeWS stade);
+
+        [OperationContract]
+        bool removeMatch(MatchWS match);
+
+        [OperationContract]
+        bool removeTournoi(TournoiWS tournoi);
     }
 }
