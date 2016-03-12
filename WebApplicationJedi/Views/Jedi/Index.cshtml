@@ -8,10 +8,10 @@
     <h2>Gestion des jedis</h2>
 
     <p>Voici la liste des Jedis que vous pouvez consulter et modifier.</p>
-</div>
 
-<div class="btn btn-success">
-    @Html.ActionLink("Créer un Nouveau Jedi", "Create")
+    <div class="col-lg-12 btn btn-success">
+        @Html.ActionLink("Créer un Nouveau Jedi", "Create")
+    </div>
 </div>
 
 @foreach(var j in Model.list) {
@@ -55,7 +55,7 @@
                         </td>
                     </tr>
                 }
-
+                
             </table>
         </div>
     </div> 
