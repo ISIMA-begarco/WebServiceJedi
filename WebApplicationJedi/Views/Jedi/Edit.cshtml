@@ -4,7 +4,8 @@
     ViewBag.Title = "Edit";
 }
 
-<h2>Modifier le jedi</h2>
+<h2>Modifier un jedi</h2>
+<hr/>
 
 @using (Html.BeginForm()) {
     @Html.AntiForgeryToken()
@@ -56,7 +57,11 @@
                             @Html.EditorFor(Model => c.Nom)
                         </td>
                         <td>
-                            @Html.DropDownList(c.Definition.ToString(), EnumHelper.GetSelectList(typeof(WebApplicationJedi.ServiceReference.EDefCaracteristique)), "Definition")
+                            @{  <!-- Creation de la liste deroulante et selection de la valeur par defaut -->
+                                IList<SelectListItem> listeSelection = EnumHelper.GetSelectList(typeof(WebApplicationJedi.ServiceReference.EDefCaracteristique));
+                                listeSelection.Single(x => x.Text.Equals(c.Definition.ToString())).Selected = true;
+                            }
+                            @Html.DropDownList(c.Definition.ToString(), listeSelection)
                         </td>
                         <td>
                             @Html.EditorFor(Model => c.Valeur)
@@ -72,10 +77,10 @@
         </div>
 
         <div>
-            <div class="btn btn-primary">
+            <div class="btn btn-default">
                 @Html.ActionLink("Annuler", "Index")
             </div>
-            <input type="submit" value="Valider" class="btn btn-success" />
+            <input type="submit" value="Valider" class="btn btn-primary" />
         </div>
     </div>
 }

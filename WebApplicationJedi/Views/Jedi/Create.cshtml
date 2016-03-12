@@ -4,10 +4,14 @@
     ViewBag.Title = "Create";
 }
 
-<h2>Modifier le jedi</h2>
+<h2>Créer un jedi</h2>
+<hr/>
+
+<!-- Debug -->
+@Html.DisplayFor(Model => Model.Nom) - @Html.DisplayNameFor(model => model.IsSith) @Html.DisplayFor(Model => Model.IsSith)
 
 @using(Html.BeginForm()) {
-    @Html.AntiForgeryToken()
+
     <div class="form-horizontal">
         @Html.ValidationSummary(true)
         @Html.HiddenFor(Model => Model.Id)
@@ -18,7 +22,6 @@
             </div>
             <div class="col-lg-10">
                 @Html.EditorFor(Model => Model.Nom)
-                @Html.ValidationMessageFor(Model => Model.Nom)
             </div>
         </div>
         <div class="form-group">
@@ -27,7 +30,6 @@
             </div>
             <div class="col-lg-10">
                 @Html.EditorFor(Model => Model.IsSith)
-                @Html.ValidationMessageFor(Model => Model.IsSith)
             </div>
         </div>
 
@@ -56,10 +58,10 @@
         </div>
 
         <div>
-            <div class="btn btn-primary">
+            <div class="btn btn-default">
                 @Html.ActionLink("Annuler", "Index")
             </div>
-            <input type="submit" value="Valider" class="btn btn-success" />
+            <input type="submit" value="Créer" class="btn btn-success" />
         </div>
     </div>
 }

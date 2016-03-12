@@ -28,6 +28,18 @@ textarea {
 }
 
 .btn a {
-    text-decoration : none;
-    color : white;
+    text-decoration: none;
+}
+
+.btn-default a {
+    color: black;
+}
+
+/* Change links color to white in all buttons and remove decoration */
+.btn-primary a,
+.btn-success a,
+.btn-info a,
+.btn-warning a,
+.btn-danger a {
+    color: white;
 }

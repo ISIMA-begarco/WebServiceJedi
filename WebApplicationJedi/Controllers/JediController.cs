@@ -42,15 +42,18 @@ namespace WebApplicationJedi.Controllers {
 
 				WebApplicationJedi.ServiceReference.JediWS jedi = new JediWS();
 				jedi.Id = 0; // Parce qu'on va le creer
-				jedi.Nom = collection["Nom"];
-				jedi.IsSith = Boolean.Parse(collection["IsSith"]);
-				
-				
+				jedi.Nom = Convert.ToString(collection.Get("Nom"));
+				jedi.IsSith = Convert.ToBoolean(collection.Get("IsSith"));
+
+				jedi.Caracteristiques = new List<WebApplicationJedi.ServiceReference.CaracteristiqueWS>();
+				// TODO recuperer les caracteristiques et les mettre la
+
+				return View("Edit", new JediViewModel(jedi));//truc de test
+															 //return RedirectToAction("Index"); // Le bon truc
+		} catch {
 				return RedirectToAction("Index");
-			} catch {
-				return View();
-			}
 		}
+}
 
 		// GET: Jedi/Edit/5
 		public ActionResult Edit(int id) {
@@ -80,22 +83,58 @@ namespace WebApplicationJedi.Controllers {
 
 		// GET: Jedi/Delete/5
 		public ActionResult Delete(int id) {
-			using(ServiceReference.ServiceClient service = new ServiceReference.ServiceClient()) {
-				
+			try {
+				WebApplicationJedi.ServiceReference.JediWS jedi = null;
+
+				using(ServiceReference.ServiceClient service = new ServiceReference.ServiceClient()) {
+					jedi = service.getJedis().Find(x => x.Id == id); // On tente de le recuperer
+				}
+
+				if(jedi != null) { // Si on l'a eu, on le fait afficher
+					return View(new JediViewModel(jedi));
+				} else { // Sinon retour a l'index
+					return RedirectToAction("Index");
+				}
+			} catch { // Les autres erreurs
+				return RedirectToAction("Index");
 			}
-			return View();
 		}
 
 		// POST: Jedi/Delete/5
 		[HttpPost]
 		public ActionResult Delete(int id, FormCollection collection) {
 			try {
-				// TODO: Add delete logic here
+				using(ServiceReference.ServiceClient service = new ServiceReference.ServiceClient()) {
+					WebApplicationJedi.ServiceReference.JediWS jedi = null;
+					jedi = service.getJedis().Find(x => x.Id == id); // On tente de le recuperer
+
+					if(jedi != null) { // Si on l'a eu, on le supprime
+						service.removeJedi(jedi);
+					}
+				}
 
 				return RedirectToAction("Index");
 			} catch {
-				return View();
+				return RedirectToAction("Index");
 			}
 		}
+
+		//[HttpPost, ActionName("Delete")]
+		//public ActionResult DeleteConfirmed(int id) {
+		//	try {
+		//		using(ServiceReference.ServiceClient service = new ServiceReference.ServiceClient()) {
+		//			WebApplicationJedi.ServiceReference.JediWS jedi = null;
+		//			jedi = service.getJedis().Find(x => x.Id == id); // On tente de le recuperer
+
+		//			if(jedi != null) { // Si on l'a eu, on le supprime
+		//				service.removeJedi(jedi);
+		//			}
+		//		}
+
+		//		return RedirectToAction("Index");
+		//	} catch {
+		//		return RedirectToAction("Index");
+		//	}
+		//}
 	}
 }

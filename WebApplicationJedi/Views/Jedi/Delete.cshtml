@@ -1,0 +1,46 @@
+﻿@model WebApplicationJedi.Models.JediViewModel
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Supprimer un Jedi</h2>
+<hr/>
+
+@using(Html.BeginForm()) {
+    @Html.HiddenFor(Model => Model.Id)
+
+    <div class="row">
+        <div class="col-lg-2">@Html.LabelFor(Model => Model.Nom)</div>
+        <div class="col-lg-10">@Html.DisplayFor(Model => Model.Nom)</div>
+    </div>
+    <div class="row">
+        <div class="col-lg-2">@Html.LabelFor(Model => Model.IsSith)</div>
+        <div class="col-lg-10">@Html.DisplayFor(Model => Model.IsSith)</div>
+    </div>
+
+
+    @Html.DisplayNameFor(Model => Model.Caracteristiques)
+    <table class="table table-striped">
+        <tr>
+            <th>@Html.LabelFor(Model => Model.Caracteristiques.Default.Nom)</th>
+            <th>@Html.LabelFor(Model => Model.Caracteristiques.Default.Definition)</th>
+            <th>@Html.LabelFor(Model => Model.Caracteristiques.Default.Valeur)</th>
+        </tr>
+
+        @foreach(var c in Model.Caracteristiques.list) {
+            <tr>
+                <td>@Html.DisplayFor(Model => c.Nom)</td>
+                <td>@Html.DisplayFor(Model => c.Definition)</td>
+                <td>@Html.DisplayFor(Model => c.Valeur)</td>
+            </tr>
+        }
+    </table>
+
+    <div>
+        <div class="btn btn-default">
+            @Html.ActionLink("Annuler", "Index")
+        </div>
+        <input type="submit" value="Supprimer" class="btn btn-danger" />
+    </div>
+}
