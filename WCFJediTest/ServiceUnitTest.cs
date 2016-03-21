@@ -11,7 +11,7 @@ namespace WCFJediTest
     public class WebServiceTest
     {
         [TestMethod]
-        public void TestServicesCaracteristiques()
+        public void TestServiceCaracteristiques()
         {
             ServiceReference.ServiceClient client = new ServiceReference.ServiceClient();
             List<CaracteristiqueWS> caracs = client.getCaracteristiquesOf("Anakin Skywalker");
@@ -73,7 +73,7 @@ namespace WCFJediTest
         }
 
         [TestMethod]
-        public void TestServicesGetStades()
+        public void TestServiceGetStades()
         {
             ServiceReference.ServiceClient client = new ServiceReference.ServiceClient();
             List<StadeWS> stades = client.getStades();
@@ -122,7 +122,7 @@ namespace WCFJediTest
         }
 
         [TestMethod]
-        public void TestServicesGetMatches()
+        public void TestServiceGetMatches()
         {
             ServiceReference.ServiceClient client = new ServiceReference.ServiceClient();
             List<MatchWS> matches = client.getMatches();
@@ -165,7 +165,7 @@ namespace WCFJediTest
             client.addMatch(zone);
             Assert.AreEqual(size + 1, client.getMatches().Count);
             /* SUPPRESSION */
-            zone = client.getMatches().Find(x => x.Jedi1.Id.Equals(jedis.ElementAt(0).Id) && x.Jedi2.Id.Equals(jedis.ElementAt(3).Id) && x.Stade.Id.Equals(stades.ElementAt(0).Id));
+            zone = client.getMatches().Find(x => x.Jedi1 != null && x.Jedi2 != null && x.Jedi1.Id.Equals(jedis.ElementAt(0).Id) && x.Jedi2.Id.Equals(jedis.ElementAt(3).Id) && x.Stade.Id.Equals(stades.ElementAt(0).Id));
             client.removeMatch(zone);
             Assert.AreEqual(size, client.getMatches().Count);
 
@@ -173,13 +173,33 @@ namespace WCFJediTest
         }
 
         [TestMethod]
-        public void TestServicesGetTournois()
+        public void TestServiceGetTournois()
         {
             ServiceReference.ServiceClient client = new ServiceReference.ServiceClient();
             List<TournoiWS> tournois = client.getTournois();
             Assert.IsNotNull(tournois);
-            TournoiWS combat = tournois.Find(x => x.Matches[0].Jedi1.Nom.Equals("Obi Wan Kenobi") && x.Matches[0].Jedi2.Nom.Equals("Yoda"));
+            TournoiWS combat = tournois.Find(x => x.Nom == "NewTournamentDeOufMalade");
             Assert.IsNotNull(combat);
+            client.Close();
+        }
+
+        [TestMethod]
+        public void TestServiceARTournois()
+        {
+            ServiceReference.ServiceClient client = new ServiceReference.ServiceClient();
+
+            List<TournoiWS> tournois = client.getTournois();
+            int size = tournois.Count;
+            Assert.IsNotNull(tournois);
+            /* AJOUT */
+            TournoiWS bob = new TournoiWS(0, "Test", new List<MatchWS>());
+            client.addTournoi(bob);
+            Assert.AreEqual(size + 1, client.getTournois().Count);
+            /* SUPPRESSION */
+            bob = client.getTournois().Find(x => x.Nom.Equals("Test"));
+            client.removeTournoi(bob);
+            Assert.AreEqual(size, client.getTournois().Count);
+
             client.Close();
         }
     }

@@ -5,13 +5,6 @@ C:\Users\Benoît\Source\Repos\webService\DataAccessLayer\bin\Debug\EntitiesLayer
 C:\Users\Benoît\Source\Repos\webService\DataAccessLayer\obj\Debug\DataAccessLayer.csprojResolveAssemblyReference.cache
 C:\Users\Benoît\Source\Repos\webService\DataAccessLayer\obj\Debug\DataAccessLayer.dll
 C:\Users\Benoît\Source\Repos\webService\DataAccessLayer\obj\Debug\DataAccessLayer.pdb
-O:\OneDrive\GitHub\WebServiceJedi\DataAccessLayer\bin\Debug\DataAccessLayer.dll
-O:\OneDrive\GitHub\WebServiceJedi\DataAccessLayer\bin\Debug\DataAccessLayer.pdb
-O:\OneDrive\GitHub\WebServiceJedi\DataAccessLayer\bin\Debug\EntitiesLayer.dll
-O:\OneDrive\GitHub\WebServiceJedi\DataAccessLayer\bin\Debug\EntitiesLayer.pdb
-O:\OneDrive\GitHub\WebServiceJedi\DataAccessLayer\obj\Debug\DataAccessLayer.csprojResolveAssemblyReference.cache
-O:\OneDrive\GitHub\WebServiceJedi\DataAccessLayer\obj\Debug\DataAccessLayer.dll
-O:\OneDrive\GitHub\WebServiceJedi\DataAccessLayer\obj\Debug\DataAccessLayer.pdb
 C:\Users\Benji\GitHub\WebServiceJedi\DataAccessLayer\bin\Debug\DataAccessLayer.dll
 C:\Users\Benji\GitHub\WebServiceJedi\DataAccessLayer\bin\Debug\DataAccessLayer.pdb
 C:\Users\Benji\GitHub\WebServiceJedi\DataAccessLayer\bin\Debug\EntitiesLayer.dll
@@ -19,3 +12,10 @@ C:\Users\Benji\GitHub\WebServiceJedi\DataAccessLayer\bin\Debug\EntitiesLayer.pdb
 C:\Users\Benji\GitHub\WebServiceJedi\DataAccessLayer\obj\Debug\DataAccessLayer.csprojResolveAssemblyReference.cache
 C:\Users\Benji\GitHub\WebServiceJedi\DataAccessLayer\obj\Debug\DataAccessLayer.dll
 C:\Users\Benji\GitHub\WebServiceJedi\DataAccessLayer\obj\Debug\DataAccessLayer.pdb
+O:\OneDrive\GitHub\WebServiceJedi\DataAccessLayer\bin\Debug\DataAccessLayer.dll
+O:\OneDrive\GitHub\WebServiceJedi\DataAccessLayer\bin\Debug\DataAccessLayer.pdb
+O:\OneDrive\GitHub\WebServiceJedi\DataAccessLayer\bin\Debug\EntitiesLayer.dll
+O:\OneDrive\GitHub\WebServiceJedi\DataAccessLayer\bin\Debug\EntitiesLayer.pdb
+O:\OneDrive\GitHub\WebServiceJedi\DataAccessLayer\obj\Debug\DataAccessLayer.csprojResolveAssemblyReference.cache
+O:\OneDrive\GitHub\WebServiceJedi\DataAccessLayer\obj\Debug\DataAccessLayer.dll
+O:\OneDrive\GitHub\WebServiceJedi\DataAccessLayer\obj\Debug\DataAccessLayer.pdb
