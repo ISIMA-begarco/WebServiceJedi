@@ -108,6 +108,13 @@ namespace WCFJedi
             return liste;
         }
 
+        public List<CaracteristiqueWS> getCaracteristiques()
+        {
+            List<CaracteristiqueWS> liste = new List<CaracteristiqueWS>();
+            businessManager.getCaracteristiques().ForEach(x => liste.Add(new CaracteristiqueWS(x)));
+            return liste;
+        }
+
         public bool removeJedi(JediWS jedi)
         {
             List<Jedi> listeJ = businessManager.getJedis();

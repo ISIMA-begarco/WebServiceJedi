@@ -27,6 +27,9 @@ namespace WCFJedi
         List<CaracteristiqueWS> getCaracteristiquesOf(string jediName);
 
         [OperationContract]
+        List<CaracteristiqueWS> getCaracteristiques();
+
+        [OperationContract]
         bool addJedi(JediWS jedi);
 
         [OperationContract]
