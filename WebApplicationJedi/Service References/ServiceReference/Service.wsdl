@@ -38,6 +38,12 @@
   <wsdl:message name="IService_getCaracteristiquesOf_OutputMessage">
     <wsdl:part name="parameters" element="tns:getCaracteristiquesOfResponse" />
   </wsdl:message>
+  <wsdl:message name="IService_getCaracteristiques_InputMessage">
+    <wsdl:part name="parameters" element="tns:getCaracteristiques" />
+  </wsdl:message>
+  <wsdl:message name="IService_getCaracteristiques_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getCaracteristiquesResponse" />
+  </wsdl:message>
   <wsdl:message name="IService_addJedi_InputMessage">
     <wsdl:part name="parameters" element="tns:addJedi" />
   </wsdl:message>
@@ -161,6 +167,10 @@
       <wsdl:input wsaw:Action="http://tempuri.org/IService/getCaracteristiquesOf" message="tns:IService_getCaracteristiquesOf_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IService/getCaracteristiquesOfResponse" message="tns:IService_getCaracteristiquesOf_OutputMessage" />
     </wsdl:operation>
+    <wsdl:operation name="getCaracteristiques">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/getCaracteristiques" message="tns:IService_getCaracteristiques_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/getCaracteristiquesResponse" message="tns:IService_getCaracteristiques_OutputMessage" />
+    </wsdl:operation>
     <wsdl:operation name="addJedi">
       <wsdl:input wsaw:Action="http://tempuri.org/IService/addJedi" message="tns:IService_addJedi_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IService/addJediResponse" message="tns:IService_addJedi_OutputMessage" />
@@ -270,6 +280,15 @@
     </wsdl:operation>
     <wsdl:operation name="getCaracteristiquesOf">
       <soap:operation soapAction="http://tempuri.org/IService/getCaracteristiquesOf" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getCaracteristiques">
+      <soap:operation soapAction="http://tempuri.org/IService/getCaracteristiques" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

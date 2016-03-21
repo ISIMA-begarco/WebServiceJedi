@@ -717,6 +717,12 @@ namespace WebApplicationJedi.ServiceReference {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/getCaracteristiquesOf", ReplyAction="http://tempuri.org/IService/getCaracteristiquesOfResponse")]
         System.Threading.Tasks.Task<System.Collections.Generic.List<WebApplicationJedi.ServiceReference.CaracteristiqueWS>> getCaracteristiquesOfAsync(string jediName);
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/getCaracteristiques", ReplyAction="http://tempuri.org/IService/getCaracteristiquesResponse")]
+        System.Collections.Generic.List<WebApplicationJedi.ServiceReference.CaracteristiqueWS> getCaracteristiques();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/getCaracteristiques", ReplyAction="http://tempuri.org/IService/getCaracteristiquesResponse")]
+        System.Threading.Tasks.Task<System.Collections.Generic.List<WebApplicationJedi.ServiceReference.CaracteristiqueWS>> getCaracteristiquesAsync();
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/addJedi", ReplyAction="http://tempuri.org/IService/addJediResponse")]
         bool addJedi(WebApplicationJedi.ServiceReference.JediWS jedi);
         
@@ -885,6 +891,14 @@ namespace WebApplicationJedi.ServiceReference {
         
         public System.Threading.Tasks.Task<System.Collections.Generic.List<WebApplicationJedi.ServiceReference.CaracteristiqueWS>> getCaracteristiquesOfAsync(string jediName) {
             return base.Channel.getCaracteristiquesOfAsync(jediName);
+        }
+        
+        public System.Collections.Generic.List<WebApplicationJedi.ServiceReference.CaracteristiqueWS> getCaracteristiques() {
+            return base.Channel.getCaracteristiques();
+        }
+        
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<WebApplicationJedi.ServiceReference.CaracteristiqueWS>> getCaracteristiquesAsync() {
+            return base.Channel.getCaracteristiquesAsync();
         }
         
         public bool addJedi(WebApplicationJedi.ServiceReference.JediWS jedi) {
