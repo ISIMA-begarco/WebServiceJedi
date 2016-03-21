@@ -32,9 +32,9 @@ namespace WebApplicationJedi.Models {
 		public MatchViewModel() { }
 
 		public MatchViewModel(ServiceReference.MatchWS match) {
-			this.Jedi1 = new JediViewModel(match.Jedi1);
-			this.Jedi2 = new JediViewModel(match.Jedi2);
-			this.JediVainqueur = new JediViewModel(match.JediVainqueur);
+			this.Jedi1 = match.Jedi1 != null ? new JediViewModel(match.Jedi1) : null;
+			this.Jedi2 = match.Jedi2 != null ? new JediViewModel(match.Jedi2) : null;
+			this.JediVainqueur = /*match.JediVainqueur != null ? new JediViewModel(match.JediVainqueur) :*/ null;
 			this.Stade = new StadeViewModel(match.Stade);
 			this.Phase = match.Phase;
 		}
