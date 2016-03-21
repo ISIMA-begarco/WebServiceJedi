@@ -663,6 +663,36 @@ namespace WebApplicationJedi.ServiceReference {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/removeTournoi", ReplyAction="http://tempuri.org/IService/removeTournoiResponse")]
         System.Threading.Tasks.Task<bool> removeTournoiAsync(WebApplicationJedi.ServiceReference.TournoiWS tournoi);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/playTournoi", ReplyAction="http://tempuri.org/IService/playTournoiResponse")]
+        bool playTournoi(WebApplicationJedi.ServiceReference.TournoiWS tournoi);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/playTournoi", ReplyAction="http://tempuri.org/IService/playTournoiResponse")]
+        System.Threading.Tasks.Task<bool> playTournoiAsync(WebApplicationJedi.ServiceReference.TournoiWS tournoi);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/getPoints", ReplyAction="http://tempuri.org/IService/getPointsResponse")]
+        int getPoints(string player);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/getPoints", ReplyAction="http://tempuri.org/IService/getPointsResponse")]
+        System.Threading.Tasks.Task<int> getPointsAsync(string player);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/setPoints", ReplyAction="http://tempuri.org/IService/setPointsResponse")]
+        bool setPoints(string player, int value);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/setPoints", ReplyAction="http://tempuri.org/IService/setPointsResponse")]
+        System.Threading.Tasks.Task<bool> setPointsAsync(string player, int value);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/inscription", ReplyAction="http://tempuri.org/IService/inscriptionResponse")]
+        bool inscription(string username, string password);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/inscription", ReplyAction="http://tempuri.org/IService/inscriptionResponse")]
+        System.Threading.Tasks.Task<bool> inscriptionAsync(string username, string password);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/connexion", ReplyAction="http://tempuri.org/IService/connexionResponse")]
+        bool connexion(string username, string password);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/connexion", ReplyAction="http://tempuri.org/IService/connexionResponse")]
+        System.Threading.Tasks.Task<bool> connexionAsync(string username, string password);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -826,6 +856,46 @@ namespace WebApplicationJedi.ServiceReference {
         
         public System.Threading.Tasks.Task<bool> removeTournoiAsync(WebApplicationJedi.ServiceReference.TournoiWS tournoi) {
             return base.Channel.removeTournoiAsync(tournoi);
+        }
+        
+        public bool playTournoi(WebApplicationJedi.ServiceReference.TournoiWS tournoi) {
+            return base.Channel.playTournoi(tournoi);
+        }
+        
+        public System.Threading.Tasks.Task<bool> playTournoiAsync(WebApplicationJedi.ServiceReference.TournoiWS tournoi) {
+            return base.Channel.playTournoiAsync(tournoi);
+        }
+        
+        public int getPoints(string player) {
+            return base.Channel.getPoints(player);
+        }
+        
+        public System.Threading.Tasks.Task<int> getPointsAsync(string player) {
+            return base.Channel.getPointsAsync(player);
+        }
+        
+        public bool setPoints(string player, int value) {
+            return base.Channel.setPoints(player, value);
+        }
+        
+        public System.Threading.Tasks.Task<bool> setPointsAsync(string player, int value) {
+            return base.Channel.setPointsAsync(player, value);
+        }
+        
+        public bool inscription(string username, string password) {
+            return base.Channel.inscription(username, password);
+        }
+        
+        public System.Threading.Tasks.Task<bool> inscriptionAsync(string username, string password) {
+            return base.Channel.inscriptionAsync(username, password);
+        }
+        
+        public bool connexion(string username, string password) {
+            return base.Channel.connexion(username, password);
+        }
+        
+        public System.Threading.Tasks.Task<bool> connexionAsync(string username, string password) {
+            return base.Channel.connexionAsync(username, password);
         }
     }
 }

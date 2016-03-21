@@ -110,6 +110,36 @@
   <wsdl:message name="IService_removeTournoi_OutputMessage">
     <wsdl:part name="parameters" element="tns:removeTournoiResponse" />
   </wsdl:message>
+  <wsdl:message name="IService_playTournoi_InputMessage">
+    <wsdl:part name="parameters" element="tns:playTournoi" />
+  </wsdl:message>
+  <wsdl:message name="IService_playTournoi_OutputMessage">
+    <wsdl:part name="parameters" element="tns:playTournoiResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_getPoints_InputMessage">
+    <wsdl:part name="parameters" element="tns:getPoints" />
+  </wsdl:message>
+  <wsdl:message name="IService_getPoints_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getPointsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_setPoints_InputMessage">
+    <wsdl:part name="parameters" element="tns:setPoints" />
+  </wsdl:message>
+  <wsdl:message name="IService_setPoints_OutputMessage">
+    <wsdl:part name="parameters" element="tns:setPointsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_inscription_InputMessage">
+    <wsdl:part name="parameters" element="tns:inscription" />
+  </wsdl:message>
+  <wsdl:message name="IService_inscription_OutputMessage">
+    <wsdl:part name="parameters" element="tns:inscriptionResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_connexion_InputMessage">
+    <wsdl:part name="parameters" element="tns:connexion" />
+  </wsdl:message>
+  <wsdl:message name="IService_connexion_OutputMessage">
+    <wsdl:part name="parameters" element="tns:connexionResponse" />
+  </wsdl:message>
   <wsdl:portType name="IService">
     <wsdl:operation name="getJedis">
       <wsdl:input wsaw:Action="http://tempuri.org/IService/getJedis" message="tns:IService_getJedis_InputMessage" />
@@ -178,6 +208,26 @@
     <wsdl:operation name="removeTournoi">
       <wsdl:input wsaw:Action="http://tempuri.org/IService/removeTournoi" message="tns:IService_removeTournoi_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IService/removeTournoiResponse" message="tns:IService_removeTournoi_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="playTournoi">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/playTournoi" message="tns:IService_playTournoi_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/playTournoiResponse" message="tns:IService_playTournoi_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getPoints">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/getPoints" message="tns:IService_getPoints_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/getPointsResponse" message="tns:IService_getPoints_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="setPoints">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/setPoints" message="tns:IService_setPoints_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/setPointsResponse" message="tns:IService_setPoints_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="inscription">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/inscription" message="tns:IService_inscription_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/inscriptionResponse" message="tns:IService_inscription_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="connexion">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/connexion" message="tns:IService_connexion_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/connexionResponse" message="tns:IService_connexion_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_IService" type="tns:IService">
@@ -328,6 +378,51 @@
     </wsdl:operation>
     <wsdl:operation name="removeTournoi">
       <soap:operation soapAction="http://tempuri.org/IService/removeTournoi" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="playTournoi">
+      <soap:operation soapAction="http://tempuri.org/IService/playTournoi" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getPoints">
+      <soap:operation soapAction="http://tempuri.org/IService/getPoints" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="setPoints">
+      <soap:operation soapAction="http://tempuri.org/IService/setPoints" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="inscription">
+      <soap:operation soapAction="http://tempuri.org/IService/inscription" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="connexion">
+      <soap:operation soapAction="http://tempuri.org/IService/connexion" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

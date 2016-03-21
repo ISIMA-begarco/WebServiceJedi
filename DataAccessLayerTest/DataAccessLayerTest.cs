@@ -135,7 +135,7 @@ namespace DataAccessLayerTest
             Assert.AreNotEqual<int>(liste.Count, 0);
             if (liste.Count > 0)
             {
-                Utilisateur j = new Utilisateur(0, "test", "test", "Jean", "Bernard");
+                Utilisateur j = new Utilisateur(0, "test", "test", "Jean", "Bernard", 1000);
                 bdd.addUser(j);
                 Assert.AreEqual<int>(debTaille+1, bdd.getUsers().Count);
                 bdd.deleteUserByLogin("test");

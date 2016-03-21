@@ -170,7 +170,7 @@ namespace BusinessLayer
         {
             bool isOk = false;
             string password = HashSHA1(mdp + login);
-            Utilisateur user = new Utilisateur(0, login, password, nom, prenom);
+            Utilisateur user = new Utilisateur(0, login, password, nom, prenom, 1000);
 
             isOk = bdd.addUser(user);
 
@@ -245,7 +245,31 @@ namespace BusinessLayer
             if (rd.NextDouble() > balance)
                 winner = m.Jedi2;
 
+            m.JediVainqueur = winner;
+
             return winner;
+        }
+
+        public Jedi playTournament(Tournoi t)
+        {
+            t.Matchs.Find(x => x.PhaseTournoi == EPhaseTournoi.QuartFinale1).Jedi1 = simulateMatch(t.Matchs.Find(x => x.PhaseTournoi == EPhaseTournoi.HuitiemeFinale1));
+            t.Matchs.Find(x => x.PhaseTournoi == EPhaseTournoi.QuartFinale1).Jedi2 = simulateMatch(t.Matchs.Find(x => x.PhaseTournoi == EPhaseTournoi.HuitiemeFinale2));
+            t.Matchs.Find(x => x.PhaseTournoi == EPhaseTournoi.QuartFinale2).Jedi1 = simulateMatch(t.Matchs.Find(x => x.PhaseTournoi == EPhaseTournoi.HuitiemeFinale3));
+            t.Matchs.Find(x => x.PhaseTournoi == EPhaseTournoi.QuartFinale2).Jedi2 = simulateMatch(t.Matchs.Find(x => x.PhaseTournoi == EPhaseTournoi.HuitiemeFinale4));
+            t.Matchs.Find(x => x.PhaseTournoi == EPhaseTournoi.QuartFinale3).Jedi1 = simulateMatch(t.Matchs.Find(x => x.PhaseTournoi == EPhaseTournoi.HuitiemeFinale5));
+            t.Matchs.Find(x => x.PhaseTournoi == EPhaseTournoi.QuartFinale3).Jedi2 = simulateMatch(t.Matchs.Find(x => x.PhaseTournoi == EPhaseTournoi.HuitiemeFinale6));
+            t.Matchs.Find(x => x.PhaseTournoi == EPhaseTournoi.QuartFinale4).Jedi1 = simulateMatch(t.Matchs.Find(x => x.PhaseTournoi == EPhaseTournoi.HuitiemeFinale7));
+            t.Matchs.Find(x => x.PhaseTournoi == EPhaseTournoi.QuartFinale4).Jedi2 = simulateMatch(t.Matchs.Find(x => x.PhaseTournoi == EPhaseTournoi.HuitiemeFinale8));
+
+            t.Matchs.Find(x => x.PhaseTournoi == EPhaseTournoi.DemiFinale1).Jedi1 = simulateMatch(t.Matchs.Find(x => x.PhaseTournoi == EPhaseTournoi.QuartFinale1));
+            t.Matchs.Find(x => x.PhaseTournoi == EPhaseTournoi.DemiFinale1).Jedi2 = simulateMatch(t.Matchs.Find(x => x.PhaseTournoi == EPhaseTournoi.QuartFinale2));
+            t.Matchs.Find(x => x.PhaseTournoi == EPhaseTournoi.DemiFinale2).Jedi1 = simulateMatch(t.Matchs.Find(x => x.PhaseTournoi == EPhaseTournoi.QuartFinale3));
+            t.Matchs.Find(x => x.PhaseTournoi == EPhaseTournoi.DemiFinale2).Jedi2 = simulateMatch(t.Matchs.Find(x => x.PhaseTournoi == EPhaseTournoi.QuartFinale4));
+
+            t.Matchs.Find(x => x.PhaseTournoi == EPhaseTournoi.Finale).Jedi1 = simulateMatch(t.Matchs.Find(x => x.PhaseTournoi == EPhaseTournoi.DemiFinale1));
+            t.Matchs.Find(x => x.PhaseTournoi == EPhaseTournoi.Finale).Jedi2 = simulateMatch(t.Matchs.Find(x => x.PhaseTournoi == EPhaseTournoi.DemiFinale2));
+
+            return simulateMatch(t.Matchs.Find(x => x.PhaseTournoi == EPhaseTournoi.Finale));
         }
 
         public class MatchOrderComparer : IComparer<Match>
