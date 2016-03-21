@@ -3,12 +3,23 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using WebApplicationJedi.Models;
+using WebApplicationJedi.ServiceReference;
 
 namespace WebApplicationJedi.Controllers {
 	public class CaracteristiqueController : Controller {
+
 		// GET: Caracteristique
 		public ActionResult Index() {
-			return View();
+			List<CaracteristiqueViewModel> list = new List<CaracteristiqueViewModel>();
+
+			using(ServiceReference.ServiceClient service = new ServiceReference.ServiceClient()) {
+				foreach(var carac in service.getCaracteristiques()) {
+					list.Add(new CaracteristiqueViewModel(carac));
+				}
+			}
+
+			return View(new CaracteristiqueCollection(list));
 		}
 
 		// GET: Caracteristique/Details/5

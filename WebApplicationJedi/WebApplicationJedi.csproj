@@ -297,10 +297,10 @@
     <Content Include="Service References\ServiceReference\WebApplicationJedi.ServiceReference.UserWS.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
+    <Content Include="Views\Caracteristique\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Views\Caracteristique\" />
     <Folder Include="Views\Default\" />
   </ItemGroup>
   <ItemGroup>
