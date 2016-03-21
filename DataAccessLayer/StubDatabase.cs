@@ -26,7 +26,7 @@ namespace DataAccessLayer
             tournois = new List<Tournoi>();
 
             #region ajout utilisateurs
-            users.Add(new Utilisateur(1, "begarco", "15851918021222115514974461602051215898129243254222", "Garçon", "Benoît"));
+            users.Add(new Utilisateur(1, "begarco", "15851918021222115514974461602051215898129243254222", "Garçon", "Benoît", 1000));
             #endregion
 
             #region ajout des caracteristiques
@@ -215,6 +215,12 @@ namespace DataAccessLayer
         public int updateJedis(List<Jedi> l)
         {
             jedis = l;
+            return 0;
+        }
+
+        public int updateUser(Utilisateur u)
+        {
+            users.Find(x => x.Login == u.Login).Points = u.Points;
             return 0;
         }
 

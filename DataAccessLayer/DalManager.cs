@@ -73,6 +73,10 @@ namespace DataAccessLayer
         {
             return bdd.updateMatches(l);
         }
+        public int updateUser(Utilisateur u)
+        {
+            return bdd.updateUser(u);
+        }
         public int updateTournois(List<Tournoi> l)
         {
             return bdd.updateTournois(l);

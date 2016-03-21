@@ -204,5 +204,40 @@ namespace WCFJedi
             newTournoi.Matchs = matches;
             return 0 == businessManager.updateTournois(listeT);
         }
+
+        public TournoiWS playTournoi(TournoiWS tournoi)
+        {
+            Tournoi t = businessManager.getTournois().Find(x => x.Id == tournoi.Id);
+            businessManager.playTournament(t);
+            return new TournoiWS(t);
+        }
+
+        public int getPoints(string player)
+        {
+            return businessManager.getUsers().Find(x => x.Login == player).Points;
+        }
+
+        public bool setPoints(string player, int value)
+        {
+            List<Utilisateur> l = businessManager.getUsers();
+            l.Find(x => x.Login == player).Points = value;
+            return 0 == businessManager.updateUser(l.Find(x => x.Login == player));
+        }
+
+        public bool inscription(string username, string password, string nom, string prenom)
+        {
+            bool exist = businessManager.getUsers().Where(x => x.Login == username).Count() != 0;
+            if(!exist)
+            {
+                businessManager.AddUser(username, password, nom, prenom);
+            }
+            return !exist;
+        }
+
+        public UserWS connexion(string username, string password)
+        {
+            bool correct = JediTournamentManager.CheckConnexionUser(username, password);
+            return (correct ? new UserWS(businessManager.getUsers().Find(x => x.Login == username)) : null);
+        }
     }
 }

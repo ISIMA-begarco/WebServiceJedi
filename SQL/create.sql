@@ -45,6 +45,7 @@ CREATE TABLE [dbo].[Users] (
     [Password] VARCHAR (555) NOT NULL,
     [Nom]	   VARCHAR (32)  NOT NULL, 
     [Prenom]   VARCHAR (32)  NOT NULL, 
+    [Points]   INT			 NOT NULL, 
     PRIMARY KEY CLUSTERED ([Id] ASC)
 )
 

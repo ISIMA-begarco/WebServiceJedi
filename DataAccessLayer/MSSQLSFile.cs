@@ -55,7 +55,8 @@ namespace DataAccessLayer
             LOGIN = 1,
             PASSWORD = 2,
             NOM = 3,
-            PRENOM = 4
+            PRENOM = 4,
+            POINTS = 5
         }
         public enum MatchField
         {
@@ -296,14 +297,14 @@ namespace DataAccessLayer
 
             using (SqlConnection sqlConnection = new SqlConnection(connectionString))
             {
-                String request = "SELECT id, login, password, nom, prenom FROM users WHERE login='" + login + "';";
+                String request = "SELECT id, login, password, nom, prenom, points FROM users WHERE login='" + login + "';";
                 SqlCommand sqlCommand = new SqlCommand(request, sqlConnection);
                 sqlConnection.Open();
 
                 SqlDataReader sqlDataReader = sqlCommand.ExecuteReader();
                 if (sqlDataReader.Read())
                 {
-                    us = new Utilisateur(sqlDataReader.GetInt32((int)UserField.ID), sqlDataReader.GetString((int)UserField.LOGIN), sqlDataReader.GetString((int)UserField.PASSWORD), sqlDataReader.GetString((int)UserField.NOM), sqlDataReader.GetString((int)UserField.PRENOM));
+                    us = new Utilisateur(sqlDataReader.GetInt32((int)UserField.ID), sqlDataReader.GetString((int)UserField.LOGIN), sqlDataReader.GetString((int)UserField.PASSWORD), sqlDataReader.GetString((int)UserField.NOM), sqlDataReader.GetString((int)UserField.PRENOM), sqlDataReader.GetInt32((int)UserField.POINTS));
                 }
                 sqlDataReader.Close();
                 sqlConnection.Close();
@@ -316,14 +317,14 @@ namespace DataAccessLayer
 
             using (SqlConnection sqlConnection = new SqlConnection(connectionString))
             {
-                String request = "SELECT id, login, password, nom, prenom FROM users;";
+                String request = "SELECT id, login, password, nom, prenom, points FROM users;";
                 SqlCommand sqlCommand = new SqlCommand(request, sqlConnection);
                 sqlConnection.Open();
 
                 SqlDataReader sqlDataReader = sqlCommand.ExecuteReader();
                 while (sqlDataReader.Read())
                 {
-                    us.Add(new Utilisateur(sqlDataReader.GetInt32((int)UserField.ID), sqlDataReader.GetString((int)UserField.LOGIN), sqlDataReader.GetString((int)UserField.PASSWORD), sqlDataReader.GetString((int)UserField.NOM), sqlDataReader.GetString((int)UserField.PRENOM)));
+                    us.Add(new Utilisateur(sqlDataReader.GetInt32((int)UserField.ID), sqlDataReader.GetString((int)UserField.LOGIN), sqlDataReader.GetString((int)UserField.PASSWORD), sqlDataReader.GetString((int)UserField.NOM), sqlDataReader.GetString((int)UserField.PRENOM), sqlDataReader.GetInt32((int)UserField.POINTS)));
                 }
                 sqlDataReader.Close();
                 SqlDataAdapter sqlDataAdapter = new SqlDataAdapter(sqlCommand);
@@ -727,6 +728,34 @@ namespace DataAccessLayer
 
             return result;
         }
+        public int updateUser(Utilisateur u)
+        {
+            int result = 0;
+            DataTable dt = new DataTable();
+
+            using (SqlConnection sqlConnection = new SqlConnection(connectionString))
+            {
+                String request = "SELECT id, login, password, nom, prenom, points FROM Users;";
+                SqlCommand sqlCommand = new SqlCommand(request, sqlConnection);
+                sqlConnection.Open();
+                SqlDataAdapter sqlDataAdapter = new SqlDataAdapter(sqlCommand);
+
+                sqlDataAdapter.Fill(dt);
+                sqlConnection.Close();
+            }
+           
+            foreach (DataRow dr in dt.Select())
+            {
+                if(u.Login == dr.Field<string>("Login"))
+                {
+                    dr.SetField<int>("Points", u.Points);
+                }
+            }
+
+            UpdateByCommandBuilder("SELECT id, login, password, nom, prenom, points FROM Users;", dt);
+
+            return result;
+        }
         public bool addUser(Utilisateur u)
         {
             bool result = true;
@@ -735,7 +764,7 @@ namespace DataAccessLayer
 
             using (SqlConnection sqlConnection = new SqlConnection(connectionString))
             {
-                String request = "SELECT id, login, password, nom, prenom FROM Users;";
+                String request = "SELECT id, login, password, nom, prenom, points FROM Users;";
                 SqlCommand sqlCommand = new SqlCommand(request, sqlConnection);
                 sqlConnection.Open();
                 SqlDataAdapter sqlDataAdapter = new SqlDataAdapter(sqlCommand);
@@ -764,8 +793,9 @@ namespace DataAccessLayer
                 row.SetField<string>("Password", u.Password);
                 row.SetField<string>("Prenom", u.Prenom);
                 row.SetField<string>("Nom", u.Nom);
+                row.SetField<int>("Points", u.Points);
                 dt.Rows.Add(row);
-                UpdateByCommandBuilder("SELECT id, login, password, nom, prenom FROM Users;", dt);
+                UpdateByCommandBuilder("SELECT id, login, password, nom, prenom, points FROM Users;", dt);
             }
 
             return result;
@@ -777,7 +807,7 @@ namespace DataAccessLayer
 
             using (SqlConnection sqlConnection = new SqlConnection(connectionString))
             {
-                String request = "SELECT id, login, password, nom, prenom FROM Users;";
+                String request = "SELECT id, login, password, nom, prenom, points FROM Users;";
                 SqlCommand sqlCommand = new SqlCommand(request, sqlConnection);
                 sqlConnection.Open();
                 SqlDataAdapter sqlDataAdapter = new SqlDataAdapter(sqlCommand);
@@ -793,7 +823,7 @@ namespace DataAccessLayer
                     c.Delete();
             }
 
-            UpdateByCommandBuilder("SELECT id, login, password, nom, prenom FROM Users;", dt);
+            UpdateByCommandBuilder("SELECT id, login, password, nom, prenom, points FROM Users;", dt);
             
             return result;
         }

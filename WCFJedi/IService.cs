@@ -61,5 +61,20 @@ namespace WCFJedi
 
         [OperationContract]
         bool removeTournoi(TournoiWS tournoi);
+
+        [OperationContract]
+        TournoiWS playTournoi(TournoiWS tournoi);
+
+        [OperationContract]
+        int getPoints(string player);
+
+        [OperationContract]
+        bool setPoints(string player, int value);
+
+        [OperationContract]
+        bool inscription(string username, string password, string nom, string prenom);
+
+        [OperationContract]
+        UserWS connexion(string username, string password);
     }
 }
