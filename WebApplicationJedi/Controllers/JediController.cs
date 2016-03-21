@@ -50,10 +50,10 @@ namespace WebApplicationJedi.Controllers {
 
 				return View("Edit", new JediViewModel(jedi));//truc de test
 															 //return RedirectToAction("Index"); // Le bon truc
-		} catch {
-				return RedirectToAction("Index");
-		}
-}
+	        } catch {
+			        return RedirectToAction("Index");
+	        }
+        }
 
 		// GET: Jedi/Edit/5
 		public ActionResult Edit(int id) {
