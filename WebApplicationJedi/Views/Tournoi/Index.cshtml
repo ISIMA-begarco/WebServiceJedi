@@ -4,15 +4,46 @@
     ViewBag.Title = "Index";
 }
 
-<h2>Gestion des Tournois</h2>
+<div class="jumbotron">
+    <h2>Gestion des tournois</h2>
+    <p>Voici la liste des tournois disponibles que vous pouvez modifier.</p>
+    <div class="col-lg-12 btn btn-success">
+        @Html.ActionLink("Créer un nouveau Tournoi", "Create")
+    </div>
+</div>
 
 @foreach(var t in Model.list) {
     <div class="panel-primary">
         <div class="panel-heading">
-            @Html.DisplayNameFor(Model => Model.Default.Nom)
+            <div class="row">
+                <div class="col-lg-6 text-left">
+                    @Html.DisplayFor(Model => t.Nom)
+                </div>
+                <div class="col-lg-6 text-right">
+                    @Html.ActionLink("Modifier", "Edit", new { id = t.Id }) |
+                    @Html.ActionLink("Supprimer", "Delete", new { id = t.Id })
+                </div>
+            </div>
         </div>
+
         <div class="panel-body">
-            
+            @Html.DisplayNameFor(Model => Model.Default.Matches)
+            <table class="table table-striped">
+                <tr>
+                    <th>@Html.DisplayNameFor(Model => t.Matches.Default.Phase)</th>
+                    <th>@Html.DisplayNameFor(Model => t.Matches.Default.Stade)</th>
+                    <th>@Html.DisplayNameFor(Model => t.Matches.Default.Jedi1)</th>
+                    <th>@Html.DisplayNameFor(Model => t.Matches.Default.Jedi2)</th>
+                </tr>
+                @foreach(var m in t.Matches.list) {
+                    <tr>
+                        <td>@Html.DisplayFor(Model => m.Phase)</td>
+                        <td>@Html.DisplayFor(Model => m.Stade.Planete)</td>
+                        <td>@if(m.Jedi1 != null) { @Html.DisplayFor(Model => m.Jedi1.Nom) }</td>
+                        <td>@if(m.Jedi2 != null) { @Html.DisplayFor(Model => m.Jedi2.Nom) }</td>
+                    </tr>
+                }
+            </table>
         </div>
     </div>
 

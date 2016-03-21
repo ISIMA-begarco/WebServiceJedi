@@ -9,6 +9,9 @@ using WebApplicationJedi.ServiceReference;
 
 namespace WebApplicationJedi.Models {
 	public class TournoiViewModel {
+
+		public int Id { get; set; }
+
 		[Required]
 		[Display(Name = "Nom du tournoi")]
 		public string Nom { get; set; }
@@ -20,6 +23,7 @@ namespace WebApplicationJedi.Models {
 		public TournoiViewModel() { }
 
 		public TournoiViewModel(ServiceReference.TournoiWS tournoi) {
+			this.Id = tournoi.Id;
 			this.Nom = tournoi.Nom;
 
 			List<MatchViewModel> tmpList = new List<MatchViewModel>();

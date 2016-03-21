@@ -4,25 +4,44 @@
     ViewBag.Title = "Index";
 }
 
-<h2>Gestion des matchs</h2>
-
-<p>Voici la liste des matchs que vous pouvez modifier ou supprimer.</p>
+<div class="jumbotron">
+    <h2>Gestion des matchs</h2>
+    <p>Voici la liste des matchs disponibles que vous pouvez modifier.</p>
+    <div class="col-lg-12 btn btn-success">
+        @Html.ActionLink("Créer un nouveau Match", "Create")
+    </div>
+</div>
 
 @foreach(var m in Model.list) {
     <div class="panel-primary">
         <div class="panel-heading">
             <div class="row">
                 <div class="col-lg-6 text-left">
-                    @Html.DisplayFor(Model => m.Stade) - @Html.DisplayFor(Model => m.Phase)
+                    Match <!-- Peut etre ajouter un numero -->
                 </div>
                 <div class="col-lg-6 text-right">
-                    @Html.ActionLink("Modifier", "Modifier", "Edit") |
-                    @Html.ActionLink("Supprimer", "Supprimer", "Delete")
+                    @Html.ActionLink("Modifier", "Edit", new { id = m.Id }) |
+                    @Html.ActionLink("Supprimer", "Delete", new { id = m.Id })
                 </div>
             </div>
         </div>
         <div class="panel-body">
-
+            <div class="row text-center">
+                <div class="col-lg-5">
+                    @if(m.Jedi1 != null) {
+                        @Html.DisplayFor(Model => m.Jedi1.Nom);
+                    }
+                </div>
+                <div class="col-lg-2"><b>VS.</b></div>
+                <div class="col-lg-5">
+                    @if(m.Jedi2 != null) {
+                        @Html.DisplayFor(Model => m.Jedi2.Nom)
+                    }
+                </div>
+            </div>
+            <div class="row">@Html.DisplayNameFor(Model => Model.Default.Phase) : @Html.DisplayFor(Model => m.Phase)</div>
+            <div class="row">@Html.DisplayNameFor(Model => Model.Default.Stade) : @Html.DisplayFor(Model => m.Stade.Planete)</div>
+            <div class="row">@Html.DisplayNameFor(Model => Model.Default.JediVainqueur) : @if(m.JediVainqueur != null) { @Html.DisplayFor(Model => m.JediVainqueur.Nom)}</div>
         </div>
     </div>
 }
