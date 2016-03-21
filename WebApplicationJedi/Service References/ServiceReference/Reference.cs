@@ -558,6 +558,131 @@ namespace WebApplicationJedi.ServiceReference {
         }
     }
     
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="UserWS", Namespace="http://schemas.datacontract.org/2004/07/WCFJedi")]
+    [System.SerializableAttribute()]
+    public partial class UserWS : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int IdField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string LoginField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string NomField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string PasswordField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int PointsField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string PrenomField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int Id {
+            get {
+                return this.IdField;
+            }
+            set {
+                if ((this.IdField.Equals(value) != true)) {
+                    this.IdField = value;
+                    this.RaisePropertyChanged("Id");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Login {
+            get {
+                return this.LoginField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.LoginField, value) != true)) {
+                    this.LoginField = value;
+                    this.RaisePropertyChanged("Login");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Nom {
+            get {
+                return this.NomField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.NomField, value) != true)) {
+                    this.NomField = value;
+                    this.RaisePropertyChanged("Nom");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Password {
+            get {
+                return this.PasswordField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.PasswordField, value) != true)) {
+                    this.PasswordField = value;
+                    this.RaisePropertyChanged("Password");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int Points {
+            get {
+                return this.PointsField;
+            }
+            set {
+                if ((this.PointsField.Equals(value) != true)) {
+                    this.PointsField = value;
+                    this.RaisePropertyChanged("Points");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Prenom {
+            get {
+                return this.PrenomField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.PrenomField, value) != true)) {
+                    this.PrenomField = value;
+                    this.RaisePropertyChanged("Prenom");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ServiceModel.ServiceContractAttribute(ConfigurationName="ServiceReference.IService")]
     public interface IService {
@@ -665,10 +790,10 @@ namespace WebApplicationJedi.ServiceReference {
         System.Threading.Tasks.Task<bool> removeTournoiAsync(WebApplicationJedi.ServiceReference.TournoiWS tournoi);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/playTournoi", ReplyAction="http://tempuri.org/IService/playTournoiResponse")]
-        bool playTournoi(WebApplicationJedi.ServiceReference.TournoiWS tournoi);
+        WebApplicationJedi.ServiceReference.TournoiWS playTournoi(WebApplicationJedi.ServiceReference.TournoiWS tournoi);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/playTournoi", ReplyAction="http://tempuri.org/IService/playTournoiResponse")]
-        System.Threading.Tasks.Task<bool> playTournoiAsync(WebApplicationJedi.ServiceReference.TournoiWS tournoi);
+        System.Threading.Tasks.Task<WebApplicationJedi.ServiceReference.TournoiWS> playTournoiAsync(WebApplicationJedi.ServiceReference.TournoiWS tournoi);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/getPoints", ReplyAction="http://tempuri.org/IService/getPointsResponse")]
         int getPoints(string player);
@@ -683,16 +808,16 @@ namespace WebApplicationJedi.ServiceReference {
         System.Threading.Tasks.Task<bool> setPointsAsync(string player, int value);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/inscription", ReplyAction="http://tempuri.org/IService/inscriptionResponse")]
-        bool inscription(string username, string password);
+        bool inscription(string username, string password, string nom, string prenom);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/inscription", ReplyAction="http://tempuri.org/IService/inscriptionResponse")]
-        System.Threading.Tasks.Task<bool> inscriptionAsync(string username, string password);
+        System.Threading.Tasks.Task<bool> inscriptionAsync(string username, string password, string nom, string prenom);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/connexion", ReplyAction="http://tempuri.org/IService/connexionResponse")]
-        bool connexion(string username, string password);
+        WebApplicationJedi.ServiceReference.UserWS connexion(string username, string password);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/connexion", ReplyAction="http://tempuri.org/IService/connexionResponse")]
-        System.Threading.Tasks.Task<bool> connexionAsync(string username, string password);
+        System.Threading.Tasks.Task<WebApplicationJedi.ServiceReference.UserWS> connexionAsync(string username, string password);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -858,11 +983,11 @@ namespace WebApplicationJedi.ServiceReference {
             return base.Channel.removeTournoiAsync(tournoi);
         }
         
-        public bool playTournoi(WebApplicationJedi.ServiceReference.TournoiWS tournoi) {
+        public WebApplicationJedi.ServiceReference.TournoiWS playTournoi(WebApplicationJedi.ServiceReference.TournoiWS tournoi) {
             return base.Channel.playTournoi(tournoi);
         }
         
-        public System.Threading.Tasks.Task<bool> playTournoiAsync(WebApplicationJedi.ServiceReference.TournoiWS tournoi) {
+        public System.Threading.Tasks.Task<WebApplicationJedi.ServiceReference.TournoiWS> playTournoiAsync(WebApplicationJedi.ServiceReference.TournoiWS tournoi) {
             return base.Channel.playTournoiAsync(tournoi);
         }
         
@@ -882,19 +1007,19 @@ namespace WebApplicationJedi.ServiceReference {
             return base.Channel.setPointsAsync(player, value);
         }
         
-        public bool inscription(string username, string password) {
-            return base.Channel.inscription(username, password);
+        public bool inscription(string username, string password, string nom, string prenom) {
+            return base.Channel.inscription(username, password, nom, prenom);
         }
         
-        public System.Threading.Tasks.Task<bool> inscriptionAsync(string username, string password) {
-            return base.Channel.inscriptionAsync(username, password);
+        public System.Threading.Tasks.Task<bool> inscriptionAsync(string username, string password, string nom, string prenom) {
+            return base.Channel.inscriptionAsync(username, password, nom, prenom);
         }
         
-        public bool connexion(string username, string password) {
+        public WebApplicationJedi.ServiceReference.UserWS connexion(string username, string password) {
             return base.Channel.connexion(username, password);
         }
         
-        public System.Threading.Tasks.Task<bool> connexionAsync(string username, string password) {
+        public System.Threading.Tasks.Task<WebApplicationJedi.ServiceReference.UserWS> connexionAsync(string username, string password) {
             return base.Channel.connexionAsync(username, password);
         }
     }

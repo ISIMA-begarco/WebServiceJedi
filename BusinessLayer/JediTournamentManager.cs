@@ -181,6 +181,10 @@ namespace BusinessLayer
         {
             return bdd.getUsers();
         }
+        public int updateUser(Utilisateur u)
+        {
+            return bdd.updateUser(u);
+        }
 
         public static string HashSHA1(string data)
         {

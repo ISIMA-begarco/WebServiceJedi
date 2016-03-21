@@ -218,6 +218,12 @@ namespace DataAccessLayer
             return 0;
         }
 
+        public int updateUser(Utilisateur u)
+        {
+            users.Find(x => x.Login == u.Login).Points = u.Points;
+            return 0;
+        }
+
         public int updateMatches(List<Match> l)
         {
             matches = l;

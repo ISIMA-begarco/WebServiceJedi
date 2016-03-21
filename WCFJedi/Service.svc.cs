@@ -221,7 +221,7 @@ namespace WCFJedi
         {
             List<Utilisateur> l = businessManager.getUsers();
             l.Find(x => x.Login == player).Points = value;
-            return 0 == 0;
+            return 0 == businessManager.updateUser(l.Find(x => x.Login == player));
         }
 
         public bool inscription(string username, string password, string nom, string prenom)

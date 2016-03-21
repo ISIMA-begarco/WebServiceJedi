@@ -77,4 +77,15 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="TournoiWS" nillable="true" type="tns:TournoiWS" />
+  <xs:complexType name="UserWS">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Id" type="xs:int" />
+      <xs:element minOccurs="0" name="Login" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Nom" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Password" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Points" type="xs:int" />
+      <xs:element minOccurs="0" name="Prenom" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="UserWS" nillable="true" type="tns:UserWS" />
 </xs:schema>

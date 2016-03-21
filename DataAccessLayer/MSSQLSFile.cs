@@ -728,6 +728,34 @@ namespace DataAccessLayer
 
             return result;
         }
+        public int updateUser(Utilisateur u)
+        {
+            int result = 0;
+            DataTable dt = new DataTable();
+
+            using (SqlConnection sqlConnection = new SqlConnection(connectionString))
+            {
+                String request = "SELECT id, login, password, nom, prenom, points FROM Users;";
+                SqlCommand sqlCommand = new SqlCommand(request, sqlConnection);
+                sqlConnection.Open();
+                SqlDataAdapter sqlDataAdapter = new SqlDataAdapter(sqlCommand);
+
+                sqlDataAdapter.Fill(dt);
+                sqlConnection.Close();
+            }
+           
+            foreach (DataRow dr in dt.Select())
+            {
+                if(u.Login == dr.Field<string>("Login"))
+                {
+                    dr.SetField<int>("Points", u.Points);
+                }
+            }
+
+            UpdateByCommandBuilder("SELECT id, login, password, nom, prenom, points FROM Users;", dt);
+
+            return result;
+        }
         public bool addUser(Utilisateur u)
         {
             bool result = true;

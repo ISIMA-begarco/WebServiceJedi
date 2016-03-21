@@ -294,6 +294,9 @@
     <Content Include="Views\Jedi\Edit.cshtml" />
     <Content Include="Views\Jedi\Create.cshtml" />
     <Content Include="Views\Jedi\Delete.cshtml" />
+    <Content Include="Service References\ServiceReference\WebApplicationJedi.ServiceReference.UserWS.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
