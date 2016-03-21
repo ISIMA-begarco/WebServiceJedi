@@ -10,6 +10,8 @@ using WebApplicationJedi.ServiceReference;
 namespace WebApplicationJedi.Models {
 	public class CaracteristiqueViewModel {
 
+		public int Id { get; set; }
+
 		[Required]
 		[Display(Name = "Nom")]
 		public string Nom { get; set; }
@@ -26,6 +28,7 @@ namespace WebApplicationJedi.Models {
 		public CaracteristiqueViewModel() { }
 
 		public CaracteristiqueViewModel(ServiceReference.CaracteristiqueWS caractetistique) {
+			this.Id = caractetistique.Id;
 			this.Nom = caractetistique.Nom;
 			this.Definition = caractetistique.Definition;
             this.Valeur = caractetistique.Valeur;

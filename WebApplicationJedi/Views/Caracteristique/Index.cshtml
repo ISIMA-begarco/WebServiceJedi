@@ -1,0 +1,37 @@
+﻿@model WebApplicationJedi.Models.CaracteristiqueCollection
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<div class="jumbotron">
+    <h2>Gestion des caractéristiques</h2>
+    <p>Voici la liste des caractéristiques qu'il est possible de consulter et modifier.</p>
+    <div class="col-lg-12 btn btn-success">
+        @Html.ActionLink("Créer une Nouvelle Caractéristique", "Create")
+    </div>
+</div>
+
+
+    <table class="table table-striped">
+        <tr>
+            <th>@Html.DisplayNameFor(Model => Model.Default.Nom)</th>
+            <th>@Html.DisplayNameFor(Model => Model.Default.Definition)</th>
+            <th>@Html.DisplayNameFor(Model => Model.Default.Valeur)</th>
+            <th>Modifier</th> <!-- Modifier -->
+            <th>Supprimer</th> <!-- Supprimer -->
+        </tr>
+        @foreach(var c in Model.list) {
+            <tr>
+                <td>@Html.DisplayFor(Model => c.Nom)</td>
+                <td>@Html.DisplayFor(Model => c.Definition)</td>
+                <td>@Html.DisplayFor(Model => c.Valeur)</td>
+                <td>
+                    @Html.ActionLink("Modifier", "Edit", new { id = c.Id })
+                </td>
+                <td>
+                    @Html.ActionLink("Supprimer", "Delete", new { id = c.Id })
+                </td>
+            </tr>
+        }
+    </table>

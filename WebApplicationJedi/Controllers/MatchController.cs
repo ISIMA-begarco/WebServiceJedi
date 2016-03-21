@@ -3,12 +3,22 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using WebApplicationJedi.Models;
+using WebApplicationJedi.ServiceReference;
 
 namespace WebApplicationJedi.Controllers {
 	public class MatchController : Controller {
 		// GET: Match
 		public ActionResult Index() {
-			return View();
+			List<MatchViewModel> list = new List<MatchViewModel>();
+
+			using(ServiceReference.ServiceClient service = new ServiceReference.ServiceClient()) {
+				foreach(var match in service.getMatches()) {
+					list.Add(new MatchViewModel(match));
+				}
+			}
+
+			return View(new MatchCollection(list));
 		}
 
 		// GET: Match/Details/5
