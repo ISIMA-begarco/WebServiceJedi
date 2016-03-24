@@ -13,11 +13,11 @@
 </div>
 
 @foreach(var j in Model.list) {
-    <div class="panel-primary">
-        <div class="panel-heading">
+    <div class='@(j.IsSith ? "panel-danger" : "panel-primary")' >
+        <div class="panel-heading" style='@(j.IsSith ? "background-color: red; color: white" : "")'>
             <div class="row">
                 <div class="col-lg-6 text-left">
-                    @Html.DisplayFor(Model => j.Nom) - @Html.DisplayNameFor(model => model.Default.IsSith) @Html.DisplayFor(Model => j.IsSith)
+                    @Html.DisplayFor(Model => j.Nom) - @(j.IsSith? "Sith" : "Jedi")
                 </div>
                 <div class="col-lg-6 text-right">
                     @Html.ActionLink("Modifier", "Edit", new {id = j.Id }) | 
@@ -26,11 +26,11 @@
             </div>
         </div>
         <div class="panel-body">
-            @Html.DisplayNameFor(Model => Model.Default.Caracteristiques)
+            
             <table class="table table-striped">
                 <tr>
                     <th>
-                        @Html.DisplayNameFor(Model => Model.Default.Caracteristiques.Default.Nom)
+                        @Html.DisplayNameFor(Model => Model.Default.Caracteristiques)
                     </th>
                     <th>
                         @Html.DisplayNameFor(Model => Model.Default.Caracteristiques.Default.Definition)
