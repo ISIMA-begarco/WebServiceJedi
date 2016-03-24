@@ -302,8 +302,9 @@
     </Content>
     <Content Include="Views\Caracteristique\Index.cshtml" />
     <Content Include="Views\Game\Index.cshtml">
-      <BrowseToURL>~/Views/Game/Index.cshtml</BrowseToURL>
+      <BrowseToURL>~/Game/Index</BrowseToURL>
     </Content>
+    <Content Include="Views\Game\Details.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Views\Default\" />

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
@@ -26,10 +27,46 @@ namespace WebApplicationJedi.Controllers
             return View(new TournoiCollection(list));
         }
 
-        // GET: Game/Details/5
-        public ActionResult Details(int id)
+        // POST: Jedi/Create
+        [HttpPost]
+        public ActionResult Index(FormCollection collection)
         {
-            return View();
+            TournoiWS ts = null;
+            string nom = collection.Get(1);
+            using (ServiceReference.ServiceClient service = new ServiceReference.ServiceClient())
+            {
+                TournoiWS tn = service.getTournois().Where(x => x.Nom == nom).First();
+                ts = service.playTournoi(tn);
+            }
+            return View("Details", new TournoiViewModel(ts));
+        }
+
+        public ActionResult TournoiSelected(string tournoi)
+        {
+            JediCollection jedis = null;
+            MatchCollection matches = null;
+            using (ServiceReference.ServiceClient service = new ServiceReference.ServiceClient())
+            {
+                List<MatchViewModel> tmpList = new List<MatchViewModel>();
+                List<JediViewModel> tmpList2 = new List<JediViewModel>();
+                foreach (MatchWS mat in ((TournoiWS)service.getTournois().Select(x => x.Nom == tournoi)).Matches)
+                {
+                    tmpList.Add(new MatchViewModel(mat));
+                    if (mat.Jedi1 != null)
+                        tmpList2.Add(new JediViewModel(mat.Jedi1));
+                    if (mat.Jedi2 != null)
+                        tmpList2.Add(new JediViewModel(mat.Jedi2));
+                }
+                matches = new MatchCollection(tmpList);
+                jedis = new JediCollection(tmpList2);
+            }
+            return Json(jedis, JsonRequestBehavior.AllowGet);
+        }
+
+        // GET: Game/Details/5
+        public ActionResult Details(TournoiViewModel tws)
+        {
+            return View(tws);
         }
 
         // GET: Game/Create

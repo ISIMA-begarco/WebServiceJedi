@@ -9,7 +9,7 @@
 @using (Html.BeginForm())
 {
     @Html.AntiForgeryToken()
-    <div class="form-horizontal">
+    <div class="form-horizontal" role="form">
         @Html.ValidationSummary(true)
 
         <!-- vue des tournois -->
@@ -19,22 +19,23 @@
             </div>
             <div class="panel-body">
                 <div class="form-group">
-                    <div class="col-sm-4">
-                        <p>Sélectionnez le tournoi</p>
+                    <div class="col-sm-3">
+                        <label for="tournoi">Sélectionnez le tournoi</label>
                     </div>
-                    <div class="col-sm-8">
+                    <div class="col-sm-9">
                         @if (Model != null)
-                {
-                  <!-- Creation de la liste deroulante et selection de la valeur par defaut -->
+                        {
+                            <!-- Creation de la liste deroulante et selection de la valeur par defaut -->
                             IList<SelectListItem> listeSelection = Model.list.Select(x => new SelectListItem
                             {
                                 Selected = false,
                                 Text = x.Nom,
                                 Value = x.Nom
                             }).ToList();
-                            @Html.DropDownList("Tournoi", listeSelection)
+                            @Html.DropDownList("Tournoi", listeSelection, new { @class = "form-control", runat = "server", AutoPostBack = "True", onselectedindexchanged = "tournoiSelected" })
                         }
                         @Html.ValidationMessageFor(Model => Model.list)
+
                     </div>
                 </div>
             </div>
@@ -45,25 +46,53 @@
             </div>
             <div class="panel-body">
                 <div class="form-group">
-                    <div class="col-sm-4">
-                        <p>Sélectionnez votre Jedi</p>
-                    </div>
-                    <div class="col-sm-8">
+                    <label for="jedi" class="col-sm-3">Sélectionnez votre Jedi</label>
+                    <div class="col-sm-9">
+                        @if (Model != null)
+                        {
+                            <!-- Creation de la liste deroulante et selection de la valeur par defaut -->
+                            IList<SelectListItem> listeSelection = Model.list.First().Jedis.list.Select(x => new SelectListItem
+                            {
+                                Selected = false,
+                                Text = x.Nom,
+                                Value = x.Id.ToString()
+                            }).ToList();
+                            @Html.DropDownList("Jedi", listeSelection, new { id = "jedi", @class = "form-control" })
+                        }
+                        @Html.ValidationMessageFor(Model => Model.list)
                     </div>
                 </div>
                 <div class="form-group">
-                    <div class="col-sm-4">
-                        <p>Entrez votre mise</p>
-                    </div>
-                    <div class="col-sm-8">
-                    </div>
+                    <label for="mise" class="col-sm-3">Entrez votre mise</label>
+                    <div class="col-sm-9"><input type="number" min="0" value="4" class="form-control" id="mise"></div>
                 </div>
             </div>
 
         </div>
 
         <div>
-            <input type="submit" value="Valider" class="btn btn-primary" />
+            <input type="submit" value="Lancer la partie" class="btn btn-primary" />
         </div>
-            </div>
-            }
+    </div>
+}
+
+@section Scripts {
+    <script>
+  function tournoiSelected() {
+    var tournoiName = $('#Tournoi').val();
+    $.ajax({
+        url: '/Game/TournoiSelected',
+        type: "GET",
+        dataType: "JSON",
+        data: { Tournoi: tournoiName },
+        success: function (jedis) {
+            $("#Jedi").html(""); // clear before appending new list
+            $.each(jedis, function (i, jedi) {
+                $("#Jedi").append(
+                    $('<option></option>').val(jedi.Id).html(jedi.Nom));
+            });
+        }
+    });
+  }
+    </script>
+}

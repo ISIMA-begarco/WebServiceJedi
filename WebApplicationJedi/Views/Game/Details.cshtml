@@ -1,0 +1,45 @@
+﻿@model WebApplicationJedi.Models.TournoiViewModel
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Résultats du tournoi</h2>
+
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Nom)
+        </dt>
+
+        <dd>
+            @if (Model != null)
+            {
+                @Model.Nom
+            }
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Matches.list.Where(x => x.Phase == WebApplicationJedi.ServiceReference.EPhaseTournoi.Finale).First().JediVainqueur)
+        </dt>
+
+        <dd>
+            @if(Model.Matches.list.Count != 0 && Model.Matches.list.Where(x => x.Phase == WebApplicationJedi.ServiceReference.EPhaseTournoi.Finale).First().JediVainqueur != null)
+            {
+                @Html.DisplayFor(model => model.Matches.list.Where(x => x.Phase == WebApplicationJedi.ServiceReference.EPhaseTournoi.Finale).First().JediVainqueur.Nom)
+            }
+        </dd>
+
+        <dt>Votre mise</dt>
+        <dd></dd>
+
+        <dt>Vos gains</dt>
+        <dd></dd>
+
+        <dt>Score total</dt>
+        <dd></dd>
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Rejouer encore", "Index")
+</p>
