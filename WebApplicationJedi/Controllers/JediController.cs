@@ -18,42 +18,60 @@ namespace WebApplicationJedi.Controllers {
 					list.Add(new JediViewModel(jedi));
 				}
 			}
-
 			return View(new JediCollection(list));
 		}
 
 		// GET: Jedi/Details/5
 		public ActionResult Details(int id) {
-			
 			return View();
 		}
 
 		// GET: Jedi/Create
 		public ActionResult Create() {
-			return View(new JediViewModel());
+			List<CaracteristiqueViewModel> caracList = new List<CaracteristiqueViewModel>();
+
+			using(ServiceReference.ServiceClient service = new ServiceClient()) {
+				// On va chercher toutes les caracteristiques
+				service.getCaracteristiques().ForEach(x => caracList.Add(new CaracteristiqueViewModel(x)));
+			}
+
+			/* Un tuple parce qu'il faut le jedi et les caracteristiques dispo */
+			return View(Tuple.Create(new JediViewModel(), new CaracteristiqueCollection(caracList)));
 		}
 
 		// POST: Jedi/Create
 		[HttpPost]
 		public ActionResult Create(FormCollection collection) {
-			Console.WriteLine("Creation d'un nouveau jedi");
 			try {
-				// TODO: Add insert logic here
+				ServiceReference.JediWS jedi = new JediWS();
+				List<CaracteristiqueWS> caracList = new List<CaracteristiqueWS>();
 
-				WebApplicationJedi.ServiceReference.JediWS jedi = new JediWS();
-				jedi.Id = 0; // Parce qu'on va le creer
-				jedi.Nom = Convert.ToString(collection.Get("Nom"));
-				jedi.IsSith = Convert.ToBoolean(collection.Get("IsSith"));
+				using(ServiceReference.ServiceClient service = new ServiceClient()) {
+					service.getCaracteristiques().ForEach(x => caracList.Add(x));
 
-				jedi.Caracteristiques = new List<WebApplicationJedi.ServiceReference.CaracteristiqueWS>();
-				// TODO recuperer les caracteristiques et les mettre la
+					/* Item1. sur le champs du jedi parce que on a un tuple */
+					jedi.Id = 0; // Car creation
+					jedi.Nom = Convert.ToString(collection.Get("Item1.Nom"));
+					jedi.IsSith = Convert.ToBoolean(collection.Get("Item1.IsSith") != "false"); // Pour que ca marche bien
+					jedi.Caracteristiques = new List<CaracteristiqueWS>(); // Pour init
 
-				return View("Edit", new JediViewModel(jedi));//truc de test
-															 //return RedirectToAction("Index"); // Le bon truc
-	        } catch {
-			        return RedirectToAction("Index");
-	        }
-        }
+					string[] checkboxes = collection.GetValues("caracteristiques");
+					if(checkboxes != null) {
+						foreach(string s in checkboxes) {
+							//On a que les ids des box selected, on ajoute les caracteristiques
+							Int32 caracId = Convert.ToInt32(s);
+							jedi.Caracteristiques.Add(caracList.First(x => x.Id == caracId));
+						}
+					}
+
+					service.addJedi(jedi); // Ajout du jedi
+				}
+
+				return RedirectToAction("Index"); // Retour a l'index
+			} catch {
+				return RedirectToAction("Index");
+			}
+		}
 
 		// GET: Jedi/Edit/5
 		public ActionResult Edit(int id) {
@@ -96,14 +114,16 @@ namespace WebApplicationJedi.Controllers {
 
 					/* Item1. sur le champs du jedi parce que on a un tuple */
 					jedi.Nom = Convert.ToString(collection.Get("Item1.Nom"));
-					jedi.IsSith = Convert.ToBoolean(collection.Get("Item1.IsSith"));
+					jedi.IsSith = Convert.ToBoolean(collection.Get("Item1.IsSith") != "false");
 					jedi.Caracteristiques = new List<CaracteristiqueWS>(); // Pour RAZ
 
 					string[] checkboxes = collection.GetValues("caracteristiques");
-					foreach(string s in checkboxes) {
-						// On a que les ids des box selected, on ajoute les caracteristiques
-						Int32 caracId = Convert.ToInt32(s);
-						jedi.Caracteristiques.Add(caracList.First(x => x.Id == caracId));
+					if(checkboxes != null) {
+						foreach(string s in checkboxes) {
+							// On a que les ids des box selected, on ajoute les caracteristiques
+							Int32 caracId = Convert.ToInt32(s);
+							jedi.Caracteristiques.Add(caracList.First(x => x.Id == caracId));
+						}
 					}
 
 					service.updateJedi(jedi);
@@ -153,22 +173,5 @@ namespace WebApplicationJedi.Controllers {
 			}
 		}
 
-		//[HttpPost, ActionName("Delete")]
-		//public ActionResult DeleteConfirmed(int id) {
-		//	try {
-		//		using(ServiceReference.ServiceClient service = new ServiceReference.ServiceClient()) {
-		//			WebApplicationJedi.ServiceReference.JediWS jedi = null;
-		//			jedi = service.getJedis().Find(x => x.Id == id); // On tente de le recuperer
-
-		//			if(jedi != null) { // Si on l'a eu, on le supprime
-		//				service.removeJedi(jedi);
-		//			}
-		//		}
-
-		//		return RedirectToAction("Index");
-		//	} catch {
-		//		return RedirectToAction("Index");
-		//	}
-		//}
 	}
 }
