@@ -27,15 +27,18 @@ namespace WebApplicationJedi.Models {
 		public JediViewModel() { }
 
 		public JediViewModel(ServiceReference.JediWS jedi) {
-			this.Id = jedi.Id;
-			this.Nom = jedi.Nom;
-			this.IsSith = jedi.IsSith;
+            if(jedi != null)
+            {
+			    this.Id = jedi.Id;
+			    this.Nom = jedi.Nom;
+			    this.IsSith = jedi.IsSith;
 
-			List<CaracteristiqueViewModel> tmpList = new List<CaracteristiqueViewModel>();
-			foreach(var car in jedi.Caracteristiques) {
-				tmpList.Add(new CaracteristiqueViewModel(car));
-			}
-			this.Caracteristiques = new CaracteristiqueCollection(tmpList);
+			    List<CaracteristiqueViewModel> tmpList = new List<CaracteristiqueViewModel>();
+			    foreach(var car in jedi.Caracteristiques) {
+				    tmpList.Add(new CaracteristiqueViewModel(car));
+			    }
+			    this.Caracteristiques = new CaracteristiqueCollection(tmpList);
+            }
 		}
 	}
 
