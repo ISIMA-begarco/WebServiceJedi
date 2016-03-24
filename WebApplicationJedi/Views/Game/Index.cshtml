@@ -1,0 +1,69 @@
+﻿@model WebApplicationJedi.Models.TournoiCollection
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Participer à un tournoi</h2>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    <div class="form-horizontal">
+        @Html.ValidationSummary(true)
+
+        <!-- vue des tournois -->
+        <div class="panel panel-warning">
+            <div class="panel-heading">
+                <h3 class="panel-title">Tournoi</h3>
+            </div>
+            <div class="panel-body">
+                <div class="form-group">
+                    <div class="col-sm-4">
+                        <p>Sélectionnez le tournoi</p>
+                    </div>
+                    <div class="col-sm-8">
+                        @if (Model != null)
+                {
+                  <!-- Creation de la liste deroulante et selection de la valeur par defaut -->
+                            IList<SelectListItem> listeSelection = Model.list.Select(x => new SelectListItem
+                            {
+                                Selected = false,
+                                Text = x.Nom,
+                                Value = x.Nom
+                            }).ToList();
+                            @Html.DropDownList("Tournoi", listeSelection)
+                        }
+                        @Html.ValidationMessageFor(Model => Model.list)
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="panel panel-warning">
+            <div class="panel-heading">
+                <h3 class="panel-title">Mise</h3>
+            </div>
+            <div class="panel-body">
+                <div class="form-group">
+                    <div class="col-sm-4">
+                        <p>Sélectionnez votre Jedi</p>
+                    </div>
+                    <div class="col-sm-8">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-sm-4">
+                        <p>Entrez votre mise</p>
+                    </div>
+                    <div class="col-sm-8">
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <div>
+            <input type="submit" value="Valider" class="btn btn-primary" />
+        </div>
+            </div>
+            }
