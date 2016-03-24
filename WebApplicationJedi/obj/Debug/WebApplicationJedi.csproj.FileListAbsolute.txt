@@ -76,7 +76,6 @@ O:\OneDrive\GitHub\WebServiceJedi\WebApplicationJedi\bin\DataAccessLayer.pdb
 O:\OneDrive\GitHub\WebServiceJedi\WebApplicationJedi\obj\Debug\WebApplicationJedi.csprojResolveAssemblyReference.cache
 O:\OneDrive\GitHub\WebServiceJedi\WebApplicationJedi\obj\Debug\WebApplicationJedi.dll
 O:\OneDrive\GitHub\WebServiceJedi\WebApplicationJedi\obj\Debug\WebApplicationJedi.pdb
-C:\Users\Benji\GitHub\WebServiceJedi\WebApplicationJedi\obj\Debug\WebApplicationJedi.csprojResolveAssemblyReference.cache
 C:\Users\Benji\GitHub\WebServiceJedi\WebApplicationJedi\bin\ApplicationInsights.config
 C:\Users\Benji\GitHub\WebServiceJedi\WebApplicationJedi\bin\roslyn\csc.exe
 C:\Users\Benji\GitHub\WebServiceJedi\WebApplicationJedi\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
@@ -152,5 +151,6 @@ C:\Users\Benji\GitHub\WebServiceJedi\WebApplicationJedi\bin\Microsoft.Owin.Secur
 C:\Users\Benji\GitHub\WebServiceJedi\WebApplicationJedi\bin\EntitiesLayer.pdb
 C:\Users\Benji\GitHub\WebServiceJedi\WebApplicationJedi\bin\BusinessLayer.pdb
 C:\Users\Benji\GitHub\WebServiceJedi\WebApplicationJedi\bin\DataAccessLayer.pdb
+C:\Users\Benji\GitHub\WebServiceJedi\WebApplicationJedi\obj\Debug\WebApplicationJedi.csprojResolveAssemblyReference.cache
 C:\Users\Benji\GitHub\WebServiceJedi\WebApplicationJedi\obj\Debug\WebApplicationJedi.dll
 C:\Users\Benji\GitHub\WebServiceJedi\WebApplicationJedi\obj\Debug\WebApplicationJedi.pdb

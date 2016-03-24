@@ -1,4 +1,4 @@
-﻿@model WebApplicationJedi.Models.JediViewModel
+﻿@model Tuple<WebApplicationJedi.Models.JediViewModel, WebApplicationJedi.Models.CaracteristiqueCollection>
 
 @{
     ViewBag.Title = "Edit";
@@ -7,74 +7,61 @@
 <h2>Modifier un jedi</h2>
 <hr/>
 
-@using (Html.BeginForm()) {
+<!-- 
+    Item1 -> Jedi
+    Item2 -> CaracteristiqueCollection
+-->
+
+@using (Html.BeginForm(Model.Item1)) { <!-- le formulaire concerne le JediViewModel -->
     @Html.AntiForgeryToken()
     <div class="form-horizontal">
         @Html.ValidationSummary(true)
-        @Html.HiddenFor(Model => Model.Id)
+        @Html.HiddenFor(Model => Model.Item1.Id)
 
         <div class="form-group">
             <div class="col-lg-2">
-                @Html.LabelFor(Model => Model.Nom)
+                @Html.LabelFor(Model => Model.Item1.Nom)
             </div>
             <div class="col-lg-10">
-                @Html.EditorFor(Model => Model.Nom)
-                @Html.ValidationMessageFor(Model => Model.Nom)
+                @Html.EditorFor(Model => Model.Item1.Nom)
+                @Html.ValidationMessageFor(Model => Model.Item1.Nom)
             </div>
         </div>
+
         <div class="form-group">
             <div class="col-lg-2">
-                @Html.LabelFor(Model => Model.IsSith)
+                @Html.LabelFor(Model => Model.Item1.IsSith)
             </div>
             <div class="col-lg-10">
-                @Html.EditorFor(Model => Model.IsSith)
-                @Html.ValidationMessageFor(Model => Model.IsSith)
+                @Html.EditorFor(Model => Model.Item1.IsSith)
+                @Html.ValidationMessageFor(Model => Model.Item1.IsSith)
             </div>
         </div>
         
-        <!-- vue des caracteristiques -->
-        <div>
-            @Html.DisplayNameFor(Model => Model.Caracteristiques)
-            <table class="table table-striped">
-                <tr>
-                    <th>
-                        @Html.LabelFor(Model => Model.Caracteristiques.Default.Nom)
-                    </th>
-                    <th>
-                        @Html.LabelFor(Model => Model.Caracteristiques.Default.Definition)
-                    </th>
-                    <th>
-                        @Html.LabelFor(Model => Model.Caracteristiques.Default.Valeur)
-                    </th>
-                    <th> <!-- Bouton ajout -->
+        @Html.LabelFor(Model => Model.Item1.Caracteristiques)
+        <!-- Caracteristiques du Jedi - deja cochees -->
+        @foreach(var c in Model.Item1.Caracteristiques.list) {
+            <div class="form-group">
+                <div class="col-lg-2">
+                    <input type="checkbox" name="caracteristiques" value="@c.Id" checked="true"/>
+                </div>
+                <div class="col-lg-10">
+                    @Html.DisplayFor(Model => c.Nom) (@Html.DisplayFor(Model => c.Definition)) : @Html.DisplayFor(Model => c.Valeur)
+                </div>
+            </div>
+        }
 
-                    </th>
-                </tr>
-
-                @foreach(var c in Model.Caracteristiques.list) {
-                    <tr>
-                        <td>
-                            @Html.EditorFor(Model => c.Nom)
-                        </td>
-                        <td>
-                            @{  <!-- Creation de la liste deroulante et selection de la valeur par defaut -->
-                                IList<SelectListItem> listeSelection = EnumHelper.GetSelectList(typeof(WebApplicationJedi.ServiceReference.EDefCaracteristique));
-                                listeSelection.Single(x => x.Text.Equals(c.Definition.ToString())).Selected = true;
-                            }
-                            @Html.DropDownList(c.Definition.ToString(), listeSelection)
-                        </td>
-                        <td>
-                            @Html.EditorFor(Model => c.Valeur)
-                        </td>
-                        <td> <!-- Bouton suppression -->
-                        +++++++++++
-
-                        </td>
-                    </tr>
-                }
-            </table>
-            @Html.ValidationMessageFor(Model => Model.Caracteristiques)
-        </div>
+        <!-- Les autres caracteristiques -->
+        @foreach(var c in Model.Item2.list) {
+            <div class="form-group">
+                <div class="col-lg-2">
+                    <input type="checkbox" name="caracteristiques" value="@c.Id"/>
+                </div>
+                <div class="col-lg-10">
+                    @Html.DisplayFor(Model => c.Nom) (@Html.DisplayFor(Model => c.Definition)) : @Html.DisplayFor(Model => c.Valeur)
+                </div>
+            </div>
+        }
 
         <div>
             <div class="btn btn-default">

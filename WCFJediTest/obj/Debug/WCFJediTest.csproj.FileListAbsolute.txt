@@ -29,6 +29,5 @@ C:\Users\Benji\GitHub\WebServiceJedi\WCFJediTest\bin\Debug\WCFJedi.pdb
 C:\Users\Benji\GitHub\WebServiceJedi\WCFJediTest\bin\Debug\BusinessLayer.pdb
 C:\Users\Benji\GitHub\WebServiceJedi\WCFJediTest\bin\Debug\DataAccessLayer.pdb
 C:\Users\Benji\GitHub\WebServiceJedi\WCFJediTest\bin\Debug\fr\Microsoft.VisualStudio.QualityTools.UnitTestFramework.resources.dll
-C:\Users\Benji\GitHub\WebServiceJedi\WCFJediTest\obj\Debug\WCFJediTest.csprojResolveAssemblyReference.cache
 C:\Users\Benji\GitHub\WebServiceJedi\WCFJediTest\obj\Debug\WCFJediTest.dll
 C:\Users\Benji\GitHub\WebServiceJedi\WCFJediTest\obj\Debug\WCFJediTest.pdb

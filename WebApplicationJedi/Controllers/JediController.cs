@@ -58,24 +58,57 @@ namespace WebApplicationJedi.Controllers {
 		// GET: Jedi/Edit/5
 		public ActionResult Edit(int id) {
 			ServiceReference.JediWS jedi = null;
+			List<CaracteristiqueViewModel> caracList = new List<CaracteristiqueViewModel>();
+
 			using(ServiceReference.ServiceClient service = new ServiceClient() ) {
 				jedi = service.getJedis().First(x => x.Id == id);
+
+				if(jedi == null) {
+					return HttpNotFound();
+				}
+
+				/* Selectionne toutes les caracteristiques qui ne sont pas deja dans le jedi */
+				caracList = (from carac in service.getCaracteristiques()
+								where !(jedi.Caracteristiques.Exists(x => x.Id == carac.Id))
+								select new CaracteristiqueViewModel(carac)).ToList();
+
 			}
 
-			if(jedi == null) {
-				return HttpNotFound();
-			}
+			/* Tuple de vues parce qu'il faut le jedi et les autres caracteristiques */
 
-			return View(new JediViewModel(jedi));
+			return View(Tuple.Create(new JediViewModel(jedi), new CaracteristiqueCollection(caracList)));
 		}
 
 		// POST: Jedi/Edit/5
 		[HttpPost]
 		public ActionResult Edit(int id, FormCollection collection) {
 			try {
-				// TODO: Add update logic here
+				ServiceReference.JediWS jedi = null;
+				List<CaracteristiqueWS> caracList = new List<CaracteristiqueWS>();
 
-				return RedirectToAction("Index");
+				using(ServiceReference.ServiceClient service = new ServiceClient()) {
+					jedi = service.getJedis().First(x => x.Id == id);
+					caracList = service.getCaracteristiques();
+				}
+
+				if(jedi == null) {
+					return HttpNotFound();
+				}
+
+				jedi.Nom = Convert.ToString(collection.Get("Nom"));
+				jedi.IsSith = Convert.ToBoolean(collection.Get("IsSith"));
+
+				string[] checkboxes = collection.GetValues("caracteristiques");
+				foreach(string s in checkboxes) {
+					// On a que les ids des box selected, on ajoute les caracteristiques
+					Int32 caracId = Convert.ToInt32(s);
+					jedi.Caracteristiques.Add(caracList.First(x => x.Id == caracId));
+				}
+
+				jedi.Nom += collection.AllKeys;
+
+				return View("Edit", Tuple.Create(new JediViewModel(jedi), new CaracteristiqueCollection(new List<CaracteristiqueViewModel>()))); // test
+				//return RedirectToAction("Index");
 			} catch {
 				return View();
 			}
