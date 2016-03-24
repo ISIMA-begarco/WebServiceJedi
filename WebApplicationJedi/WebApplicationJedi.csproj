@@ -172,6 +172,7 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\CaracteristiqueController.cs" />
     <Compile Include="Controllers\DefaultController.cs" />
+    <Compile Include="Controllers\GameController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\JediController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
@@ -298,6 +299,9 @@
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
     <Content Include="Views\Caracteristique\Index.cshtml" />
+    <Content Include="Views\Game\Index.cshtml">
+      <BrowseToURL>~/Views/Game/Index.cshtml</BrowseToURL>
+    </Content>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
