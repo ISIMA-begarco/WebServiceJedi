@@ -89,26 +89,27 @@ namespace WebApplicationJedi.Controllers {
 				using(ServiceReference.ServiceClient service = new ServiceClient()) {
 					jedi = service.getJedis().First(x => x.Id == id);
 					caracList = service.getCaracteristiques();
+
+					if(jedi == null) {
+						return HttpNotFound();
+					}
+
+					/* Item1. sur le champs du jedi parce que on a un tuple */
+					jedi.Nom = Convert.ToString(collection.Get("Item1.Nom"));
+					jedi.IsSith = Convert.ToBoolean(collection.Get("Item1.IsSith"));
+					jedi.Caracteristiques = new List<CaracteristiqueWS>(); // Pour RAZ
+
+					string[] checkboxes = collection.GetValues("caracteristiques");
+					foreach(string s in checkboxes) {
+						// On a que les ids des box selected, on ajoute les caracteristiques
+						Int32 caracId = Convert.ToInt32(s);
+						jedi.Caracteristiques.Add(caracList.First(x => x.Id == caracId));
+					}
+
+					service.updateJedi(jedi);
 				}
 
-				if(jedi == null) {
-					return HttpNotFound();
-				}
-
-				jedi.Nom = Convert.ToString(collection.Get("Nom"));
-				jedi.IsSith = Convert.ToBoolean(collection.Get("IsSith"));
-
-				string[] checkboxes = collection.GetValues("caracteristiques");
-				foreach(string s in checkboxes) {
-					// On a que les ids des box selected, on ajoute les caracteristiques
-					Int32 caracId = Convert.ToInt32(s);
-					jedi.Caracteristiques.Add(caracList.First(x => x.Id == caracId));
-				}
-
-				jedi.Nom += collection.AllKeys;
-
-				return View("Edit", Tuple.Create(new JediViewModel(jedi), new CaracteristiqueCollection(new List<CaracteristiqueViewModel>()))); // test
-				//return RedirectToAction("Index");
+				return RedirectToAction("Index");
 			} catch {
 				return View();
 			}
