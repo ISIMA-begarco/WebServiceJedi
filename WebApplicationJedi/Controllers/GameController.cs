@@ -19,7 +19,6 @@ namespace WebApplicationJedi.Controllers
             {
                 foreach (var t in service.getTournois())
                 {
-                    Console.WriteLine("coucou");
                     list.Add(new TournoiViewModel(t));
                 }
             }

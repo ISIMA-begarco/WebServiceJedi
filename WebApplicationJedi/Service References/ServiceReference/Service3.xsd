@@ -24,13 +24,29 @@
   <xs:element name="ArrayOfCaracteristiqueWS" nillable="true" type="tns:ArrayOfCaracteristiqueWS" />
   <xs:complexType name="CaracteristiqueWS">
     <xs:sequence>
-      <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/EntitiesLayer" minOccurs="0" name="Definition" type="q1:EDefCaracteristique" />
+      <xs:element minOccurs="0" name="Definition" type="tns:EDefCaracteristiqueWS" />
       <xs:element minOccurs="0" name="Id" type="xs:int" />
       <xs:element minOccurs="0" name="Nom" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Type" type="tns:ETypeCaracteristiqueWS" />
       <xs:element minOccurs="0" name="Valeur" type="xs:int" />
     </xs:sequence>
   </xs:complexType>
   <xs:element name="CaracteristiqueWS" nillable="true" type="tns:CaracteristiqueWS" />
+  <xs:simpleType name="EDefCaracteristiqueWS">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Strength" />
+      <xs:enumeration value="Dexterity" />
+      <xs:enumeration value="Perception" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="EDefCaracteristiqueWS" nillable="true" type="tns:EDefCaracteristiqueWS" />
+  <xs:simpleType name="ETypeCaracteristiqueWS">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Jedi" />
+      <xs:enumeration value="Stade" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="ETypeCaracteristiqueWS" nillable="true" type="tns:ETypeCaracteristiqueWS" />
   <xs:complexType name="ArrayOfStadeWS">
     <xs:sequence>
       <xs:element minOccurs="0" maxOccurs="unbounded" name="StadeWS" nillable="true" type="tns:StadeWS" />
@@ -58,7 +74,7 @@
       <xs:element minOccurs="0" name="Jedi1" nillable="true" type="tns:JediWS" />
       <xs:element minOccurs="0" name="Jedi2" nillable="true" type="tns:JediWS" />
       <xs:element minOccurs="0" name="JediVainqueur" nillable="true" type="tns:JediWS" />
-      <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/EntitiesLayer" minOccurs="0" name="Phase" type="q2:EPhaseTournoi" />
+      <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/EntitiesLayer" minOccurs="0" name="Phase" type="q1:EPhaseTournoi" />
       <xs:element minOccurs="0" name="Stade" nillable="true" type="tns:StadeWS" />
     </xs:sequence>
   </xs:complexType>

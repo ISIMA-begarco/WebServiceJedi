@@ -15,7 +15,9 @@ namespace WCFJedi
         [DataMember]
         public string Nom { get; set; }
         [DataMember]
-        public EDefCaracteristique Definition { get; set; }
+        public EDefCaracteristiqueWS Definition { get; set; }
+        [DataMember]
+        public ETypeCaracteristiqueWS Type { get; set; }
         [DataMember]
         public int Valeur { get; set; }
         
@@ -23,7 +25,8 @@ namespace WCFJedi
         {
             this.Id = c.Id;
             this.Nom = c.Nom;
-            this.Definition = c.Definition;
+            this.Type = (ETypeCaracteristiqueWS)c.Type;
+            this.Definition = (EDefCaracteristiqueWS) c.Definition;
             this.Valeur = c.Valeur;
         }
     }

@@ -116,13 +116,16 @@ namespace WebApplicationJedi.ServiceReference {
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private WebApplicationJedi.ServiceReference.EDefCaracteristique DefinitionField;
+        private WebApplicationJedi.ServiceReference.EDefCaracteristiqueWS DefinitionField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private int IdField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string NomField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private WebApplicationJedi.ServiceReference.ETypeCaracteristiqueWS TypeField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private int ValeurField;
@@ -138,7 +141,7 @@ namespace WebApplicationJedi.ServiceReference {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public WebApplicationJedi.ServiceReference.EDefCaracteristique Definition {
+        public WebApplicationJedi.ServiceReference.EDefCaracteristiqueWS Definition {
             get {
                 return this.DefinitionField;
             }
@@ -177,6 +180,19 @@ namespace WebApplicationJedi.ServiceReference {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
+        public WebApplicationJedi.ServiceReference.ETypeCaracteristiqueWS Type {
+            get {
+                return this.TypeField;
+            }
+            set {
+                if ((this.TypeField.Equals(value) != true)) {
+                    this.TypeField = value;
+                    this.RaisePropertyChanged("Type");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
         public int Valeur {
             get {
                 return this.ValeurField;
@@ -200,8 +216,8 @@ namespace WebApplicationJedi.ServiceReference {
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="EDefCaracteristique", Namespace="http://schemas.datacontract.org/2004/07/EntitiesLayer")]
-    public enum EDefCaracteristique : int {
+    [System.Runtime.Serialization.DataContractAttribute(Name="EDefCaracteristiqueWS", Namespace="http://schemas.datacontract.org/2004/07/WCFJedi")]
+    public enum EDefCaracteristiqueWS : int {
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
         Strength = 0,
@@ -211,6 +227,17 @@ namespace WebApplicationJedi.ServiceReference {
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
         Perception = 2,
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="ETypeCaracteristiqueWS", Namespace="http://schemas.datacontract.org/2004/07/WCFJedi")]
+    public enum ETypeCaracteristiqueWS : int {
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        Jedi = 0,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        Stade = 1,
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]

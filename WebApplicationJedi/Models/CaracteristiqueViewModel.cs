@@ -1,14 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using WCFJedi;
 using WebApplicationJedi.ServiceReference;
 
-namespace WebApplicationJedi.Models {
-	public class CaracteristiqueViewModel {
+namespace WebApplicationJedi.Models
+{
+    public class CaracteristiqueViewModel {
 
 		public int Id { get; set; }
 
@@ -16,21 +12,26 @@ namespace WebApplicationJedi.Models {
 		[Display(Name = "Nom")]
 		public string Nom { get; set; }
 
-		[Required]
-		[Display(Name = "Definition")]
-		public EDefCaracteristique Definition { get; set; }
+        [Required]
+        [Display(Name = "Definition")]
+        public EDefCaracteristiqueWS Definition { get; set; }
 
-		[Required]
+        [Required]
+        [Display(Name = "Type")]
+        public ETypeCaracteristiqueWS Type { get; set; }
+
+        [Required]
 		[Display(Name = "Valeur")]
 		[Range(0,100)]
 		public int Valeur { get; set; }
 
 		public CaracteristiqueViewModel() { }
 
-		public CaracteristiqueViewModel(ServiceReference.CaracteristiqueWS caractetistique) {
+		public CaracteristiqueViewModel(CaracteristiqueWS caractetistique) {
 			this.Id = caractetistique.Id;
 			this.Nom = caractetistique.Nom;
-			this.Definition = caractetistique.Definition;
+            this.Definition = caractetistique.Definition;
+            this.Type = caractetistique.Type;
             this.Valeur = caractetistique.Valeur;
 		}
 	}
