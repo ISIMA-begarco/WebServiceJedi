@@ -30,31 +30,6 @@
             </div>
         </div>
 
-        @{  <!-- Creation de la liste deroulante et selection de la valeur par defaut -->
-            /*
-            List<Object> jediElements = new List<object>(); // Liste de ce qui va dans la liste deroulante
-            foreach(var j in Model.Item2.list) {
-                jediElements.Add(new { value = j.Id, text = j.Nom });
-            }
-            */
-
-            List<SelectListItem> jediSelector = new List<SelectListItem>();
-            foreach(var j in Model.Item2.list) {
-                SelectListItem i = new SelectListItem();
-                i.Value = Convert.ToString(j.Id);
-                i.Text = j.Nom;
-                jediSelector.Add(i);
-            }
-
-            List<SelectListItem> stadeSelector = new List<SelectListItem>();
-            foreach(var s in Model.Item3.list) {
-                SelectListItem i = new SelectListItem();
-                i.Value = Convert.ToString(s.Id);
-                i.Text = s.Planete;
-                stadeSelector.Add(i);
-            }
-        }
-
         <!-- Les matchs pour les Huitieme -->
         @for(int i = (int)WebApplicationJedi.ServiceReference.EPhaseTournoi.HuitiemeFinale1; i >= (int)WebApplicationJedi.ServiceReference.EPhaseTournoi.HuitiemeFinale8; i--) {
             <strong>Match : @((WebApplicationJedi.ServiceReference.EPhaseTournoi)i)</strong>
@@ -63,10 +38,7 @@
                     @Html.DisplayNameFor(Model => Model.Item1.Matches.Default.Jedi1)
                 </div>
                 <div class="col-xs-10">
-                    @{  <!-- Je copie la liste pour modifier celui qui est select de base -->
-                        List<SelectListItem> tmp = new List<SelectListItem>(jediSelector);
-                    }
-                    @Html.DropDownList("jedi1for" + i, tmp)
+                    @Html.DropDownList("jedi1for" + i, new SelectList(Model.Item2.list, "Id", "Nom"))
                 </div>
             </div>
             <div class="row"> <!-- Jedi 2-->
@@ -74,10 +46,7 @@
                     @Html.DisplayNameFor(Model => Model.Item1.Matches.Default.Jedi2)
                 </div>
                 <div class="col-xs-10">
-                    @{  <!-- Je copie la liste pour modifier celui qui est select de base -->    
-                        List<SelectListItem> tmp2 = new List<SelectListItem>(jediSelector);
-                    }
-                    @Html.DropDownList("jedi2for" + i, tmp2)
+                    @Html.DropDownList("jedi2for" + i, new SelectList(Model.Item2.list, "Id", "Nom"))
                 </div>
             </div>
             <div class="row"> <!-- Stade -->
@@ -85,10 +54,7 @@
                     @Html.DisplayNameFor(Model => Model.Item1.Matches.Default.Stade)
                 </div>
                 <div class="col-xs-10">
-                    @{  <!-- Je copie la liste pour modifier celui qui est select de base -->
-                        List<SelectListItem> tmpS = new List<SelectListItem>(stadeSelector);
-                    }
-                    @Html.DropDownList("stadefor" + i, tmpS)
+                    @Html.DropDownList("stadefor" + i, new SelectList(Model.Item3.list, "Id", "Planete"))
                 </div>
             </div>
             <hr/>
@@ -102,10 +68,7 @@
                     @Html.DisplayNameFor(Model => Model.Item1.Matches.Default.Stade)
                 </div>
                 <div class="col-xs-10">
-                    @{  <!-- Je copie la liste pour modifier celui qui est select de base -->
-                        List<SelectListItem> tmpS = new List<SelectListItem>(stadeSelector);
-                    }
-                    @Html.DropDownList("stadefor" + i, tmpS)
+                    @Html.DropDownList("stadefor" + i, new SelectList(Model.Item3.list, "Id", "Planete"))
                 </div>
             </div>
             <hr/>

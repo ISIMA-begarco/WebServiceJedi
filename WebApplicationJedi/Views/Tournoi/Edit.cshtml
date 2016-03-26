@@ -30,24 +30,6 @@
             </div>
         </div>
 
-        @{  <!-- Creation de la liste deroulante et selection de la valeur par defaut -->
-            List<SelectListItem> jediSelector = new List<SelectListItem>();
-            foreach(var j in Model.Item2.list) {
-                SelectListItem i = new SelectListItem();
-                i.Value = Convert.ToString(j.Id);
-                i.Text = j.Nom;
-                jediSelector.Add(i);
-            }
-
-            List<SelectListItem> stadeSelector = new List<SelectListItem>();
-            foreach(var s in Model.Item3.list) {
-                SelectListItem i = new SelectListItem();
-                i.Value = Convert.ToString(s.Id);
-                i.Text = s.Planete;
-                stadeSelector.Add(i);
-            }
-        }
-
         <!-- Les matchs pour les Huitieme -->
         @for(int i = (int)WebApplicationJedi.ServiceReference.EPhaseTournoi.HuitiemeFinale1; i >= (int)WebApplicationJedi.ServiceReference.EPhaseTournoi.HuitiemeFinale8; i--) {
             <strong>Match : @((WebApplicationJedi.ServiceReference.EPhaseTournoi)i)</strong>
@@ -57,12 +39,7 @@
                     @Html.DisplayNameFor(Model => Model.Item1.Matches.Default.Jedi1)
                 </div>
                 <div class="col-xs-10">
-                    @{  <!-- Je copie la liste pour modifier celui qui est select de base -->
-                        List<SelectListItem> tmp = new List<SelectListItem>(jediSelector);
-                        tmp.First(x => Convert.ToInt32(x.Value) == Model.Item1.Matches.list.First(y => ((int)y.Phase) == i).Jedi1.Id).Selected = true;
-                    }
-                    @Html.DropDownList("jedi1for" + i, tmp)
-
+                    @Html.DropDownList("jedi1for" + i, new SelectList(Model.Item2.list, "Id", "Nom", Model.Item1.Matches.list.First(y => ((int)y.Phase) == i).Jedi1.Id))
                 </div>
             </div>
             <div class="row">
@@ -71,11 +48,7 @@
                     @Html.DisplayNameFor(Model => Model.Item1.Matches.Default.Jedi2)
                 </div>
                 <div class="col-xs-10">
-                    @{  <!-- Je copie la liste pour modifier celui qui est select de base -->    
-                        List<SelectListItem> tmp2 = new List<SelectListItem>(jediSelector);
-                        tmp2.First(x => Convert.ToInt32(x.Value) == Model.Item1.Matches.list.First(y => ((int)y.Phase) == i).Jedi2.Id).Selected = true;
-                    }
-                    @Html.DropDownList("jedi2for" + i, tmp2)
+                    @Html.DropDownList("jedi2for" + i, new SelectList(Model.Item2.list, "Id", "Nom", Model.Item1.Matches.list.First(y => ((int)y.Phase) == i).Jedi2.Id))
                 </div>
             </div>
             <div class="row">
@@ -84,11 +57,7 @@
                     @Html.DisplayNameFor(Model => Model.Item1.Matches.Default.Stade)
                 </div>
                 <div class="col-xs-10">
-                    @{  <!-- Je copie la liste pour modifier celui qui est select de base -->    
-                        List<SelectListItem> tmpS = new List<SelectListItem>(stadeSelector);
-                        tmpS.First(x => Convert.ToInt32(x.Value) == Model.Item1.Matches.list.First(y => ((int)y.Phase) == i).Stade.Id).Selected = true;
-                    }
-                    @Html.DropDownList("stadefor" + i, tmpS)
+                    @Html.DropDownList("stadefor" + i, new SelectList(Model.Item3.list, "Id", "Planete", Model.Item1.Matches.list.First(y => ((int)y.Phase) == i).Stade.Id))
                 </div>
             </div>
             <hr />
@@ -103,11 +72,7 @@
                     @Html.DisplayNameFor(Model => Model.Item1.Matches.Default.Stade)
                 </div>
                 <div class="col-xs-10">
-                    @{  <!-- Je copie la liste pour modifier celui qui est select de base -->    
-                        List<SelectListItem> tmpS = new List<SelectListItem>(stadeSelector);
-                        tmpS.First(x => Convert.ToInt32(x.Value) == Model.Item1.Matches.list.First(y => ((int)y.Phase) == i).Stade.Id).Selected = true;
-                    }
-                    @Html.DropDownList("stadefor" + i, tmpS)
+                    @Html.DropDownList("stadefor" + i, new SelectList(Model.Item3.list, "Id", "Planete", Model.Item1.Matches.list.First(y => ((int)y.Phase) == i).Stade.Id))
                 </div>
             </div>
             <hr />
@@ -117,9 +82,9 @@
             <div class="btn btn-default">
                 @Html.ActionLink("Annuler", "Index")
             </div>
-            <input type="submit" value="Créer" class="btn btn-success" />
+            <input type="submit" value="Valider" class="btn btn-primary" />
         </div>
 
     </div>
 
-            }
+}
