@@ -4,16 +4,16 @@
 winexe
 C#
 .cs
-O:\OneDrive\GitHub\WebServiceJedi\ApplicationWPF\obj\Debug\
+C:\Users\Benji\Documents\GitHubVisualStudio\WebServiceJedi\ApplicationWPF\obj\Debug\
 ApplicationWPF
 none
 false
 DEBUG;TRACE
-O:\OneDrive\GitHub\WebServiceJedi\ApplicationWPF\App.xaml
+C:\Users\Benji\Documents\GitHubVisualStudio\WebServiceJedi\ApplicationWPF\App.xaml
 26-1193390681
 
 421189188958
-16-555787325
+16-1651929997
 Frames\FightPage.xaml;Frames\NewJediPagexaml.xaml;Frames\PlayPageFrame\MultiplayerPage.xaml;Frames\PlayPageFrame\OnePlayerPage.xaml;Frames\PlayPageFrame\PariMultiplayer.xaml;Frames\PlayPageFrame\PariOnePlayer.xaml;Frames\WinnerPage.xaml;UserControls\ButtonSoft.xaml;ConnexionWindow.xaml;Frames\MainMenu.xaml;Frames\PlayPage.xaml;MainWindow.xaml;UserControls\Tournoi\CtrlTournoi.xaml;UserControls\Tournoi\TournoisView.xaml;UserControls\ComboBoxJedi.xaml;UserControls\ComboBoxStade.xaml;UserControls\ComboBoxTournoi.xaml;UserControls\Stade\StadesView.xaml;UserControls\Jedi\JedisView.xaml;UserControls\Match\MatchsView.xaml;UserControls\PlayChoice.xaml;UserControls\Jedi\CtrlJedi.xaml;UserControls\Match\CtrlMatch.xaml;ViewModel\Gestion\CtrlResearch.xaml;UserControls\Stade\CtrlStade.xaml;Frames\GestionTournament.xaml;
 
 False

@@ -1,0 +1,42 @@
+﻿@model WebApplicationJedi.Models.TournoiViewModel
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Supprimer un Tournoi</h2>
+<hr/>
+
+@using(Html.BeginForm()) {
+    @Html.HiddenFor(Model => Model.Id)
+
+    <div class="row">
+        <div class="col-xs-2">@Html.LabelFor(Model => Model.Nom)</div>
+        <div class="col-xs-10">@Html.DisplayFor(Model => Model.Nom)</div>
+    </div>
+
+    @Html.DisplayNameFor(Model => Model.Matches)
+    <table class="table table-striped">
+        <tr>
+            <th>@Html.DisplayNameFor(Model => Model.Matches.Default.Phase)</th>
+            <th>@Html.DisplayNameFor(Model => Model.Matches.Default.Stade)</th>
+            <th>@Html.DisplayNameFor(Model => Model.Matches.Default.Jedi1)</th>
+            <th>@Html.DisplayNameFor(Model => Model.Matches.Default.Jedi2)</th>
+        </tr>
+        @foreach(var m in Model.Matches.list) {
+            <tr>
+                <td>@Html.DisplayFor(Model => m.Phase)</td>
+                <td>@Html.DisplayFor(Model => m.Stade.Planete)</td>
+                <td>@if(m.Jedi1 != null) { @Html.DisplayFor(Model => m.Jedi1.Nom) }</td>
+                <td>@if(m.Jedi2 != null) { @Html.DisplayFor(Model => m.Jedi2.Nom) }</td>
+            </tr>
+        }
+    </table>
+
+    <div>
+        <div class="btn btn-default">
+            @Html.ActionLink("Annuler", "Index")
+        </div>
+        <input type="submit" value="Supprimer" class="btn btn-danger" />
+    </div>
+}

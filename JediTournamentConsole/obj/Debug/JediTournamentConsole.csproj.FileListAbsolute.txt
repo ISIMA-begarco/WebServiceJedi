@@ -34,3 +34,15 @@ C:\Users\Benji\GitHub\WebServiceJedi\JediTournamentConsole\bin\Debug\DataAccessL
 C:\Users\Benji\GitHub\WebServiceJedi\JediTournamentConsole\obj\Debug\JediTournamentConsole.csprojResolveAssemblyReference.cache
 C:\Users\Benji\GitHub\WebServiceJedi\JediTournamentConsole\obj\Debug\JediTournamentConsole.exe
 C:\Users\Benji\GitHub\WebServiceJedi\JediTournamentConsole\obj\Debug\JediTournamentConsole.pdb
+C:\Users\Benji\Documents\GitHubVisualStudio\WebServiceJedi\JediTournamentConsole\bin\Debug\JediTournamentConsole.exe.config
+C:\Users\Benji\Documents\GitHubVisualStudio\WebServiceJedi\JediTournamentConsole\bin\Debug\JediTournamentConsole.exe
+C:\Users\Benji\Documents\GitHubVisualStudio\WebServiceJedi\JediTournamentConsole\bin\Debug\JediTournamentConsole.pdb
+C:\Users\Benji\Documents\GitHubVisualStudio\WebServiceJedi\JediTournamentConsole\bin\Debug\BusinessLayer.dll
+C:\Users\Benji\Documents\GitHubVisualStudio\WebServiceJedi\JediTournamentConsole\bin\Debug\EntitiesLayer.dll
+C:\Users\Benji\Documents\GitHubVisualStudio\WebServiceJedi\JediTournamentConsole\bin\Debug\DataAccessLayer.dll
+C:\Users\Benji\Documents\GitHubVisualStudio\WebServiceJedi\JediTournamentConsole\bin\Debug\BusinessLayer.pdb
+C:\Users\Benji\Documents\GitHubVisualStudio\WebServiceJedi\JediTournamentConsole\bin\Debug\EntitiesLayer.pdb
+C:\Users\Benji\Documents\GitHubVisualStudio\WebServiceJedi\JediTournamentConsole\bin\Debug\DataAccessLayer.pdb
+C:\Users\Benji\Documents\GitHubVisualStudio\WebServiceJedi\JediTournamentConsole\obj\Debug\JediTournamentConsole.csprojResolveAssemblyReference.cache
+C:\Users\Benji\Documents\GitHubVisualStudio\WebServiceJedi\JediTournamentConsole\obj\Debug\JediTournamentConsole.exe
+C:\Users\Benji\Documents\GitHubVisualStudio\WebServiceJedi\JediTournamentConsole\obj\Debug\JediTournamentConsole.pdb

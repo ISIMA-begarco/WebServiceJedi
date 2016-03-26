@@ -19,3 +19,10 @@ C:\Users\Benji\GitHub\WebServiceJedi\DataAccessLayer\bin\Debug\EntitiesLayer.pdb
 C:\Users\Benji\GitHub\WebServiceJedi\DataAccessLayer\obj\Debug\DataAccessLayer.csprojResolveAssemblyReference.cache
 C:\Users\Benji\GitHub\WebServiceJedi\DataAccessLayer\obj\Debug\DataAccessLayer.dll
 C:\Users\Benji\GitHub\WebServiceJedi\DataAccessLayer\obj\Debug\DataAccessLayer.pdb
+C:\Users\Benji\Documents\GitHubVisualStudio\WebServiceJedi\DataAccessLayer\bin\Debug\DataAccessLayer.dll
+C:\Users\Benji\Documents\GitHubVisualStudio\WebServiceJedi\DataAccessLayer\bin\Debug\DataAccessLayer.pdb
+C:\Users\Benji\Documents\GitHubVisualStudio\WebServiceJedi\DataAccessLayer\bin\Debug\EntitiesLayer.dll
+C:\Users\Benji\Documents\GitHubVisualStudio\WebServiceJedi\DataAccessLayer\bin\Debug\EntitiesLayer.pdb
+C:\Users\Benji\Documents\GitHubVisualStudio\WebServiceJedi\DataAccessLayer\obj\Debug\DataAccessLayer.csprojResolveAssemblyReference.cache
+C:\Users\Benji\Documents\GitHubVisualStudio\WebServiceJedi\DataAccessLayer\obj\Debug\DataAccessLayer.dll
+C:\Users\Benji\Documents\GitHubVisualStudio\WebServiceJedi\DataAccessLayer\obj\Debug\DataAccessLayer.pdb

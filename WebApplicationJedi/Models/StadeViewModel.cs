@@ -10,6 +10,8 @@ using WebApplicationJedi.ServiceReference;
 namespace WebApplicationJedi.Models {
 	public class StadeViewModel {
 
+		public int Id { get; set; }
+
 		[Required]
 		[Display(Name = "Planète")]
 		public string Planete { get; set; }
@@ -25,6 +27,7 @@ namespace WebApplicationJedi.Models {
 		public StadeViewModel() { }
 
 		public StadeViewModel(ServiceReference.StadeWS stade) {
+			this.Id = stade.Id;
 			this.Planete = stade.Planete;
 			this.NbPlaces = stade.NbPlaces;
 

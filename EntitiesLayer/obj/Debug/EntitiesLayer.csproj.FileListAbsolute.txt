@@ -13,3 +13,7 @@ C:\Users\Benji\GitHub\WebServiceJedi\EntitiesLayer\bin\Debug\EntitiesLayer.pdb
 C:\Users\Benji\GitHub\WebServiceJedi\EntitiesLayer\obj\Debug\EntitiesLayer.csprojResolveAssemblyReference.cache
 C:\Users\Benji\GitHub\WebServiceJedi\EntitiesLayer\obj\Debug\EntitiesLayer.dll
 C:\Users\Benji\GitHub\WebServiceJedi\EntitiesLayer\obj\Debug\EntitiesLayer.pdb
+C:\Users\Benji\Documents\GitHubVisualStudio\WebServiceJedi\EntitiesLayer\bin\Debug\EntitiesLayer.dll
+C:\Users\Benji\Documents\GitHubVisualStudio\WebServiceJedi\EntitiesLayer\bin\Debug\EntitiesLayer.pdb
+C:\Users\Benji\Documents\GitHubVisualStudio\WebServiceJedi\EntitiesLayer\obj\Debug\EntitiesLayer.dll
+C:\Users\Benji\Documents\GitHubVisualStudio\WebServiceJedi\EntitiesLayer\obj\Debug\EntitiesLayer.pdb

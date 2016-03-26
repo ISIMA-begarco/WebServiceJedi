@@ -1,0 +1,86 @@
+﻿@model Tuple<WebApplicationJedi.Models.TournoiViewModel, WebApplicationJedi.Models.JediCollection, WebApplicationJedi.Models.StadeCollection>
+
+<!--
+    Item1 -> Tournoi
+    Item2 -> JediCollection
+    Item3 -> StadeCollection
+-->
+
+@{
+    ViewBag.Title = "Create";
+}
+
+<h2>Créer un Tournoi</h2>
+<hr/>
+
+@using (Html.BeginForm(Model.Item1)) {
+    @Html.AntiForgeryToken()
+
+    <div class="form-horizontal">
+        @Html.ValidationSummary(true)
+        @Html.HiddenFor(Model => Model.Item1.Id)
+
+        <div class="form-group">
+            <div class="col-xs-2">
+                @Html.LabelFor(Model => Model.Item1.Nom)
+            </div>
+            <div class="col-xs-10">
+                @Html.EditorFor(Model => Model.Item1.Nom)
+                @Html.ValidationMessageFor(Model => Model.Item1.Nom)
+            </div>
+        </div>
+
+        <!-- Les matchs pour les Huitieme -->
+        @for(int i = (int)WebApplicationJedi.ServiceReference.EPhaseTournoi.HuitiemeFinale1; i >= (int)WebApplicationJedi.ServiceReference.EPhaseTournoi.HuitiemeFinale8; i--) {
+            <strong>Match : @((WebApplicationJedi.ServiceReference.EPhaseTournoi)i)</strong>
+            <div class="row"> <!-- Jedi 1 -->
+                <div class="col-xs-2">
+                    @Html.DisplayNameFor(Model => Model.Item1.Matches.Default.Jedi1)
+                </div>
+                <div class="col-xs-10">
+                    @Html.DropDownList("jedi1for" + i, new SelectList(Model.Item2.list, "Id", "Nom"))
+                </div>
+            </div>
+            <div class="row"> <!-- Jedi 2-->
+                <div class="col-xs-2">
+                    @Html.DisplayNameFor(Model => Model.Item1.Matches.Default.Jedi2)
+                </div>
+                <div class="col-xs-10">
+                    @Html.DropDownList("jedi2for" + i, new SelectList(Model.Item2.list, "Id", "Nom"))
+                </div>
+            </div>
+            <div class="row"> <!-- Stade -->
+                <div class="col-xs-2">
+                    @Html.DisplayNameFor(Model => Model.Item1.Matches.Default.Stade)
+                </div>
+                <div class="col-xs-10">
+                    @Html.DropDownList("stadefor" + i, new SelectList(Model.Item3.list, "Id", "Planete"))
+                </div>
+            </div>
+            <hr/>
+        }
+
+        <!-- Les autres matchs-->
+        @for(int i = (int)WebApplicationJedi.ServiceReference.EPhaseTournoi.QuartFinale1; i >= (int)WebApplicationJedi.ServiceReference.EPhaseTournoi.Finale; i--) {
+            <strong>Match : @((WebApplicationJedi.ServiceReference.EPhaseTournoi)i)</strong>
+            <div class="row"> <!-- Stade -->
+                <div class="col-xs-2">
+                    @Html.DisplayNameFor(Model => Model.Item1.Matches.Default.Stade)
+                </div>
+                <div class="col-xs-10">
+                    @Html.DropDownList("stadefor" + i, new SelectList(Model.Item3.list, "Id", "Planete"))
+                </div>
+            </div>
+            <hr/>
+        }
+
+        <div>
+            <div class="btn btn-default">
+                @Html.ActionLink("Annuler", "Index")
+            </div>
+            <input type="submit" value="Créer" class="btn btn-success" />
+        </div>
+
+    </div>
+
+}

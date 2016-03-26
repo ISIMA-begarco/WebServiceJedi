@@ -1,0 +1,74 @@
+﻿@model Tuple<WebApplicationJedi.Models.StadeViewModel, WebApplicationJedi.Models.CaracteristiqueCollection>
+
+@{
+    ViewBag.Title = "Edit";
+}
+
+<h2>Modifier un Stade</h2>
+<hr/>
+
+<!--
+    Item1 -> Stade
+    Item2 -> CaracteristiqueCollection
+-->
+
+@using(Html.BeginForm(Model.Item1)) {
+    @Html.AntiForgeryToken()
+
+    <div class="form-horizontal">
+        @Html.ValidationSummary(true)
+        @Html.HiddenFor(Model => Model.Item1.Id)
+
+        <div class="form-group">
+            <div class="col-lg-2">
+                @Html.LabelFor(Model => Model.Item1.Planete)
+            </div>
+            <div class="col-lg-10">
+                @Html.EditorFor(Model => Model.Item1.Planete)
+                @Html.ValidationMessageFor(Model => Model.Item1.Planete)
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-lg-2">
+                @Html.LabelFor(Model => Model.Item1.NbPlaces)
+            </div>
+            <div class="col-lg-10">
+                @Html.EditorFor(Model => Model.Item1.NbPlaces)
+                @Html.ValidationMessageFor(Model => Model.Item1.NbPlaces)
+            </div>
+        </div>
+
+        @Html.LabelFor(Model => Model.Item1.Caracteristiques)
+        <!-- Caracteristiques du stade - deja cochees -->
+        @foreach(var c in Model.Item1.Caracteristiques.list) {
+            <div class="form-group">
+                <div class="col-lg-2">
+                    <input type="checkbox" name="caracteristiques" value="@c.Id" checked="true" />
+                </div>
+                <div class="col-lg-10">
+                    @Html.DisplayFor(Model => c.Nom) (@Html.DisplayFor(Model => c.Definition)) : @Html.DisplayFor(Model => c.Valeur)
+                </div>
+            </div>
+        }
+
+        <!-- Les autres caracteristiques -->
+        @foreach(var c in Model.Item2.list) {
+            <div class="form-group">
+                <div class="col-lg-2">
+                    <input type="checkbox" name="caracteristiques" value="@c.Id" />
+                </div>
+                <div class="col-lg-10">
+                    @Html.DisplayFor(Model => c.Nom) (@Html.DisplayFor(Model => c.Definition)) : @Html.DisplayFor(Model => c.Valeur)
+                </div>
+            </div>
+        }
+
+        <div>
+            <div class="btn btn-default">
+                @Html.ActionLink("Annuler", "Index")
+            </div>
+            <input type="submit" value="Valider" class="btn btn-primary" />
+        </div>
+    </div>
+}
