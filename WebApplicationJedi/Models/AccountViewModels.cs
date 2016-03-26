@@ -49,9 +49,9 @@ namespace WebApplicationJedi.Models
     public class LoginViewModel
     {
         [Required]
-        [Display(Name = "Courrier électronique")]
-        [EmailAddress]
-        public string Email { get; set; }
+        [Display(Name = "Login")]
+        [DataType(DataType.Text)]
+        public string Login { get; set; }
 
         [Required]
         [DataType(DataType.Password)]
@@ -65,9 +65,26 @@ namespace WebApplicationJedi.Models
     public class RegisterViewModel
     {
         [Required]
+        [DataType(DataType.Text)]
+        [Display(Name = "Login")]
+        public string Login { get; set; }
+
+        [Required]
         [EmailAddress]
-        [Display(Name = "Courrier électronique")]
+        [Display(Name = "Adresse électronique")]
         public string Email { get; set; }
+
+        [Required]
+        [StringLength(100, ErrorMessage = "La chaîne {0} doit comporter au moins {2} caractères.", MinimumLength = 1)]
+        [DataType(DataType.Text)]
+        [Display(Name = "Prénom")]
+        public string Prenom { get; set; }
+
+        [Required]
+        [StringLength(100, ErrorMessage = "La chaîne {0} doit comporter au moins {2} caractères.", MinimumLength = 1)]
+        [DataType(DataType.Text)]
+        [Display(Name = "Nom")]
+        public string Nom { get; set; }
 
         [Required]
         [StringLength(100, ErrorMessage = "La chaîne {0} doit comporter au moins {2} caractères.", MinimumLength = 6)]

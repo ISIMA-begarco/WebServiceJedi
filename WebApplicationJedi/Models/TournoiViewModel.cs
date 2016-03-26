@@ -12,7 +12,13 @@ namespace WebApplicationJedi.Models {
 
 		public int Id { get; set; }
 
-		[Required]
+
+        public int Mise { get; set; }
+        public int Gain { get; set; }
+        public int Total { get; set; }
+        public string Jedi { get; set; }
+
+        [Required]
 		[Display(Name = "Nom du tournoi")]
 		public string Nom { get; set; }
 

@@ -55,7 +55,7 @@
                             {
                                 Selected = false,
                                 Text = x.Nom,
-                                Value = x.Id.ToString()
+                                Value = x.Nom
                             }).ToList();
                             @Html.DropDownList("Jedi", listeSelection, new { id = "jedi", @class = "form-control" })
                         }
@@ -64,7 +64,8 @@
                 </div>
                 <div class="form-group">
                     <label for="mise" class="col-sm-3">Entrez votre mise</label>
-                    <div class="col-sm-9"><input type="number" min="0" value="4" class="form-control" id="mise"></div>
+                    <div class="col-sm-9"><input name="Mise" type="number" min="0" value="4" class="form-control" id="mise"></div>
+                    @Html.ValidationMessageFor(Model => Model.list)
                 </div>
             </div>
 

@@ -297,7 +297,7 @@ namespace DataAccessLayer
 
             using (SqlConnection sqlConnection = new SqlConnection(connectionString))
             {
-                String request = "SELECT id, login, password, nom, prenom, points FROM users WHERE login='" + login + "';";
+                String request = "SELECT id, login, password, nom, prenom, points, id2 FROM users WHERE login='" + login + "';";
                 SqlCommand sqlCommand = new SqlCommand(request, sqlConnection);
                 sqlConnection.Open();
 
@@ -317,7 +317,7 @@ namespace DataAccessLayer
 
             using (SqlConnection sqlConnection = new SqlConnection(connectionString))
             {
-                String request = "SELECT id, login, password, nom, prenom, points FROM users;";
+                String request = "SELECT id, login, password, nom, prenom, points, id2 FROM users;";
                 SqlCommand sqlCommand = new SqlCommand(request, sqlConnection);
                 sqlConnection.Open();
 
@@ -735,7 +735,7 @@ namespace DataAccessLayer
 
             using (SqlConnection sqlConnection = new SqlConnection(connectionString))
             {
-                String request = "SELECT id, login, password, nom, prenom, points FROM Users;";
+                String request = "SELECT id, login, password, nom, prenom, points, id2 FROM Users;";
                 SqlCommand sqlCommand = new SqlCommand(request, sqlConnection);
                 sqlConnection.Open();
                 SqlDataAdapter sqlDataAdapter = new SqlDataAdapter(sqlCommand);
@@ -752,7 +752,7 @@ namespace DataAccessLayer
                 }
             }
 
-            UpdateByCommandBuilder("SELECT id, login, password, nom, prenom, points FROM Users;", dt);
+            UpdateByCommandBuilder("SELECT id, login, password, nom, prenom, points, id2 FROM Users;", dt);
 
             return result;
         }
@@ -764,7 +764,7 @@ namespace DataAccessLayer
 
             using (SqlConnection sqlConnection = new SqlConnection(connectionString))
             {
-                String request = "SELECT id, login, password, nom, prenom, points FROM Users;";
+                String request = "SELECT id, login, password, nom, prenom, points, id2 FROM Users;";
                 SqlCommand sqlCommand = new SqlCommand(request, sqlConnection);
                 sqlConnection.Open();
                 SqlDataAdapter sqlDataAdapter = new SqlDataAdapter(sqlCommand);
@@ -795,7 +795,7 @@ namespace DataAccessLayer
                 row.SetField<string>("Nom", u.Nom);
                 row.SetField<int>("Points", u.Points);
                 dt.Rows.Add(row);
-                UpdateByCommandBuilder("SELECT id, login, password, nom, prenom, points FROM Users;", dt);
+                UpdateByCommandBuilder("SELECT id, login, password, nom, prenom, points, id2 FROM Users;", dt);
             }
 
             return result;
@@ -807,7 +807,7 @@ namespace DataAccessLayer
 
             using (SqlConnection sqlConnection = new SqlConnection(connectionString))
             {
-                String request = "SELECT id, login, password, nom, prenom, points FROM Users;";
+                String request = "SELECT id, login, password, nom, prenom, points, id2 FROM Users;";
                 SqlCommand sqlCommand = new SqlCommand(request, sqlConnection);
                 sqlConnection.Open();
                 SqlDataAdapter sqlDataAdapter = new SqlDataAdapter(sqlCommand);
@@ -823,7 +823,7 @@ namespace DataAccessLayer
                     c.Delete();
             }
 
-            UpdateByCommandBuilder("SELECT id, login, password, nom, prenom, points FROM Users;", dt);
+            UpdateByCommandBuilder("SELECT id, login, password, nom, prenom, points, id2 FROM Users;", dt);
             
             return result;
         }

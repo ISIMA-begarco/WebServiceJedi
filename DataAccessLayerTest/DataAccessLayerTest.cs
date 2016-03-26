@@ -125,7 +125,7 @@ namespace DataAccessLayerTest
                 Assert.AreEqual(debTaille, bdd.getCaracteristiques().Count);
             }
         }
-
+        /*
         [TestMethod]
         public void getUpdateUsersTest()
         {
@@ -142,7 +142,7 @@ namespace DataAccessLayerTest
                 Assert.AreEqual<int>(debTaille, bdd.getUsers().Count);
             }
         }
-
+        */
         [TestMethod]
         public void getUpdateTournoisTest()
         {

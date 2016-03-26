@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.AspNet.Identity;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -14,21 +15,29 @@ namespace WebApplicationJedi.Controllers
         // GET: Game
         public ActionResult Index()
         {
-            List<TournoiViewModel> list = new List<TournoiViewModel>();
-
-            using (ServiceReference.ServiceClient service = new ServiceReference.ServiceClient())
+            if (User.Identity.IsAuthenticated)
             {
-                foreach (var t in service.getTournois())
-                {
-                    list.Add(new TournoiViewModel(t));
-                }
-            }
+                List<TournoiViewModel> list = new List<TournoiViewModel>();
 
-            return View(new TournoiCollection(list));
+                using (ServiceReference.ServiceClient service = new ServiceReference.ServiceClient())
+                {
+                    foreach (var t in service.getTournois())
+                    {
+                        list.Add(new TournoiViewModel(t));
+                    }
+                }
+
+                return View(new TournoiCollection(list));
+            }
+            else
+            {
+                return Redirect("Login");
+            }
         }
 
-        // POST: Jedi/Create
+        // POST: Game/play
         [HttpPost]
+        [ValidateAntiForgeryToken]
         public ActionResult Index(FormCollection collection)
         {
             TournoiWS ts = null;
@@ -38,7 +47,25 @@ namespace WebApplicationJedi.Controllers
                 TournoiWS tn = service.getTournois().Where(x => x.Nom == nom).First();
                 ts = service.playTournoi(tn);
             }
-            return View("Details", new TournoiViewModel(ts));
+            TournoiViewModel mod = new TournoiViewModel(ts);
+
+            using (ServiceReference.ServiceClient service = new ServiceReference.ServiceClient())
+            {
+                int butin = service.getPoints(User.Identity.GetUserName());
+                mod.Mise = Int32.Parse(collection.Get("Mise"));
+                mod.Mise = (mod.Mise < 0 ? 0 : mod.Mise > butin ? butin : mod.Mise);
+                mod.Jedi = collection.Get("Jedi");
+                bool gagne = mod.Jedi == mod.Matches.list.Where(x => x.Phase == WebApplicationJedi.ServiceReference.EPhaseTournoi.Finale).First().JediVainqueur.Nom;
+                mod.Gain = (gagne ? mod.Mise * 2 + 1 : 0);
+                var userId = User.Identity.GetUserId();
+
+                mod.Total = service.getPoints(User.Identity.GetUserName());
+                mod.Total += (gagne ? mod.Gain : -mod.Mise);
+                mod.Total = mod.Total < 0 ? 0 : mod.Total;
+                service.setPoints(User.Identity.GetUserName(), mod.Total);
+            }
+
+            return View("Details", mod);
         }
 
         public ActionResult TournoiSelected(string tournoi)
@@ -64,20 +91,21 @@ namespace WebApplicationJedi.Controllers
         }
 
         // GET: Game/Details/5
+        [ValidateAntiForgeryToken]
         public ActionResult Details(TournoiViewModel tws)
         {
             return View(tws);
         }
 
         // GET: Game/Create
-        public ActionResult Create()
+        private ActionResult Create()
         {
             return View();
         }
 
         // POST: Game/Create
         [HttpPost]
-        public ActionResult Create(FormCollection collection)
+        private ActionResult Create(FormCollection collection)
         {
             try
             {
@@ -92,14 +120,14 @@ namespace WebApplicationJedi.Controllers
         }
 
         // GET: Game/Edit/5
-        public ActionResult Edit(int id)
+        private ActionResult Edit(int id)
         {
             return View();
         }
 
         // POST: Game/Edit/5
         [HttpPost]
-        public ActionResult Edit(int id, FormCollection collection)
+        private ActionResult Edit(int id, FormCollection collection)
         {
             try
             {
@@ -114,14 +142,14 @@ namespace WebApplicationJedi.Controllers
         }
 
         // GET: Game/Delete/5
-        public ActionResult Delete(int id)
+        private ActionResult Delete(int id)
         {
             return View();
         }
 
         // POST: Game/Delete/5
         [HttpPost]
-        public ActionResult Delete(int id, FormCollection collection)
+        private ActionResult Delete(int id, FormCollection collection)
         {
             try
             {

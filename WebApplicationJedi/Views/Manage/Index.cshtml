@@ -10,6 +10,10 @@
     <h4>Changer les paramètres de votre compte</h4>
     <hr />
     <dl class="dl-horizontal">
+        <dt>Votre nom :</dt>
+        <dd>@Model.Prenom @Model.Nom</dd>
+        <dt>Votre score :</dt>
+        <dd>@Model.Points crédits</dd>
         <dt>Mot de passe :</dt>
         <dd>
             [
@@ -30,13 +34,13 @@
         </dd>
         @*
             Les numéros de téléphone peuvent servir de second facteur de vérification dans un système d'authentification à 2 facteurs.
-             
+
              Consultez <a href="http://go.microsoft.com/fwlink/?LinkId=403804">cet article</a>
                 pour des détails sur la configuration de cette application ASP.NET en vue de la prise en charge de l'authentification à 2 facteurs via des SMS.
-             
+
              Décommentez le bloc suivant après avoir configuré l'authentification à 2 facteurs
         *@
-        @*  
+        @*
             <dt>Numéro de téléphone :</dt>
             <dd>
                 @(Model.PhoneNumber ?? "Aucun") [
