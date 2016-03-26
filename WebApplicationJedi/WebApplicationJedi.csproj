@@ -308,6 +308,9 @@
     <Content Include="Views\Stade\Create.cshtml" />
     <Content Include="Views\Stade\Edit.cshtml" />
     <Content Include="Views\Stade\Delete.cshtml" />
+    <Content Include="Views\Tournoi\Create.cshtml" />
+    <Content Include="Views\Tournoi\Edit.cshtml" />
+    <Content Include="Views\Tournoi\Delete.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Views\Default\" />
