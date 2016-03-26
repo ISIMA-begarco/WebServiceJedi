@@ -27,3 +27,12 @@ C:\Users\Benji\GitHub\WebServiceJedi\BusinessLayer\bin\Debug\EntitiesLayer.pdb
 C:\Users\Benji\GitHub\WebServiceJedi\BusinessLayer\obj\Debug\BusinessLayer.csprojResolveAssemblyReference.cache
 C:\Users\Benji\GitHub\WebServiceJedi\BusinessLayer\obj\Debug\BusinessLayer.dll
 C:\Users\Benji\GitHub\WebServiceJedi\BusinessLayer\obj\Debug\BusinessLayer.pdb
+C:\Users\Benji\Documents\GitHubVisualStudio\WebServiceJedi\BusinessLayer\bin\Debug\BusinessLayer.dll
+C:\Users\Benji\Documents\GitHubVisualStudio\WebServiceJedi\BusinessLayer\bin\Debug\BusinessLayer.pdb
+C:\Users\Benji\Documents\GitHubVisualStudio\WebServiceJedi\BusinessLayer\bin\Debug\DataAccessLayer.dll
+C:\Users\Benji\Documents\GitHubVisualStudio\WebServiceJedi\BusinessLayer\bin\Debug\EntitiesLayer.dll
+C:\Users\Benji\Documents\GitHubVisualStudio\WebServiceJedi\BusinessLayer\bin\Debug\DataAccessLayer.pdb
+C:\Users\Benji\Documents\GitHubVisualStudio\WebServiceJedi\BusinessLayer\bin\Debug\EntitiesLayer.pdb
+C:\Users\Benji\Documents\GitHubVisualStudio\WebServiceJedi\BusinessLayer\obj\Debug\BusinessLayer.csprojResolveAssemblyReference.cache
+C:\Users\Benji\Documents\GitHubVisualStudio\WebServiceJedi\BusinessLayer\obj\Debug\BusinessLayer.dll
+C:\Users\Benji\Documents\GitHubVisualStudio\WebServiceJedi\BusinessLayer\obj\Debug\BusinessLayer.pdb

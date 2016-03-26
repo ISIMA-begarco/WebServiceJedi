@@ -31,8 +31,12 @@ namespace WebApplicationJedi.Controllers {
 			List<CaracteristiqueViewModel> caracList = new List<CaracteristiqueViewModel>();
 
 			using(ServiceReference.ServiceClient service = new ServiceClient()) {
-				// On va chercher toutes les caracteristiques
-				service.getCaracteristiques().ForEach(x => caracList.Add(new CaracteristiqueViewModel(x)));
+				// On va chercher toutes les caracteristiques de Jedi
+				service.getCaracteristiques().ForEach(x => {
+					if(x.Type == ServiceReference.ETypeCaracteristiqueWS.Jedi) {
+						caracList.Add(new CaracteristiqueViewModel(x));
+					}
+				});
 			}
 
 			/* Un tuple parce qu'il faut le jedi et les caracteristiques dispo */
@@ -47,7 +51,11 @@ namespace WebApplicationJedi.Controllers {
 				List<CaracteristiqueWS> caracList = new List<CaracteristiqueWS>();
 
 				using(ServiceReference.ServiceClient service = new ServiceClient()) {
-					service.getCaracteristiques().ForEach(x => caracList.Add(x));
+					service.getCaracteristiques().ForEach(x => {
+						if(x.Type == ServiceReference.ETypeCaracteristiqueWS.Jedi) {
+							caracList.Add(x);
+						}
+					});
 
 					/* Item1. sur le champs du jedi parce que on a un tuple */
 					jedi.Id = 0; // Car creation
@@ -85,9 +93,10 @@ namespace WebApplicationJedi.Controllers {
 					return HttpNotFound();
 				}
 
-				/* Selectionne toutes les caracteristiques qui ne sont pas deja dans le jedi */
+				/* Selectionne toutes les caracteristiques Jedi qui ne sont pas deja dans le jedi */
 				caracList = (from carac in service.getCaracteristiques()
-								where !(jedi.Caracteristiques.Exists(x => x.Id == carac.Id))
+								where !(jedi.Caracteristiques.Exists(x => x.Id == carac.Id)) 
+									&& carac.Type == ServiceReference.ETypeCaracteristiqueWS.Jedi
 								select new CaracteristiqueViewModel(carac)).ToList();
 
 			}
@@ -106,7 +115,11 @@ namespace WebApplicationJedi.Controllers {
 
 				using(ServiceReference.ServiceClient service = new ServiceClient()) {
 					jedi = service.getJedis().First(x => x.Id == id);
-					caracList = service.getCaracteristiques();
+					service.getCaracteristiques().ForEach(x => {
+						if(x.Type == ServiceReference.ETypeCaracteristiqueWS.Jedi) {
+							caracList.Add(x);
+						}
+					});
 
 					if(jedi == null) {
 						return HttpNotFound();

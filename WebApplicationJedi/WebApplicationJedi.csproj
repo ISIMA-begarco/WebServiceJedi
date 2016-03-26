@@ -305,6 +305,9 @@
       <BrowseToURL>~/Game/Index</BrowseToURL>
     </Content>
     <Content Include="Views\Game\Details.cshtml" />
+    <Content Include="Views\Stade\Create.cshtml" />
+    <Content Include="Views\Stade\Edit.cshtml" />
+    <Content Include="Views\Stade\Delete.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Views\Default\" />

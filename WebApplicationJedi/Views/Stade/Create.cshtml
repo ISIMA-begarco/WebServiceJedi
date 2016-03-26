@@ -1,0 +1,80 @@
+﻿@model Tuple<WebApplicationJedi.Models.StadeViewModel, WebApplicationJedi.Models.CaracteristiqueCollection>
+
+@{
+    ViewBag.Title = "Create";
+}
+
+<h2>Créer un Stade</h2>
+<hr/>
+
+<!--
+    Item1 -> Stade
+    Item2-> CaracteristiqueCollection
+-->
+
+@using (Html.BeginForm(Model.Item1)) {
+    @Html.AntiForgeryToken()
+
+    <div class="form-horizontal">
+        @Html.ValidationSummary(true)
+        @Html.HiddenFor(Model => Model.Item1.Id)
+
+        <div class="panel panel-primary">
+            <div class="panel-heading">
+                <strong>Détails</strong>
+            </div>
+            <div class="panel-body">
+                <div class="form-group">
+                    <div class="col-xs-2">
+                        @Html.LabelFor(Model => Model.Item1.Planete)
+                    </div>
+                    <div class="col-xs-10">
+                        @Html.EditorFor(Model => Model.Item1.Planete)
+                        @Html.ValidationMessageFor(Model => Model.Item1.Planete)
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-xs-2">
+                        @Html.LabelFor(Model => Model.Item1.NbPlaces)
+                    </div>
+                    <div class="col-xs-10">
+                        @Html.EditorFor(Model => Model.Item1.NbPlaces)
+                        @Html.ValidationMessageFor(Model => Model.Item1.NbPlaces)
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="panel panel-primary">
+            <div class="panel-heading">
+                <strong>@Html.LabelFor(Model => Model.Item1.Caracteristiques)</strong>
+            </div>
+            <!-- Les caracteristiques -->
+            <ul class="panel-body" style="list-style-type:none">
+                @foreach(var c in Model.Item2.list) {
+                    <li class="row">
+                        <input class="col-xs-1" type="checkbox" name="caracteristiques" id="@c.Id" value="@c.Id" /><label class="col-xs-3" for="@c.Id">@Html.DisplayFor(Model => c.Nom)</label>
+
+                        <div class="col-xs-12 col-sm-8">
+                            <div class="progress progress-striped active">
+                                <div class='progress-bar @(c.Definition==WebApplicationJedi.ServiceReference.EDefCaracteristiqueWS.Perception ? "progress-bar-info" : (c.Definition==WebApplicationJedi.ServiceReference.EDefCaracteristiqueWS.Strength ? "progress-bar-danger" : "progress-bar-warning"))' role="progressbar" aria-valuenow="@c.Valeur"
+                                        aria-valuemin="0" aria-valuemax="100" style="width:@c.Valeur%">
+                                    <span class="sr-only">@c.Valeur% Complete</span>
+                                    <span class="progress-value"><strong>@c.Valeur @c.Definition</strong></span>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <br />
+                }
+            </ul>
+        </div>
+        <div>
+            <div class="btn btn-default">
+                @Html.ActionLink("Annuler", "Index")
+            </div>
+            <input type="submit" value="Créer" class="btn btn-success" />
+        </div>
+
+    </div>
+}
