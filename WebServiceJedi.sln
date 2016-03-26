@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
-VisualStudioVersion = 14.0.23107.0
+VisualStudioVersion = 14.0.24720.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JediTournamentConsole", "JediTournamentConsole\JediTournamentConsole.csproj", "{834579C7-F006-4BC1-910A-C13AAC6454FE}"
 EndProject
@@ -36,6 +36,12 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApplicationJedi", "WebApplicationJedi\WebApplicationJedi.csproj", "{198B3908-CAF8-4CFB-94DB-EAC682A84411}"
 	ProjectSection(ProjectDependencies) = postProject
 		{937CCA0F-99A5-4BDB-A519-B6B1749D21C5} = {937CCA0F-99A5-4BDB-A519-B6B1749D21C5}
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Database", "Database", "{C1EA2CF7-D277-4F61-A5A1-E7100E49A03C}"
+	ProjectSection(SolutionItems) = preProject
+		Database\JediTournament.mdf = Database\JediTournament.mdf
+		Database\JediTournament_log.ldf = Database\JediTournament_log.ldf
 	EndProjectSection
 EndProject
 Global

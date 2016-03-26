@@ -16,6 +16,9 @@ namespace WebApplicationJedi
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
+            /* rajouté par Benoît */
+            string coco = AppDomain.CurrentDomain.BaseDirectory.Split(new string[] { "WebApplicationJedi" }, StringSplitOptions.RemoveEmptyEntries)[0]+"Database";
+            AppDomain.CurrentDomain.SetData("DataDirectory", coco);
         }
     }
 }

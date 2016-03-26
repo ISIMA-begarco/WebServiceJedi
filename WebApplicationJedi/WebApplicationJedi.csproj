@@ -182,6 +182,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="MemberShip\MemberShip.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\CaracteristiqueViewModel.cs" />
     <Compile Include="Models\IdentityModels.cs" />
@@ -199,8 +200,12 @@
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="App_Data\JediTournament.mdf" />
-    <Content Include="App_Data\JediTournament_log.ldf" />
+    <Content Include="..\Database\JediTournament.mdf">
+      <Link>App_Data\JediTournament.mdf</Link>
+    </Content>
+    <Content Include="..\Database\JediTournament_log.ldf">
+      <Link>App_Data\JediTournament_log.ldf</Link>
+    </Content>
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="favicon.ico" />
@@ -228,14 +233,18 @@
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
     <Content Include="Web.Release.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
-    <Content Include="Views\Web.config" />
+    <Content Include="Views\Web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
