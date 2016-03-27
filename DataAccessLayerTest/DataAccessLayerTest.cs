@@ -43,6 +43,7 @@ namespace DataAccessLayerTest
             List<Stade> liste = bdd.getStades();
             debTaille = liste.Count;
             Assert.AreNotEqual<int>(liste.Count, 0);
+            Assert.AreEqual(2, liste.Find(x => x.Planete == "Kamino").Caracteristiques.Count);
             if (liste.Count > 0)
             {
                 Stade j = new Stade(0, 999, "Planete Test", new List<Caracteristique>() { bdd.getCaracteristiques().First() });

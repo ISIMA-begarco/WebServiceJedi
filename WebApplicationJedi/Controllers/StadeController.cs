@@ -13,8 +13,11 @@ namespace WebApplicationJedi.Controllers {
 			List<StadeViewModel> list = new List<StadeViewModel>();
 
 			using(ServiceReference.ServiceClient service = new ServiceReference.ServiceClient()) {
-				service.getStades().ForEach(x => list.Add(new StadeViewModel(x)));
-			}
+                foreach (var stade in service.getStades())
+                {
+                    list.Add(new StadeViewModel(stade));
+                }
+            }
 
 			return View(new StadeCollection(list));
 		}

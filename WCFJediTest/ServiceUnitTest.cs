@@ -77,6 +77,7 @@ namespace WCFJediTest
             List<StadeWS> stades = client.getStades();
             Assert.IsNotNull(stades);
             StadeWS kamino = stades.Find(x => x.Planete.Equals("Kamino"));
+            Assert.AreEqual(2, kamino.Caracteristiques.Count);
             Assert.IsNotNull(kamino);
             client.Close();
         }

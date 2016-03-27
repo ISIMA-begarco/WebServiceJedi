@@ -257,7 +257,7 @@ namespace DataAccessLayer
                     using (SqlConnection sqlConnection2 = new SqlConnection(connectionString))
                     {
                         String id = sqlDataReader.GetInt32((int)JediField.ID).ToString();
-                        String request2 = "SELECT C.id, C.nom, C.def, C.type, C.valeur FROM stades s, caracteristiques C, StadeCarac SC WHERE S.id=" + id + " AND S.id=SC.idstade AND S.id=SC.idcarac;";
+                        String request2 = "SELECT C.id, C.nom, C.def, C.type, C.valeur FROM stades s, caracteristiques C, StadeCarac SC WHERE S.id=" + id + " AND S.id=SC.idstade AND C.id=SC.idcarac;";
                         SqlCommand sqlCommand2 = new SqlCommand(request2, sqlConnection2);
                         sqlConnection2.Open();
 
