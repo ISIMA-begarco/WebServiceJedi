@@ -4,15 +4,77 @@
 
 <div class="jumbotron">
     <h1>WebService Jedi !</h1>
-    <p class="lead">Cette page web va permettre de gérer les différentes entités du tournoi de Jedis.</p>
+    <p class="lead">Cette Application Web va permettre de gérer les entités des Tournois de Jedi ainsi que de les jouer !</p>
 </div>
 
 <div class="row">
     <div class="col-md-12">
         <h2>Informations complémentaires</h2>
-        <p>
-            ...
-        </p>
-    </div>
 
+        <div class="panel panel-primary">
+            <div class="panel-heading">
+                @Html.ActionLink("Jouer", "Index", "Game")
+            </div>
+            <div class="panel-body">
+                <p>
+                    Il vous est possible de Jouer un Tournoi et de parier sur le vainqueur. Pour se faire, vous devez au préalable vous connecter (ou créer un compte). Choisissez ensuite le Tournoi que vous voulez lancer, le nom du Jedi sur lequel vous pariez, ainsi que la somme misée.
+                    Chaque nouveau compte débute avec un solde de 1000 points. Si vous aviez parié sur le vainqueur vous gagnerez 2 fois votre mise, dans le cas contraire, vous perdez juste votre mise.
+                </p>
+            </div>
+        </div>
+
+        <div class="panel panel-primary">
+            <div class="panel-heading">
+                @Html.ActionLink("Jedis", "Index", "Jedi")
+            </div>
+            <div class="panel-body">
+                <p>
+                    Sur la page de gestion des Jedis, il est possible de créer un nouveau jedi grace au bouton de création qui se trouve tout en haut de la page. Il faudra alors lui choisir un Nom, définir s'il est Sith ou non ainsi que cocher les cases correspondantes aux caractéristiques que vous souhaitez lui atrribuer. Enfin cliquez sur le bouton Créer pour valider.
+                </p>
+                <p>
+                    Il est également possible de modifier un Jedi qui est déjà existant dans la base de données en cliquant sur l'option Modifier se trouvant en face du nom du Jedi. Il sera ensuite possible de modifier complètement le Jedi.
+                </p>
+                <p>
+                    Enfin vous pouvez aussi supprimer un Jedi si vous le souhaitez, en cliquant sur l'option Supprimer se trouvant en face du nom du Jedi. Un formulaire récapitulatif sur le Jedi vous demandera si vous voulez vraiment supprimer ce Jedi.
+                </p>
+            </div>
+        </div>
+
+        <div class="panel panel-primary">
+            <div class="panel-heading">
+                @Html.ActionLink("Stades", "Index", "Stade")
+            </div>
+            <div class="panel-body">
+                <p>
+                    Sur la page de gestion des Stades, vous pourrez créer votre propre stade. Pour cela, cliquez sur le bouton Créer se trouvant en haut de la page. Il vous sera ensuite demandé de rensigner le nom du Stade, sa capacité en nombre de places et éventuellement des caractéristiques qui affecteront les combatants. Une fois terminé, cliquez sur le bouton Créer pour valider.
+                </p>
+                <p>
+                    Si vous souhaitez modifier un stade, ceci est possible en choisissant l'option Modifier se trouvant face au nom du Stade que vous souhaitez modifier. Vous pourrez changer son nom, sa capacité et ses caractéristiques.
+                </p>
+                <p>
+                    Si un Stade ne vous plaît pas, vous pourrez le supprimer en cliquant sur l'option Supprimer se trouvant en face du nom du Stade.
+                </p>
+            </div>
+        </div>
+
+        <div class="panel panel-primary">
+            <div class="panel-heading">
+                @Html.ActionLink("Tournois", "Index", "Tournoi")
+            </div>
+            <div class="panel-body">
+                <p>
+                    Si vous souhaitez jouer un Tournoi comportant vos Jedis préférés, il est possible de créer votre propre Tournoi. Pour ce faire, il faut choisir l'option Créer se trouvant en haut de la page de gestion des Tournois.
+                    Pour les phases de Huitième, vous serez amenés a choisir un Jedi et son opposant ainsi qu'un Stade.
+                    Pour les autres phases du Tournoi, il vous sera uniquement demandé de sélectionner le stade dans lequel le match aura lieu.
+                </p>
+                <p>
+                    Lorsqu'un match de Tournoi ne vous convient pas, il est tout à fait possible de modifier celui-ci grace a l'option Modifier qui se trouve en face du nom de celui-ci. Vous pourrez alors modifier n'importe quel Match de ce Tournoi à votre guise. Pour terminer, n'oubliez pas de cliquer sur le bouton Valider.
+                </p>
+                <p>
+                    Il vous est possible de supprimer un Tournoi ne vous satisfaisant pas du tout en cliquant sur l'option Supprimer se trouvant en face du nom de ce Tournoi. Avant de confirmer la suppression, une fenêtre affichant les détails de ce Tournoi vous demandera confirmation de suppression.
+                </p>
+            </div>
+        </div>
+
+    </div>
 </div>

@@ -17,3 +17,4 @@ O:\OneDrive\GitHub\WebServiceJedi\EntitiesLayer\bin\Debug\EntitiesLayer.pdb
 O:\OneDrive\GitHub\WebServiceJedi\EntitiesLayer\obj\Debug\EntitiesLayer.dll
 O:\OneDrive\GitHub\WebServiceJedi\EntitiesLayer\obj\Debug\EntitiesLayer.pdb
 O:\OneDrive\GitHub\WebServiceJedi\EntitiesLayer\obj\Debug\EntitiesLayer.csprojResolveAssemblyReference.cache
+C:\Users\Benji\Documents\GitHubVisualStudio\WebServiceJedi\EntitiesLayer\obj\Debug\EntitiesLayer.csprojResolveAssemblyReference.cache
