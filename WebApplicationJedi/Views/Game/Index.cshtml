@@ -51,7 +51,7 @@
                         @if (Model != null)
                         {
                             <!-- Creation de la liste deroulante et selection de la valeur par defaut -->
-                            IList<SelectListItem> listeSelection = Model.list.First().Jedis.list.Select(x => new SelectListItem
+                            IList<SelectListItem> listeSelection = Model.participants.Select(x => new SelectListItem
                             {
                                 Selected = false,
                                 Text = x.Nom,
@@ -77,8 +77,4 @@
     </div>
 }
 
-@section JavaScript
-{
-    <script type="text/javascript" src="@Url.Content("/Scripts/game.js")"></script>
-}
 

@@ -30,7 +30,6 @@
                         <ul class="dropdown-menu">
                             <li>@Html.ActionLink("Jedis", "Index", "Jedi")</li>
                             <li>@Html.ActionLink("Stades", "Index", "Stade")</li>
-                            <li>@Html.ActionLink("Caractéristiques", "Index", "Caracteristique")</li>
                             <li>@Html.ActionLink("Tournois", "Index", "Tournoi")</li>
                         </ul>
                     </li>
@@ -52,5 +51,8 @@
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
     @RenderSection("scripts", required: false)
+
+    <script type="text/javascript" src="@Url.Content("/Scripts/game.js")"></script>
 </body>
+
 </html>

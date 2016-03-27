@@ -51,14 +51,23 @@ namespace WebApplicationJedi.Models {
 		}
 	}
 
-	public class TournoiCollection {
-		public List<TournoiViewModel> list { get; set; }
+	public class TournoiCollection
+    {
+        public List<TournoiViewModel> list { get; set; }
+        public List<JediViewModel> participants { get; set; }
 
-		public TournoiCollection(List<TournoiViewModel> list) {
-			this.list = list;
-		}
+        public TournoiCollection(List<TournoiViewModel> list)
+        {
+            this.list = list;
+        }
 
-		public TournoiViewModel Default {
+        public TournoiCollection(List<TournoiViewModel> list, List<JediViewModel> list2)
+        {
+            this.list = list;
+            this.participants = list2;
+        }
+
+        public TournoiViewModel Default {
 			get { return new TournoiViewModel(); }
 		}
 	}

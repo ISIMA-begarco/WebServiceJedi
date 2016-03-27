@@ -18,6 +18,7 @@ namespace WebApplicationJedi.Controllers
             if (User.Identity.IsAuthenticated)
             {
                 List<TournoiViewModel> list = new List<TournoiViewModel>();
+                List<JediViewModel> part = new List<JediViewModel>();
 
                 using (ServiceReference.ServiceClient service = new ServiceReference.ServiceClient())
                 {
@@ -25,9 +26,13 @@ namespace WebApplicationJedi.Controllers
                     {
                         list.Add(new TournoiViewModel(t));
                     }
+                    foreach (var t in service.getJedis())
+                    {
+                        part.Add(new JediViewModel(t));
+                    }
                 }
 
-                return View(new TournoiCollection(list));
+                return View(new TournoiCollection(list, part));
             }
             else
             {

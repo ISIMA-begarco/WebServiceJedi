@@ -20,13 +20,13 @@
             }
         </dd>
         <dt>
-            @Html.DisplayNameFor(model => model.Matches.list.Where(x => x.Phase == WebApplicationJedi.ServiceReference.EPhaseTournoi.Finale).First().JediVainqueur)
+            @Html.DisplayNameFor(model => model.Matches.list.Where(x => x.Phase == WebApplicationJedi.ServiceReference.EPhaseTournoiWS.Finale).First().JediVainqueur)
         </dt>
 
         <dd>
-            @if(Model.Matches.list.Count != 0 && Model.Matches.list.Where(x => x.Phase == WebApplicationJedi.ServiceReference.EPhaseTournoi.Finale).First().JediVainqueur != null)
+            @if(Model.Matches.list.Count != 0 && Model.Matches.list.Where(x => x.Phase == WebApplicationJedi.ServiceReference.EPhaseTournoiWS.Finale).First().JediVainqueur != null)
             {
-                @Html.DisplayFor(model => model.Matches.list.Where(x => x.Phase == WebApplicationJedi.ServiceReference.EPhaseTournoi.Finale).First().JediVainqueur.Nom)
+                @Html.DisplayFor(model => model.Matches.list.Where(x => x.Phase == WebApplicationJedi.ServiceReference.EPhaseTournoiWS.Finale).First().JediVainqueur.Nom)
             }
         </dd>
 
