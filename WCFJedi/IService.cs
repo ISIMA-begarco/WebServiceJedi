@@ -33,6 +33,9 @@ namespace WCFJedi
         bool addJedi(JediWS jedi);
 
         [OperationContract]
+        bool addCaracteristique(CaracteristiqueWS carac);
+
+        [OperationContract]
         bool addStade(StadeWS stade);
 
         [OperationContract]
@@ -54,6 +57,9 @@ namespace WCFJedi
         bool updateTournoi(TournoiWS tournoi);
 
         [OperationContract]
+        bool updateCaracteristique(CaracteristiqueWS carac);
+
+        [OperationContract]
         bool removeJedi(JediWS jedi);
 
         [OperationContract]
@@ -64,6 +70,9 @@ namespace WCFJedi
 
         [OperationContract]
         bool removeTournoi(TournoiWS tournoi);
+
+        [OperationContract]
+        bool removeCaracteristique(CaracteristiqueWS carac);
 
         [OperationContract]
         TournoiWS playTournoi(TournoiWS tournoi);

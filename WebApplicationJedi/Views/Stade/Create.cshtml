@@ -57,10 +57,10 @@
 
                         <div class="col-xs-12 col-sm-8">
                             <div class="progress progress-striped active">
-                                <div class='progress-bar @(c.Definition==WebApplicationJedi.ServiceReference.EDefCaracteristiqueWS.Perception ? "progress-bar-info" : (c.Definition==WebApplicationJedi.ServiceReference.EDefCaracteristiqueWS.Strength ? "progress-bar-danger" : "progress-bar-warning"))' role="progressbar" aria-valuenow="@c.Valeur"
-                                        aria-valuemin="0" aria-valuemax="100" style="width:@c.Valeur%">
-                                    <span class="sr-only">@c.Valeur% Complete</span>
-                                    <span class="progress-value"><strong>@c.Valeur @c.Definition</strong></span>
+                                <div class='progress-bar @(c.Definition==WebApplicationJedi.ServiceReference.EDefCaracteristiqueWS.Perception ? "progress-bar-info" : (c.Definition==WebApplicationJedi.ServiceReference.EDefCaracteristiqueWS.Strength ? "progress-bar-danger" : "progress-bar-warning"))' role="progressbar" aria-valuenow="@(c.Valeur>0?c.Valeur : -c.Valeur)"
+                                        aria-valuemin="0" aria-valuemax="100" style="width:@(c.Valeur>0?c.Valeur : -c.Valeur)%">
+                                    <span class="sr-only">@(c.Valeur > 0 ? c.Valeur : -c.Valeur)% Complete</span>
+                                    <span class="progress-value"><strong>@(c.Valeur > 0 ? c.Valeur : -c.Valeur) @c.Definition</strong></span>
                                 </div>
                             </div>
                         </div>

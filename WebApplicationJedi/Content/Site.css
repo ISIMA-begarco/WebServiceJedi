@@ -43,3 +43,7 @@ textarea {
 .btn-danger a {
     color: white;
 }
+
+.nopuce {
+    list-style-type: none;
+}

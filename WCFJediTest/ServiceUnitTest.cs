@@ -1,7 +1,7 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System.Collections.Generic;
-using WCFJedi;
 using System.Linq;
+using WCFJedi;
 
 namespace WCFJediTest
 {
@@ -109,6 +109,7 @@ namespace WCFJediTest
             Assert.IsNotNull(stades);
             /* AJOUT */
             StadeWS zone = new StadeWS(0, "Zone TEST", 11, new List<CaracteristiqueWS>());
+
             client.addStade(zone);
             Assert.AreEqual(size + 1, client.getStades().Count);
             /* SUPPRESSION */

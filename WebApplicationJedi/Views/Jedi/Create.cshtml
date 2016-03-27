@@ -24,7 +24,7 @@
                         @Html.LabelFor(Model => Model.Item1.Nom)
                     </div>
                     <div class="col-xs-10">
-                        @Html.EditorFor(Model => Model.Item1.Nom)
+                        @Html.EditorFor(Model => Model.Item1.Nom, new { @class = "form-control" })
                         @Html.ValidationMessageFor(Model => Model.Item1.Nom)
                     </div>
                 </div>
@@ -40,12 +40,16 @@
             </div>
         </div>
 
+
+        <!--        ooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo        -->
+
+
         <div class="panel panel-primary">
             <div class="panel-heading">
                 <strong>@Html.LabelFor(Model => Model.Item1.Caracteristiques)</strong>
             </div>
             <!-- Les caracteristiques -->
-            <ul class="panel-body" style="list-style-type:none">
+            <ul class="panel-body nopuce">
                 @foreach (var c in Model.Item2.list)
                 {
                     if (c.Type != WebApplicationJedi.ServiceReference.ETypeCaracteristiqueWS.Stade)

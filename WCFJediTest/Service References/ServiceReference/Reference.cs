@@ -8,6 +8,10 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
+using System;
+using System.Collections.Generic;
+using WCFJedi;
+
 namespace WCFJediTest.ServiceReference {
     
     

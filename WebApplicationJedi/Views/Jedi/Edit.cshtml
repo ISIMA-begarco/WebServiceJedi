@@ -18,50 +18,88 @@
         @Html.ValidationSummary(true)
         @Html.HiddenFor(Model => Model.Item1.Id)
 
-        <div class="form-group">
-            <div class="col-lg-2">
-                @Html.LabelFor(Model => Model.Item1.Nom)
+        <div class="panel panel-primary">
+            <div class="panel-heading">
+                <strong>Détails</strong>
             </div>
-            <div class="col-lg-10">
-                @Html.EditorFor(Model => Model.Item1.Nom)
-                @Html.ValidationMessageFor(Model => Model.Item1.Nom)
-            </div>
-        </div>
-
-        <div class="form-group">
-            <div class="col-lg-2">
-                @Html.LabelFor(Model => Model.Item1.IsSith)
-            </div>
-            <div class="col-lg-10">
-                @Html.EditorFor(Model => Model.Item1.IsSith)
-                @Html.ValidationMessageFor(Model => Model.Item1.IsSith)
+            <div class="panel-body">
+                <div class="form-group">
+                    <div class="col-xs-2">
+                        @Html.LabelFor(Model => Model.Item1.Nom)
+                    </div>
+                    <div class="col-xs-10">
+                        @Html.EditorFor(Model => Model.Item1.Nom, null, new { @class = "form-control" })
+                        @Html.ValidationMessageFor(Model => Model.Item1.Nom)
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-xs-2">
+                        @Html.LabelFor(Model => Model.Item1.IsSith)
+                    </div>
+                    <div class="col-xs-10">
+                        @Html.EditorFor(Model => Model.Item1.IsSith)
+                        @Html.ValidationMessageFor(Model => Model.Item1.IsSith)
+                    </div>
+                </div>
             </div>
         </div>
         
-        @Html.LabelFor(Model => Model.Item1.Caracteristiques)
-        <!-- Caracteristiques du Jedi - deja cochees -->
-        @foreach(var c in Model.Item1.Caracteristiques.list) {
-            <div class="form-group">
-                <div class="col-lg-2">
-                    <input type="checkbox" name="caracteristiques" value="@c.Id" checked="true"/>
-                </div>
-                <div class="col-lg-10">
-                    @Html.DisplayFor(Model => c.Nom) (@Html.DisplayFor(Model => c.Definition)) : @Html.DisplayFor(Model => c.Valeur)
-                </div>
+        <div class="panel panel-primary">
+            <div class="panel-heading">
+                <strong>@Html.LabelFor(Model => Model.Item1.Caracteristiques)</strong>
             </div>
-        }
+            <!-- Les caracteristiques -->
+            <ul class="panel-body nopuce">
+                @foreach (var c in Model.Item1.Caracteristiques.list)
+                {
+                    if (c.Type != WebApplicationJedi.ServiceReference.ETypeCaracteristiqueWS.Stade)
+                    {
+                        <li class="row">
+                            <input class="col-xs-1" type="checkbox" checked name="caracteristiques" id="@c.Id" value="@c.Id" /><label class="col-xs-3" for="@c.Id">@Html.DisplayFor(Model => c.Nom)</label>
+
+                            <div class="col-xs-12 col-sm-8">
+                                <div class="progress progress-striped active">
+                                    <div class='progress-bar @(c.Definition==WebApplicationJedi.ServiceReference.EDefCaracteristiqueWS.Perception ? "progress-bar-info" : (c.Definition==WebApplicationJedi.ServiceReference.EDefCaracteristiqueWS.Strength ? "progress-bar-danger" : "progress-bar-warning"))' role="progressbar" aria-valuenow="@c.Valeur"
+                                         aria-valuemin="0" aria-valuemax="100" style="width:@c.Valeur%">
+                                        <span class="sr-only">@c.Valeur% Complete</span>
+                                        <span class="progress-value"><strong>@c.Valeur @c.Definition</strong></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                    }
+                }
+            </ul>
+        </div>
 
         <!-- Les autres caracteristiques -->
-        @foreach(var c in Model.Item2.list) {
-            <div class="form-group">
-                <div class="col-lg-2">
-                    <input type="checkbox" name="caracteristiques" value="@c.Id"/>
-                </div>
-                <div class="col-lg-10">
-                    @Html.DisplayFor(Model => c.Nom) (@Html.DisplayFor(Model => c.Definition)) : @Html.DisplayFor(Model => c.Valeur)
-                </div>
+        <div class="panel panel-primary">
+            <div class="panel-heading">
+                <strong>@Html.LabelFor(Model => Model.Item2.list)</strong>
             </div>
-        }
+            <!-- Les caracteristiques -->
+            <ul class="panel-body nopuce">
+                @foreach (var c in Model.Item2.list)
+                {
+                    if (c.Type != WebApplicationJedi.ServiceReference.ETypeCaracteristiqueWS.Stade)
+                    {
+                        <li class="row">
+                            <input class="col-xs-1" type="checkbox" name="caracteristiques" id="@c.Id" value="@c.Id" /><label class="col-xs-3" for="@c.Id">@Html.DisplayFor(Model => c.Nom)</label>
+
+                            <div class="col-xs-12 col-sm-8">
+                                <div class="progress progress-striped active">
+                                    <div class='progress-bar @(c.Definition==WebApplicationJedi.ServiceReference.EDefCaracteristiqueWS.Perception ? "progress-bar-info" : (c.Definition==WebApplicationJedi.ServiceReference.EDefCaracteristiqueWS.Strength ? "progress-bar-danger" : "progress-bar-warning"))' role="progressbar" aria-valuenow="@c.Valeur"
+                                         aria-valuemin="0" aria-valuemax="100" style="width:@c.Valeur%">
+                                        <span class="sr-only">@c.Valeur% Complete</span>
+                                        <span class="progress-value"><strong>@c.Valeur @c.Definition</strong></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                    }
+                }
+            </ul>
+        </div>
 
         <div>
             <div class="btn btn-default">

@@ -756,6 +756,12 @@ namespace WebApplicationJedi.ServiceReference {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/addJedi", ReplyAction="http://tempuri.org/IService/addJediResponse")]
         System.Threading.Tasks.Task<bool> addJediAsync(WebApplicationJedi.ServiceReference.JediWS jedi);
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/addCaracteristique", ReplyAction="http://tempuri.org/IService/addCaracteristiqueResponse")]
+        bool addCaracteristique(WebApplicationJedi.ServiceReference.CaracteristiqueWS carac);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/addCaracteristique", ReplyAction="http://tempuri.org/IService/addCaracteristiqueResponse")]
+        System.Threading.Tasks.Task<bool> addCaracteristiqueAsync(WebApplicationJedi.ServiceReference.CaracteristiqueWS carac);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/addStade", ReplyAction="http://tempuri.org/IService/addStadeResponse")]
         bool addStade(WebApplicationJedi.ServiceReference.StadeWS stade);
         
@@ -798,6 +804,12 @@ namespace WebApplicationJedi.ServiceReference {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/updateTournoi", ReplyAction="http://tempuri.org/IService/updateTournoiResponse")]
         System.Threading.Tasks.Task<bool> updateTournoiAsync(WebApplicationJedi.ServiceReference.TournoiWS tournoi);
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/updateCaracteristique", ReplyAction="http://tempuri.org/IService/updateCaracteristiqueResponse")]
+        bool updateCaracteristique(WebApplicationJedi.ServiceReference.CaracteristiqueWS carac);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/updateCaracteristique", ReplyAction="http://tempuri.org/IService/updateCaracteristiqueResponse")]
+        System.Threading.Tasks.Task<bool> updateCaracteristiqueAsync(WebApplicationJedi.ServiceReference.CaracteristiqueWS carac);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/removeJedi", ReplyAction="http://tempuri.org/IService/removeJediResponse")]
         bool removeJedi(WebApplicationJedi.ServiceReference.JediWS jedi);
         
@@ -821,6 +833,12 @@ namespace WebApplicationJedi.ServiceReference {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/removeTournoi", ReplyAction="http://tempuri.org/IService/removeTournoiResponse")]
         System.Threading.Tasks.Task<bool> removeTournoiAsync(WebApplicationJedi.ServiceReference.TournoiWS tournoi);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/removeCaracteristique", ReplyAction="http://tempuri.org/IService/removeCaracteristiqueResponse")]
+        bool removeCaracteristique(WebApplicationJedi.ServiceReference.CaracteristiqueWS carac);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/removeCaracteristique", ReplyAction="http://tempuri.org/IService/removeCaracteristiqueResponse")]
+        System.Threading.Tasks.Task<bool> removeCaracteristiqueAsync(WebApplicationJedi.ServiceReference.CaracteristiqueWS carac);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/playTournoi", ReplyAction="http://tempuri.org/IService/playTournoiResponse")]
         WebApplicationJedi.ServiceReference.TournoiWS playTournoi(WebApplicationJedi.ServiceReference.TournoiWS tournoi);
@@ -936,6 +954,14 @@ namespace WebApplicationJedi.ServiceReference {
             return base.Channel.addJediAsync(jedi);
         }
         
+        public bool addCaracteristique(WebApplicationJedi.ServiceReference.CaracteristiqueWS carac) {
+            return base.Channel.addCaracteristique(carac);
+        }
+        
+        public System.Threading.Tasks.Task<bool> addCaracteristiqueAsync(WebApplicationJedi.ServiceReference.CaracteristiqueWS carac) {
+            return base.Channel.addCaracteristiqueAsync(carac);
+        }
+        
         public bool addStade(WebApplicationJedi.ServiceReference.StadeWS stade) {
             return base.Channel.addStade(stade);
         }
@@ -992,6 +1018,14 @@ namespace WebApplicationJedi.ServiceReference {
             return base.Channel.updateTournoiAsync(tournoi);
         }
         
+        public bool updateCaracteristique(WebApplicationJedi.ServiceReference.CaracteristiqueWS carac) {
+            return base.Channel.updateCaracteristique(carac);
+        }
+        
+        public System.Threading.Tasks.Task<bool> updateCaracteristiqueAsync(WebApplicationJedi.ServiceReference.CaracteristiqueWS carac) {
+            return base.Channel.updateCaracteristiqueAsync(carac);
+        }
+        
         public bool removeJedi(WebApplicationJedi.ServiceReference.JediWS jedi) {
             return base.Channel.removeJedi(jedi);
         }
@@ -1022,6 +1056,14 @@ namespace WebApplicationJedi.ServiceReference {
         
         public System.Threading.Tasks.Task<bool> removeTournoiAsync(WebApplicationJedi.ServiceReference.TournoiWS tournoi) {
             return base.Channel.removeTournoiAsync(tournoi);
+        }
+        
+        public bool removeCaracteristique(WebApplicationJedi.ServiceReference.CaracteristiqueWS carac) {
+            return base.Channel.removeCaracteristique(carac);
+        }
+        
+        public System.Threading.Tasks.Task<bool> removeCaracteristiqueAsync(WebApplicationJedi.ServiceReference.CaracteristiqueWS carac) {
+            return base.Channel.removeCaracteristiqueAsync(carac);
         }
         
         public WebApplicationJedi.ServiceReference.TournoiWS playTournoi(WebApplicationJedi.ServiceReference.TournoiWS tournoi) {

@@ -246,5 +246,30 @@ namespace WCFJedi
             bool correct = JediTournamentManager.CheckConnexionUser(username, password);
             return (correct ? new UserWS(businessManager.getUsers().Find(x => x.Login == username)) : null);
         }
+
+        public bool addCaracteristique(CaracteristiqueWS carac)
+        {
+            List<Caracteristique> l = businessManager.getCaracteristiques();
+            l.Add(new Caracteristique(0, (EDefCaracteristique) carac.Definition, carac.Nom, (ETypeCaracteristique)carac.Type, carac.Valeur));
+            return 0==businessManager.updateCaracteristiques(l);
+        }
+
+        public bool updateCaracteristique(CaracteristiqueWS carac)
+        {
+            List<Caracteristique> l = businessManager.getCaracteristiques();
+            Caracteristique c = l.Find(x => x.Id == carac.Id);
+            c.Nom = carac.Nom;
+            c.Type = (ETypeCaracteristique) carac.Type;
+            c.Valeur = carac.Valeur;
+            c.Definition = (EDefCaracteristique) carac.Definition;
+            return 0 == businessManager.updateCaracteristiques(l);
+        }
+
+        public bool removeCaracteristique(CaracteristiqueWS carac)
+        {
+            List<Caracteristique> l = businessManager.getCaracteristiques();
+            l.Remove(l.Find(x => x.Id == carac.Id));
+            return 0 == businessManager.updateCaracteristiques(l);
+        }
     }
 }
