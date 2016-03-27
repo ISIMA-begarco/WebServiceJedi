@@ -55,7 +55,7 @@ namespace WebApplicationJedi.Controllers
                 mod.Mise = Int32.Parse(collection.Get("Mise"));
                 mod.Mise = (mod.Mise < 0 ? 0 : mod.Mise > butin ? butin : mod.Mise);
                 mod.Jedi = collection.Get("Jedi");
-                bool gagne = mod.Jedi == mod.Matches.list.Where(x => x.Phase == WebApplicationJedi.ServiceReference.EPhaseTournoi.Finale).First().JediVainqueur.Nom;
+                bool gagne = mod.Jedi == mod.Matches.list.Where(x => x.Phase == EPhaseTournoiWS.Finale).First().JediVainqueur.Nom;
                 mod.Gain = (gagne ? mod.Mise * 2 + 1 : 0);
                 var userId = User.Identity.GetUserId();
 

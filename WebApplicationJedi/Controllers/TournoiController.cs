@@ -6,193 +6,248 @@ using System.Web.Mvc;
 using WebApplicationJedi.Models;
 using WebApplicationJedi.ServiceReference;
 
-namespace WebApplicationJedi.Controllers {
-	public class TournoiController : Controller {
-		// GET: Tournoi
-		public ActionResult Index() {
-			List<TournoiViewModel> list = new List<TournoiViewModel>();
-			using(ServiceReference.ServiceClient service = new ServiceReference.ServiceClient()) {
-				foreach(var tournoi in service.getTournois()) {
-					list.Add(new TournoiViewModel(tournoi));
-				}
-			}
+namespace WebApplicationJedi.Controllers
+{
+    public class TournoiController : Controller
+    {
+        // GET: Tournoi
+        public ActionResult Index()
+        {
+            List<TournoiViewModel> list = new List<TournoiViewModel>();
+            using (ServiceReference.ServiceClient service = new ServiceReference.ServiceClient())
+            {
+                foreach (var tournoi in service.getTournois())
+                {
+                    list.Add(new TournoiViewModel(tournoi));
+                }
+            }
 
-			return View(new TournoiCollection(list));
-		}
+            return View(new TournoiCollection(list));
+        }
 
-		// GET: Tournoi/Details/5
-		public ActionResult Details(int id) {
-			return View();
-		}
+        // GET: Tournoi/Details/5
+        public ActionResult Details(int id)
+        {
+            return View();
+        }
 
-		// GET: Tournoi/Create
-		public ActionResult Create() {
-			List<JediViewModel> jediList = new List<JediViewModel>();
-			List<StadeViewModel> stadeListe = new List<StadeViewModel>();
+        // GET: Tournoi/Create
+        public ActionResult Create()
+        {
+            List<JediViewModel> jediList = new List<JediViewModel>();
+            List<StadeViewModel> stadeListe = new List<StadeViewModel>();
 
-			using(ServiceReference.ServiceClient service = new ServiceReference.ServiceClient()) {
-				service.getJedis().ForEach(x => jediList.Add(new JediViewModel(x)));
-				service.getStades().ForEach(x => stadeListe.Add(new StadeViewModel(x)));
-			}
+            using (ServiceReference.ServiceClient service = new ServiceReference.ServiceClient())
+            {
+                service.getJedis().ForEach(x => jediList.Add(new JediViewModel(x)));
+                service.getStades().ForEach(x => stadeListe.Add(new StadeViewModel(x)));
+            }
 
-			return View(Tuple.Create(new TournoiViewModel(), new JediCollection(jediList), new StadeCollection(stadeListe)));
-		}
+            return View(Tuple.Create(new TournoiViewModel(), new JediCollection(jediList), new StadeCollection(stadeListe)));
+        }
 
-		// POST: Tournoi/Create
-		[HttpPost]
-		public ActionResult Create(FormCollection collection) {
-			//try {
-				ServiceReference.TournoiWS tournoi = new ServiceReference.TournoiWS();
-				List<JediWS> jediList = new List<JediWS>();
-				List<StadeWS> stadeList = new List<StadeWS>();
+        // POST: Tournoi/Create
+        [HttpPost]
+        public ActionResult Create(FormCollection collection)
+        {
+            //try {
+            ServiceReference.TournoiWS tournoi = new ServiceReference.TournoiWS();
+            List<JediWS> jediList = new List<JediWS>();
+            List<StadeWS> stadeList = new List<StadeWS>();
 
-				using(ServiceReference.ServiceClient service = new ServiceReference.ServiceClient()) {
-					service.getJedis().ForEach(x => jediList.Add(x));
-					service.getStades().ForEach(x => stadeList.Add(x));
+            using (ServiceReference.ServiceClient service = new ServiceReference.ServiceClient())
+            {
+                service.getJedis().ForEach(x => jediList.Add(x));
+                service.getStades().ForEach(x => stadeList.Add(x));
 
-					tournoi.Id = 0;
-					tournoi.Nom = Convert.ToString(collection.Get("Item1.Nom"));
-					tournoi.Matches = new List<MatchWS>();
+                tournoi.Id = 0;
+                tournoi.Nom = Convert.ToString(collection.Get("Item1.Nom"));
+                tournoi.Matches = new List<MatchWS>();
 
-					// Va chercher jedi1, jedi2 et stade pour les huitieme
-					for(int i = (int)WebApplicationJedi.ServiceReference.EPhaseTournoi.HuitiemeFinale1; i >= (int)WebApplicationJedi.ServiceReference.EPhaseTournoi.HuitiemeFinale8; i--) {
-						MatchWS m = new MatchWS();
-						m.Id = 0;
-						m.JediVainqueur = null;
-						m.Phase = ((WebApplicationJedi.ServiceReference.EPhaseTournoi)i);
-						m.Stade = stadeList.First(x => x.Id == Convert.ToInt32(collection.Get("stadefor" + i)));
-						m.Jedi1 = jediList.First(x => x.Id == Convert.ToInt32(collection.Get("jedi1for" + i)));
-						m.Jedi2 = jediList.First(x => x.Id == Convert.ToInt32(collection.Get("jedi2for" + i)));
-						tournoi.Matches.Add(m);
-						// TODO : ai-je besoin des participants ?
-					}
+                // Va chercher jedi1, jedi2 et stade pour les huitieme
+                for (int i = (int)EPhaseTournoiWS.HuitiemeFinale1; i >= (int)EPhaseTournoiWS.HuitiemeFinale8; i--)
+                {
+                    MatchWS m = new MatchWS();
+                    m.Id = 0;
+                    m.JediVainqueur = null;
+                    m.Phase = ((EPhaseTournoiWS)i);
+                    m.Stade = stadeList.First(x => x.Id == Convert.ToInt32(collection.Get("stadefor" + i)));
+                    m.Jedi1 = jediList.First(x => x.Id == Convert.ToInt32(collection.Get("jedi1for" + i)));
+                    m.Jedi2 = jediList.First(x => x.Id == Convert.ToInt32(collection.Get("jedi2for" + i)));
+                    tournoi.Matches.Add(m);
+                    // TODO : ai-je besoin des participants ?
+                }
 
-					// Va chercher stade pour les autres phases
-					for(int i = (int)WebApplicationJedi.ServiceReference.EPhaseTournoi.QuartFinale1; i >= (int)WebApplicationJedi.ServiceReference.EPhaseTournoi.Finale; i--) {
-						MatchWS m = new MatchWS();
-						m.Id = 0;
-						m.JediVainqueur = null;
-						m.Jedi1 = null;
-						m.Jedi2 = null;
-						m.Phase = ((WebApplicationJedi.ServiceReference.EPhaseTournoi)i);
-						m.Stade = stadeList.First(x => x.Id == Convert.ToInt32(collection.Get("stadefor" + i)));
+                // Va chercher stade pour les autres phases
+                for (int i = (int)EPhaseTournoiWS.QuartFinale1; i >= (int)EPhaseTournoiWS.Finale; i--)
+                {
+                    MatchWS m = new MatchWS();
+                    m.Id = 0;
+                    m.JediVainqueur = null;
+                    m.Jedi1 = null;
+                    m.Jedi2 = null;
+                    m.Phase = ((EPhaseTournoiWS)i);
+                    m.Stade = stadeList.First(x => x.Id == Convert.ToInt32(collection.Get("stadefor" + i)));
 
-						tournoi.Matches.Add(m);
-					}
+                    tournoi.Matches.Add(m);
+                }
 
-					foreach(var m in tournoi.Matches) {
-						service.addMatch(m);
-					}
-					service.addTournoi(tournoi);
-				}
+                List<MatchWS> vraiMatches = new List<MatchWS>();
+                foreach (var m in tournoi.Matches)
+                {
+                    service.addMatch(m);
+                }
+                List<MatchWS> mmm = service.getMatches();
+                foreach (var m in tournoi.Matches)
+                {
+                    if (m.Phase >= EPhaseTournoiWS.HuitiemeFinale8)
+                    {
+                        vraiMatches.Add(mmm.Find(x => x.Phase == m.Phase
+                                                && x.Jedi1.Nom == m.Jedi1.Nom
+                                                && x.Jedi2.Nom == m.Jedi2.Nom
+                                                && x.Stade.Planete == m.Stade.Planete));
+                    }
+                    else
+                    {
+                        vraiMatches.Add(mmm.Find(x => x.Stade.Planete == m.Stade.Planete
+                                                && x.Phase == m.Phase));
+                    }
+                }
+                tournoi.Matches = vraiMatches;
+                service.addTournoi(tournoi);
+            }
 
-				return RedirectToAction("Index");
-			//} catch {
-			//	return View("Error");
-			//}
-		}
+            return RedirectToAction("Index");
+            //} catch {
+            //	return View("Error");
+            //}
+        }
 
-		// GET: Tournoi/Edit/5
-		public ActionResult Edit(int id) {
-			ServiceReference.TournoiWS tournoi = null;
-			List<JediViewModel> jediList = new List<JediViewModel>();
-			List<StadeViewModel> stadeList = new List<StadeViewModel>();
+        // GET: Tournoi/Edit/5
+        public ActionResult Edit(int id)
+        {
+            ServiceReference.TournoiWS tournoi = null;
+            List<JediViewModel> jediList = new List<JediViewModel>();
+            List<StadeViewModel> stadeList = new List<StadeViewModel>();
 
-			using(ServiceReference.ServiceClient service = new ServiceReference.ServiceClient()) {
-				tournoi = service.getTournois().First(x => x.Id == id);
+            using (ServiceReference.ServiceClient service = new ServiceReference.ServiceClient())
+            {
+                tournoi = service.getTournois().First(x => x.Id == id);
 
-				if(tournoi == null) {
-					return HttpNotFound();
-				}
+                if (tournoi == null)
+                {
+                    return HttpNotFound();
+                }
 
-				service.getJedis().ForEach(x => jediList.Add(new JediViewModel(x)));
-				service.getStades().ForEach(x => stadeList.Add(new StadeViewModel(x)));
-			}
+                service.getJedis().ForEach(x => jediList.Add(new JediViewModel(x)));
+                service.getStades().ForEach(x => stadeList.Add(new StadeViewModel(x)));
+            }
 
-			return View(Tuple.Create(new TournoiViewModel(tournoi), new JediCollection(jediList), new StadeCollection(stadeList)));
-		}
+            return View(Tuple.Create(new TournoiViewModel(tournoi), new JediCollection(jediList), new StadeCollection(stadeList)));
+        }
 
-		// POST: Tournoi/Edit/5
-		[HttpPost]
-		public ActionResult Edit(int id, FormCollection collection) {
-			try {
-				ServiceReference.TournoiWS tournoi = null;
-				List<JediWS> jediList = new List<JediWS>();
-				List<StadeWS> stadeList = new List<StadeWS>();
+        // POST: Tournoi/Edit/5
+        [HttpPost]
+        public ActionResult Edit(int id, FormCollection collection)
+        {
+            try
+            {
+                ServiceReference.TournoiWS tournoi = null;
+                List<JediWS> jediList = new List<JediWS>();
+                List<StadeWS> stadeList = new List<StadeWS>();
 
-				using(ServiceReference.ServiceClient service = new ServiceReference.ServiceClient()) {
-					tournoi = service.getTournois().First(x => x.Id == id);
+                using (ServiceReference.ServiceClient service = new ServiceReference.ServiceClient())
+                {
+                    tournoi = service.getTournois().First(x => x.Id == id);
 
-					if(tournoi == null) {
-						return HttpNotFound();
-					}
+                    if (tournoi == null)
+                    {
+                        return HttpNotFound();
+                    }
 
-					service.getJedis().ForEach(x => jediList.Add(x));
-					service.getStades().ForEach(x => stadeList.Add(x));
+                    service.getJedis().ForEach(x => jediList.Add(x));
+                    service.getStades().ForEach(x => stadeList.Add(x));
 
-					tournoi.Nom = Convert.ToString(collection.Get("Item1.Nom"));
+                    tournoi.Nom = Convert.ToString(collection.Get("Item1.Nom"));
 
-					// Mise a jour des matchs
-					foreach(var m in tournoi.Matches) {
-						int i = ((int)m.Phase);
-						if(m.Phase >= EPhaseTournoi.HuitiemeFinale8 && m.Phase <= EPhaseTournoi.HuitiemeFinale1) { // Mise a jour jedis
-							m.Jedi1 = jediList.First(x => x.Id == Convert.ToInt32(collection.Get("jedi1for" + i)));
-							m.Jedi2 = jediList.First(x => x.Id == Convert.ToInt32(collection.Get("jedi2for" + i)));
-						} else {
-							m.Jedi1 = null;
-							m.Jedi2 = null;
-						}
-						m.JediVainqueur = null;
-						m.Stade = stadeList.First(x => x.Id == Convert.ToInt32(collection.Get("stadefor" + i)));
-					}
+                    // Mise a jour des matchs
+                    foreach (var m in tournoi.Matches)
+                    {
+                        int i = ((int)m.Phase);
+                        if (m.Phase >= EPhaseTournoiWS.HuitiemeFinale8 && m.Phase <= EPhaseTournoiWS.HuitiemeFinale1)
+                        { // Mise a jour jedis
+                            m.Jedi1 = jediList.First(x => x.Id == Convert.ToInt32(collection.Get("jedi1for" + i)));
+                            m.Jedi2 = jediList.First(x => x.Id == Convert.ToInt32(collection.Get("jedi2for" + i)));
+                        }
+                        else {
+                            m.Jedi1 = null;
+                            m.Jedi2 = null;
+                        }
+                        m.JediVainqueur = null;
+                        m.Stade = stadeList.First(x => x.Id == Convert.ToInt32(collection.Get("stadefor" + i)));
+                    }
 
-					foreach(var m in tournoi.Matches) {
-						service.updateMatch(m);
-					}
-					service.updateTournoi(tournoi);
-				}
+                    foreach (var m in tournoi.Matches)
+                    {
+                        service.updateMatch(m);
+                    }
+                    service.updateTournoi(tournoi);
+                }
 
-				return RedirectToAction("Index");
-			} catch {
-				return RedirectToAction("Error");
-			}
-		}
+                return RedirectToAction("Index");
+            }
+            catch
+            {
+                return RedirectToAction("Error");
+            }
+        }
 
-		// GET: Tournoi/Delete/5
-		public ActionResult Delete(int id) {
-			WebApplicationJedi.ServiceReference.TournoiWS tournoi = null;
+        // GET: Tournoi/Delete/5
+        public ActionResult Delete(int id)
+        {
+            WebApplicationJedi.ServiceReference.TournoiWS tournoi = null;
 
-			using(ServiceReference.ServiceClient service = new ServiceClient()) {
-				tournoi = service.getTournois().First(x => x.Id == id);
-			}
+            using (ServiceReference.ServiceClient service = new ServiceClient())
+            {
+                tournoi = service.getTournois().First(x => x.Id == id);
+            }
 
-			if(tournoi != null) {
-				return View(new TournoiViewModel(tournoi));
-			} else {
-				return RedirectToAction("Index");
-			}
-		}
+            if (tournoi != null)
+            {
+                return View(new TournoiViewModel(tournoi));
+            }
+            else {
+                return RedirectToAction("Index");
+            }
+        }
 
-		// POST: Tournoi/Delete/5
-		[HttpPost]
-		public ActionResult Delete(int id, FormCollection collection) {
-			try {
-				WebApplicationJedi.ServiceReference.TournoiWS tournoi = null;
-				using(ServiceReference.ServiceClient service = new ServiceClient()) {
-					tournoi = service.getTournois().First(x => x.Id == id);
+        // POST: Tournoi/Delete/5
+        [HttpPost]
+        public ActionResult Delete(int id, FormCollection collection)
+        {
+            try
+            {
+                WebApplicationJedi.ServiceReference.TournoiWS tournoi = null;
+                using (ServiceReference.ServiceClient service = new ServiceClient())
+                {
+                    tournoi = service.getTournois().First(x => x.Id == id);
 
-					if(tournoi != null) {
-						foreach(var m in tournoi.Matches) {
-							service.removeMatch(m);
-						}
-						service.removeTournoi(tournoi);
-					}
-				}
+                    if (tournoi != null)
+                    {
+                        foreach (var m in tournoi.Matches)
+                        {
+                            service.removeMatch(m);
+                        }
+                        service.removeTournoi(tournoi);
+                    }
+                }
 
-				return RedirectToAction("Index");
-			} catch {
-				return RedirectToAction("Index");
-			}
-		}
-	}
+                return RedirectToAction("Index");
+            }
+            catch
+            {
+                return RedirectToAction("Index");
+            }
+        }
+    }
 }

@@ -1,14 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using WCFJedi;
-using WebApplicationJedi.ServiceReference;
 
-namespace WebApplicationJedi.Models {
-	public class MatchViewModel {
+namespace WebApplicationJedi.Models
+{
+    public class MatchViewModel {
 
 		public int Id { get; set; }
 
@@ -30,7 +25,7 @@ namespace WebApplicationJedi.Models {
 
 		[Required]
 		[Display(Name = "Phase du tournoi")]
-		public EPhaseTournoi Phase { get; set; }
+		public ServiceReference.EPhaseTournoiWS Phase { get; set; }
 
 		public MatchViewModel() { }
 

@@ -1,7 +1,5 @@
-﻿using System;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System.Collections.Generic;
-using WCFJediTest.ServiceReference;
 using WCFJedi;
 using System.Linq;
 
@@ -140,12 +138,12 @@ namespace WCFJediTest
             List<MatchWS> matches = client.getMatches();
             Assert.IsNotNull(matches);
             MatchWS kamino = client.getMatches().Find(x => x.Id.Equals(11));
-            kamino.Phase = (EntitiesLayer.EPhaseTournoi)5;
+            kamino.Phase = (EPhaseTournoiWS)5;
             client.updateMatch(kamino);
-            Assert.AreEqual((EntitiesLayer.EPhaseTournoi)5, ((MatchWS)client.getMatches().Find(x => x.Id.Equals(11))).Phase);
-            kamino.Phase = (EntitiesLayer.EPhaseTournoi)4;
+            Assert.AreEqual((EPhaseTournoiWS)5, ((MatchWS)client.getMatches().Find(x => x.Id.Equals(11))).Phase);
+            kamino.Phase = (EPhaseTournoiWS)4;
             client.updateMatch(kamino);
-            Assert.AreEqual((EntitiesLayer.EPhaseTournoi)4, ((MatchWS)client.getMatches().Find(x => x.Id.Equals(11))).Phase);
+            Assert.AreEqual((EPhaseTournoiWS)4, ((MatchWS)client.getMatches().Find(x => x.Id.Equals(11))).Phase);
 
             client.Close();
         }

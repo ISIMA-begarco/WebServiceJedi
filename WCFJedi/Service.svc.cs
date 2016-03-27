@@ -38,7 +38,7 @@ namespace WCFJedi
             List<Stade> listeS = businessManager.getStades();
             Match newMatch = new Match(0,   (match.Jedi1 != null ? listeJ.Where(x => x.Nom == match.Jedi1.Nom).First() : null),
                                             (match.Jedi2 != null ? listeJ.Where(x => x.Nom == match.Jedi2.Nom).First() : null), 
-                                            match.Phase, 
+                                            (EPhaseTournoi) match.Phase, 
                                             listeS.Where(x => x.Planete == match.Stade.Planete).First(),
                                             (match.JediVainqueur != null ? listeJ.Where(x => x.Nom == match.JediVainqueur.Nom).First() : null));
             listeM.Add(newMatch);
@@ -166,8 +166,8 @@ namespace WCFJedi
             List<Jedi> jedis = businessManager.getJedis();
             Match m = new Match(ws.Id, 
                                 (ws.Jedi1 != null ? jedis.First(x => x.Id == ws.Jedi1.Id) : null),
-                                (ws.Jedi2 != null ? jedis.First(x => x.Id == ws.Jedi2.Id) : null), 
-                                ws.Phase, 
+                                (ws.Jedi2 != null ? jedis.First(x => x.Id == ws.Jedi2.Id) : null),
+                                (EPhaseTournoi)ws.Phase, 
                                 stades.First(x => x.Id == ws.Stade.Id), 
                                 (ws.JediVainqueur != null ? jedis.First(x => x.Id == ws.JediVainqueur.Id) : null));
             return m;

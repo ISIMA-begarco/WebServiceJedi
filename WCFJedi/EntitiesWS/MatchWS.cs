@@ -21,7 +21,7 @@ namespace WCFJedi
         [DataMember]
         public StadeWS Stade { get; set; }
         [DataMember]
-        public EPhaseTournoi Phase { get; set; }
+        public EPhaseTournoiWS Phase { get; set; }
 
         public MatchWS(Match m)
         {
@@ -30,7 +30,7 @@ namespace WCFJedi
             this.Jedi2 = m.Jedi2 != null ? new JediWS(m.Jedi2) : null;
             this.JediVainqueur = m.JediVainqueur != null ? new JediWS(m.JediVainqueur) : null;
             this.Stade = new StadeWS(m.Stade);
-            this.Phase = m.PhaseTournoi;
+            this.Phase = (EPhaseTournoiWS)m.PhaseTournoi;
         }
 
         public MatchWS(int pId, JediWS pJedi1, JediWS pJedi2, JediWS pJediV, StadeWS pStade, EPhaseTournoi pPhase)
@@ -40,7 +40,7 @@ namespace WCFJedi
             this.Jedi2 = pJedi2;
             this.JediVainqueur = pJediV;
             this.Stade = pStade;
-            this.Phase = pPhase;
+            this.Phase = (EPhaseTournoiWS)pPhase;
         }
     }
 }

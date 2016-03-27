@@ -355,7 +355,7 @@ namespace WebApplicationJedi.ServiceReference {
         private WebApplicationJedi.ServiceReference.JediWS JediVainqueurField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private WebApplicationJedi.ServiceReference.EPhaseTournoi PhaseField;
+        private WebApplicationJedi.ServiceReference.EPhaseTournoiWS PhaseField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private WebApplicationJedi.ServiceReference.StadeWS StadeField;
@@ -423,7 +423,7 @@ namespace WebApplicationJedi.ServiceReference {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public WebApplicationJedi.ServiceReference.EPhaseTournoi Phase {
+        public WebApplicationJedi.ServiceReference.EPhaseTournoiWS Phase {
             get {
                 return this.PhaseField;
             }
@@ -459,8 +459,8 @@ namespace WebApplicationJedi.ServiceReference {
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="EPhaseTournoi", Namespace="http://schemas.datacontract.org/2004/07/EntitiesLayer")]
-    public enum EPhaseTournoi : int {
+    [System.Runtime.Serialization.DataContractAttribute(Name="EPhaseTournoiWS", Namespace="http://schemas.datacontract.org/2004/07/WCFJedi")]
+    public enum EPhaseTournoiWS : int {
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
         HuitiemeFinale1 = 14,

@@ -7,9 +7,7 @@
 <div class="jumbotron">
     <h2>Gestion des tournois</h2>
     <p>Voici la liste des tournois disponibles que vous pouvez modifier.</p>
-    <div class="col-lg-12 btn btn-success">
-        @Html.ActionLink("Créer un nouveau Tournoi", "Create")
-    </div>
+    <a class="col-lg-12 btn btn-success" href='@Url.Action("Create", "Tournoi", new { id = 0 })'>Créer un nouveau tournoi</a>
 </div>
 
 @foreach(var t in Model.list) {
