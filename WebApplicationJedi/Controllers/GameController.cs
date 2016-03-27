@@ -31,7 +31,7 @@ namespace WebApplicationJedi.Controllers
             }
             else
             {
-                return Redirect("Login");
+                return RedirectToAction("Login", "Account", "Home");
             }
         }
 
